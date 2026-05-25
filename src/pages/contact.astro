@@ -17,7 +17,7 @@ const tierLabel = tierLabels[tierParam];
 const mailSubject = tierLabel
   ? `Inquiry: ${tierLabel}`
   : "Inquiry: Work with me";
-const mailtoHref = `mailto:hello@erlonrachi.com?subject=${encodeURIComponent(mailSubject)}`;
+const mailtoHref = `mailto:erlonrachi@gmail.com?subject=${encodeURIComponent(mailSubject)}`;
 ---
 
 <Layout title="Contact — Erlon Rachi">
@@ -43,15 +43,11 @@ const mailtoHref = `mailto:hello@erlonrachi.com?subject=${encodeURIComponent(mai
     <dl class="spec-sheet">
       <div class="spec-row">
         <dt class="label-mono">Email</dt>
-        <dd><a href={mailtoHref}>hello@erlonrachi.com</a></dd>
+        <dd><a href={mailtoHref}>erlonrachi@gmail.com</a></dd>
       </div>
       <div class="spec-row">
         <dt class="label-mono">LinkedIn</dt>
         <dd><a href="https://www.linkedin.com/in/erlonrachi/" rel="me noopener">linkedin.com/in/erlonrachi</a></dd>
-      </div>
-      <div class="spec-row">
-        <dt class="label-mono">Response time</dt>
-        <dd>Within 24 hours during the working week.</dd>
       </div>
       <div class="spec-row">
         <dt class="label-mono">Location</dt>
@@ -76,7 +72,7 @@ const mailtoHref = `mailto:hello@erlonrachi.com?subject=${encodeURIComponent(mai
     flex-direction: column;
     gap: 6px;
     padding: 16px 20px;
-    background: rgba(212, 160, 23, 0.08);
+    background: var(--accent-faint);
     border-left: 2px solid var(--splash);
     margin: 0 0 28px;
     max-width: 60ch;
@@ -100,7 +96,7 @@ const mailtoHref = `mailto:hello@erlonrachi.com?subject=${encodeURIComponent(mai
   .spec-sheet {
     margin: 0 0 56px;
     padding: 0;
-    border-top: 1px solid rgba(230, 228, 218, 0.18);
+    border-top: 1px solid var(--border-strong);
   }
 
   .spec-row {
@@ -108,7 +104,7 @@ const mailtoHref = `mailto:hello@erlonrachi.com?subject=${encodeURIComponent(mai
     grid-template-columns: 1fr;
     gap: 6px;
     padding: 16px 0;
-    border-bottom: 1px solid rgba(230, 228, 218, 0.1);
+    border-bottom: 1px solid var(--border-medium);
   }
 
   @media (min-width: 720px) {
@@ -134,7 +130,7 @@ const mailtoHref = `mailto:hello@erlonrachi.com?subject=${encodeURIComponent(mai
     color: var(--paper);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba(212, 160, 23, 0.6);
+    text-decoration-color: var(--accent-link);
   }
 
   .spec-row a:hover {
@@ -144,7 +140,7 @@ const mailtoHref = `mailto:hello@erlonrachi.com?subject=${encodeURIComponent(mai
   .contact__back {
     margin: 0;
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }

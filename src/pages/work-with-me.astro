@@ -115,74 +115,96 @@ const builderTiers = [
       The question is simple: do you need an executive in the decision room, or a builder in the codebase? Both are senior. Both are me. Different roles, different cadences, different deliverables. Pick the lane that fits the problem, request a quote, and we will talk.
     </p>
 
-    <div class="engage__note">
-      Looking for a full-time executive role for me? That conversation does not live on this page. Reach out via <a href="https://www.linkedin.com/in/erlonrachi/" rel="me noopener">LinkedIn</a> with context, and I will respond directly.
-    </div>
+    <aside class="engage__note">
+      <p class="label-mono engage__note-label">A note on <PaintedHighlight>full-time</PaintedHighlight> position</p>
+      <p class="engage__note-question">Are you considering me for a full-time executive role?</p>
+      <p>This conversation does not live on this page. Feel free to drop me a message on <a href="https://www.linkedin.com/in/erlonrachi/" rel="me noopener">LinkedIn</a>. Let's have a meaningful conversation.</p>
+    </aside>
 
     <div class="tracks">
       {/* Track A: Fractional Executive */}
-      <section class="track" aria-labelledby="track-fractional">
-        <header class="track__header">
-          <p class="label-mono">Track A</p>
-          <h2 class="track__title" id="track-fractional">Fractional Executive</h2>
-          <p class="track__sub">Erlon in the decision room. Structuring teams, setting strategy, advising, building organisations through the team.</p>
-        </header>
+      <details class="track">
+        <summary class="track__summary">
+          <div class="track__summary-text">
+            <p class="track__label"><PaintedHighlight>Track A</PaintedHighlight></p>
+            <h2 class="track__title">Fractional Executive</h2>
+            <p class="track__sub">Erlon in the decision room. Structuring teams, setting strategy, advising, building organisations through the team.</p>
+          </div>
+          <span class="track__indicator" aria-hidden="true"></span>
+        </summary>
         <div class="tier-stack">
           {fractionalTiers.map((t) => (
-            <article class="tier">
-              <p class="label-mono tier__meta">Tier {t.n} · {t.duration}</p>
-              <h3 class="tier__name">{t.name}</h3>
-              <div class="tier__section">
-                <p class="label-mono tier__sub-label">Who it's for</p>
-                <p class="tier__body">{t.who}</p>
+            <details class="tier">
+              <summary class="tier__summary">
+                <div class="tier__summary-text">
+                  <p class="label-mono tier__meta">Tier {t.n} · {t.duration}</p>
+                  <h3 class="tier__name">{t.name}</h3>
+                </div>
+                <span class="tier__indicator" aria-hidden="true"></span>
+              </summary>
+              <div class="tier__expanded">
+                <div class="tier__section">
+                  <p class="label-mono tier__sub-label">Who it's for</p>
+                  <p class="tier__body">{t.who}</p>
+                </div>
+                <div class="tier__section">
+                  <p class="label-mono tier__sub-label">What you get</p>
+                  <ul class="tier__list">
+                    {t.what.map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+                <div class="tier__section">
+                  <p class="label-mono tier__sub-label">Why it works</p>
+                  <p class="tier__body tier__body--italic">{t.why}</p>
+                </div>
+                <a href={`/contact?tier=${t.slug}`} class="tier__cta">{t.cta} →</a>
               </div>
-              <div class="tier__section">
-                <p class="label-mono tier__sub-label">What you get</p>
-                <ul class="tier__list">
-                  {t.what.map((item) => <li>{item}</li>)}
-                </ul>
-              </div>
-              <div class="tier__section">
-                <p class="label-mono tier__sub-label">Why it works</p>
-                <p class="tier__body tier__body--italic">{t.why}</p>
-              </div>
-              <a href={`/contact?tier=${t.slug}`} class="tier__cta">{t.cta} →</a>
-            </article>
+            </details>
           ))}
         </div>
-      </section>
+      </details>
 
       {/* Track B: Embedded Builder */}
-      <section class="track" aria-labelledby="track-builder">
-        <header class="track__header">
-          <p class="label-mono">Track B</p>
-          <h2 class="track__title" id="track-builder">Embedded Builder</h2>
-          <p class="track__sub">Erlon in the codebase. Shipping production artifacts. Builder, shipper, executioner.</p>
-        </header>
+      <details class="track">
+        <summary class="track__summary">
+          <div class="track__summary-text">
+            <p class="track__label"><PaintedHighlight>Track B</PaintedHighlight></p>
+            <h2 class="track__title">Embedded Builder</h2>
+            <p class="track__sub">Erlon in the codebase. Shipping production artifacts. Builder, shipper, executioner.</p>
+          </div>
+          <span class="track__indicator" aria-hidden="true"></span>
+        </summary>
         <div class="tier-stack">
           {builderTiers.map((t) => (
-            <article class="tier">
-              <p class="label-mono tier__meta">Tier {t.n} · {t.duration}</p>
-              <h3 class="tier__name">{t.name}</h3>
-              <div class="tier__section">
-                <p class="label-mono tier__sub-label">Who it's for</p>
-                <p class="tier__body">{t.who}</p>
+            <details class="tier">
+              <summary class="tier__summary">
+                <div class="tier__summary-text">
+                  <p class="label-mono tier__meta">Tier {t.n} · {t.duration}</p>
+                  <h3 class="tier__name">{t.name}</h3>
+                </div>
+                <span class="tier__indicator" aria-hidden="true"></span>
+              </summary>
+              <div class="tier__expanded">
+                <div class="tier__section">
+                  <p class="label-mono tier__sub-label">Who it's for</p>
+                  <p class="tier__body">{t.who}</p>
+                </div>
+                <div class="tier__section">
+                  <p class="label-mono tier__sub-label">What you get</p>
+                  <ul class="tier__list">
+                    {t.what.map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+                <div class="tier__section">
+                  <p class="label-mono tier__sub-label">Why it works</p>
+                  <p class="tier__body tier__body--italic">{t.why}</p>
+                </div>
+                <a href={`/contact?tier=${t.slug}`} class="tier__cta">{t.cta} →</a>
               </div>
-              <div class="tier__section">
-                <p class="label-mono tier__sub-label">What you get</p>
-                <ul class="tier__list">
-                  {t.what.map((item) => <li>{item}</li>)}
-                </ul>
-              </div>
-              <div class="tier__section">
-                <p class="label-mono tier__sub-label">Why it works</p>
-                <p class="tier__body tier__body--italic">{t.why}</p>
-              </div>
-              <a href={`/contact?tier=${t.slug}`} class="tier__cta">{t.cta} →</a>
-            </article>
+            </details>
           ))}
         </div>
-      </section>
+      </details>
     </div>
 
     <footer class="engage__footer">
@@ -195,9 +217,15 @@ const builderTiers = [
 </Layout>
 
 <style>
+  /* Intro block — centered to match the 2-track grid below */
+  .engage > .label-mono {
+    text-align: center;
+  }
+
   .engage__h1 {
-    margin: 14px 0 40px;
-    max-width: 14ch;
+    text-align: center;
+    margin: 14px auto 40px;
+    max-width: 18ch;
   }
 
   .engage__lead {
@@ -205,25 +233,51 @@ const builderTiers = [
     line-height: 1.65;
     color: var(--paper);
     max-width: 65ch;
-    margin: 0 0 28px;
+    margin: 0 auto 28px;
+    text-align: center;
   }
 
+  /* Full-time aside: centered, capped width, gold accent on top.
+   * Mirrors the home page FT aside pattern. */
   .engage__note {
-    font-size: 14px;
-    line-height: 1.55;
-    color: var(--paper-muted);
-    padding: 16px 20px;
-    border-left: 2px solid rgba(212, 160, 23, 0.5);
-    background: rgba(8, 20, 41, 0.5);
-    margin: 0 0 80px;
-    max-width: 65ch;
+    padding: 28px 32px;
+    border-top: 2px solid var(--accent-soft);
+    background: var(--surface-tint);
+    margin: 0 auto 80px;
+    max-width: 760px;
+    text-align: center;
+  }
+
+  .engage__note-label {
+    margin: 0 0 18px;
+  }
+
+  .engage__note p:not(.label-mono) {
+    margin: 0 auto;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--paper-soft);
+    max-width: 60ch;
+  }
+
+  .engage__note p.engage__note-question {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    color: var(--paper);
+    margin: 0 auto 16px;
+    max-width: 52ch;
   }
 
   .engage__note a {
     color: var(--paper-soft);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba(212, 160, 23, 0.6);
+    text-decoration-color: var(--accent-soft);
+    transition: color 140ms, text-decoration-color 140ms;
   }
 
   .engage__note a:hover {
@@ -231,24 +285,82 @@ const builderTiers = [
     text-decoration-color: var(--splash);
   }
 
-  /* Two-track parallel layout: stacks on mobile, side-by-side on desktop */
+  /* Two-track parallel layout: stacks on mobile, side-by-side on desktop.
+   * align-items: start so an opened track does not stretch the closed one. */
   .tracks {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 64px;
+    gap: 24px;
+    align-items: start;
   }
 
   @media (min-width: 1000px) {
     .tracks {
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 28px;
     }
   }
 
-  .track__header {
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 2px solid rgba(212, 160, 23, 0.5);
+  /* Track: outer accordion. Click summary to reveal the 3 tier accordions. */
+  .track {
+    background: var(--surface-card);
+    border: 1px solid var(--border-soft);
+    transition: border-color 200ms var(--ease-quart), background 200ms var(--ease-quart);
+  }
+
+  .track[open] {
+    border-color: var(--accent-strong);
+    background: var(--surface-card-open);
+  }
+
+  .track__summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px 28px;
+    transition: background 140ms;
+  }
+
+  /* Equalize closed-state height on desktop so the two boxes pair visually
+   * regardless of sub-description length. Mobile (stacked) does not need it. */
+  @media (min-width: 1000px) {
+    .track__summary {
+      min-height: 240px;
+    }
+  }
+
+  .track__summary::-webkit-details-marker { display: none; }
+  .track__summary::marker { display: none; }
+
+  .track__summary:hover {
+    background: var(--accent-faint);
+  }
+
+  /* Keyboard focus: visible splash outline. Global :focus-visible already
+   * provides a fallback, but summaries benefit from a more deliberate state. */
+  .track__summary:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 2px;
+    background: var(--accent-faint);
+  }
+
+  .track__summary-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Track label gets the painted highlight signature. Inline-block keeps
+   * the highlight from spanning the whole line. */
+  .track__label {
+    margin: 0 0 14px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
   }
 
   .track__title {
@@ -270,17 +382,93 @@ const builderTiers = [
     max-width: 42ch;
   }
 
+  /* Track plus-indicator (larger than tier indicator) */
+  .track__indicator {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 12px;
+    color: var(--splash);
+  }
+
+  .track__indicator::before,
+  .track__indicator::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+    transition: transform 200ms var(--ease-quart);
+  }
+
+  .track__indicator::before {
+    top: 50%; left: 0;
+    width: 100%; height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .track__indicator::after {
+    top: 0; left: 50%;
+    width: 2px; height: 100%;
+    transform: translateX(-50%);
+  }
+
+  .track[open] .track__indicator::after {
+    transform: translateX(-50%) rotate(90deg) scaleX(0);
+  }
+
   .tier-stack {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 12px;
+    padding: 24px 20px;
+    border-top: 1px solid var(--border-soft);
   }
 
+  /* Tier accordion: native <details>/<summary>, no JS. Click summary to expand.
+   * Closed: shows tier number, duration, name. Open: adds Who/What/Why + CTA. */
   .tier {
-    display: block;
-    padding: 28px 28px 32px;
-    background: rgba(22, 49, 90, 0.4);
-    border: 1px solid rgba(230, 228, 218, 0.08);
+    background: var(--surface-card);
+    border: 1px solid var(--border-soft);
+    transition: border-color 180ms var(--ease-quart), background 180ms var(--ease-quart);
+  }
+
+  .tier[open] {
+    border-color: var(--accent-soft);
+    background: var(--surface-card-open);
+  }
+
+  .tier__summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 24px;
+    transition: background 140ms;
+  }
+
+  /* Hide native disclosure markers */
+  .tier__summary::-webkit-details-marker {
+    display: none;
+  }
+  .tier__summary::marker {
+    display: none;
+  }
+
+  .tier__summary:hover {
+    background: var(--accent-faint);
+  }
+
+  .tier__summary:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 2px;
+    background: var(--accent-faint);
+  }
+
+  .tier__summary-text {
+    flex: 1;
+    min-width: 0;
   }
 
   .tier__meta {
@@ -295,12 +483,58 @@ const builderTiers = [
     line-height: 1.18;
     letter-spacing: -0.01em;
     color: var(--paper);
-    margin: 0 0 24px;
+    margin: 0;
     max-width: 22ch;
   }
 
-  .tier__section {
-    margin-bottom: 18px;
+  /* Plus/minus indicator. CSS-only: two pseudo-elements form a plus,
+   * vertical one collapses on open to make a minus. */
+  .tier__indicator {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--splash);
+  }
+
+  .tier__indicator::before,
+  .tier__indicator::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+    transition: transform 200ms var(--ease-quart);
+  }
+
+  .tier__indicator::before {
+    /* horizontal bar */
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .tier__indicator::after {
+    /* vertical bar (rotates to disappear on open) */
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  .tier[open] .tier__indicator::after {
+    transform: translateX(-50%) rotate(90deg) scaleX(0);
+  }
+
+  /* Expanded content */
+  .tier__expanded {
+    padding: 20px 24px 28px;
+    border-top: 1px solid var(--border-soft);
+  }
+
+  .tier__section + .tier__section {
+    margin-top: 18px;
   }
 
   .tier__sub-label {
@@ -310,7 +544,7 @@ const builderTiers = [
 
   .tier__body {
     margin: 0;
-    font-size: 14.5px;
+    font-size: 15.5px;
     line-height: 1.55;
     color: var(--paper-soft);
   }
@@ -327,7 +561,7 @@ const builderTiers = [
   }
 
   .tier__list li {
-    font-size: 14.5px;
+    font-size: 15.5px;
     line-height: 1.5;
     color: var(--paper-soft);
     padding-left: 16px;
@@ -347,35 +581,47 @@ const builderTiers = [
 
   .tier__cta {
     display: inline-block;
-    margin-top: 18px;
-    padding: 12px 0 12px 0;
+    margin-top: 22px;
+    padding: 12px 4px;
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--paper);
     border-bottom: 2px solid var(--splash);
     text-decoration: none;
-    transition: color 140ms, padding-right 140ms, border-color 140ms;
+    transition: padding 140ms var(--ease-quart), border-bottom-width 140ms var(--ease-quart);
   }
 
+  /* Hover keeps text in --paper (preserves contrast over the open-tier surface);
+   * emphasis shifts to a thicker border and slight horizontal advance to convey
+   * forward motion. Avoids the gold-on-blue text contrast drop. */
   .tier__cta:hover,
   .tier__cta:focus-visible {
-    color: var(--splash);
-    padding-right: 4px;
+    padding-right: 12px;
+    border-bottom-width: 3px;
+    outline: none;
+  }
+
+  .tier__cta:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 4px;
   }
 
   .engage__footer {
     margin-top: 96px;
     padding-top: 32px;
-    border-top: 1px solid rgba(230, 228, 218, 0.18);
+    border-top: 1px solid var(--border-strong);
+    text-align: center;
   }
 
   .engage__footer-body {
-    margin: 12px 0 0;
+    margin: 12px auto 0;
     font-size: 16px;
     line-height: 1.55;
     color: var(--paper-soft);
     max-width: 60ch;
   }
+
+  /* Reduced-motion handled site-wide via global.css */
 </style>

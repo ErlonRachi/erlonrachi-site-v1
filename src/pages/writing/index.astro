@@ -98,7 +98,7 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
   .pillar__header {
     margin-bottom: 24px;
     padding-bottom: 18px;
-    border-bottom: 2px solid rgba(212, 160, 23, 0.5);
+    border-bottom: 2px solid var(--accent-soft);
   }
 
   .pillar__title {
@@ -121,7 +121,7 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
   }
 
   .pillar__empty {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--paper-muted);
     font-style: italic;
     margin: 12px 0 0;
@@ -135,7 +135,7 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
 
   .essay-row {
     margin: 0;
-    border-bottom: 1px solid rgba(230, 228, 218, 0.1);
+    border-bottom: 1px solid var(--border-medium);
   }
 
   .essay-row:last-child {
@@ -162,17 +162,18 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
 
   .essay-link:hover,
   .essay-link:focus-visible {
-    background: linear-gradient(
-      to right,
-      rgba(212, 160, 23, 0.05) 0%,
-      transparent 60%
-    );
+    background: var(--accent-faint-grad);
     outline: none;
+  }
+
+  .essay-link:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 2px;
   }
 
   .essay-row__date {
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--paper-muted);
@@ -197,7 +198,7 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
   }
 
   .essay-row__desc {
-    font-size: 14.5px;
+    font-size: 15.5px;
     line-height: 1.5;
     color: var(--paper-soft);
     max-width: 60ch;
@@ -206,7 +207,7 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
   .writing__footer {
     margin-top: 96px;
     padding-top: 24px;
-    border-top: 1px solid rgba(230, 228, 218, 0.18);
+    border-top: 1px solid var(--border-strong);
   }
 
   .writing__footer p {

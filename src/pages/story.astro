@@ -241,20 +241,20 @@ import PaintedHighlight from "../components/PaintedHighlight.astro";
     margin: 0 auto;
     filter: url(#duotone-europa);
     /* Subtle border in europa-blue-mid to anchor against the dark surface */
-    border: 1px solid rgba(230, 228, 218, 0.08);
+    border: 1px solid var(--border-soft);
   }
 
   /* How I work spec sheet — same pattern as /work intro spec */
   .how-i-work {
     margin-top: 112px;
     padding-top: 56px;
-    border-top: 1px solid rgba(230, 228, 218, 0.18);
+    border-top: 1px solid var(--border-strong);
   }
 
   .spec-sheet {
     margin: 32px 0 0;
     padding: 0;
-    border-top: 1px solid rgba(230, 228, 218, 0.12);
+    border-top: 1px solid var(--border-medium);
   }
 
   .spec-sheet--compact .spec-row {
@@ -266,7 +266,7 @@ import PaintedHighlight from "../components/PaintedHighlight.astro";
     grid-template-columns: 1fr;
     gap: 6px;
     padding: 18px 0;
-    border-bottom: 1px solid rgba(230, 228, 218, 0.1);
+    border-bottom: 1px solid var(--border-medium);
   }
 
   @media (min-width: 720px) {
@@ -293,7 +293,7 @@ import PaintedHighlight from "../components/PaintedHighlight.astro";
     color: var(--paper);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba(212, 160, 23, 0.6);
+    text-decoration-color: var(--accent-link);
     transition: text-decoration-color 140ms;
   }
 
@@ -310,7 +310,7 @@ import PaintedHighlight from "../components/PaintedHighlight.astro";
   .practical__epigraph {
     margin: 64px 0 0;
     padding-top: 32px;
-    border-top: 1px solid rgba(230, 228, 218, 0.18);
+    border-top: 1px solid var(--border-strong);
     font-family: "Fraunces", Georgia, serif;
     font-weight: 400;
     font-style: italic;

@@ -31,7 +31,7 @@ const href = `/work/${entry.id}`;
       "metric metric";
     column-gap: 16px;
     padding: 28px 0;
-    border-bottom: 1px solid rgba(230, 228, 218, 0.12);
+    border-bottom: 1px solid var(--border-medium);
     text-decoration: none;
     color: inherit;
     transition: background 160ms var(--ease-quart);
@@ -39,12 +39,13 @@ const href = `/work/${entry.id}`;
 
   .case-card:hover,
   .case-card:focus-visible {
-    background: linear-gradient(
-      to right,
-      rgba(212, 160, 23, 0.05) 0%,
-      transparent 60%
-    );
+    background: var(--accent-faint-grad);
     outline: none;
+  }
+
+  .case-card:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 2px;
   }
 
   .case-card:last-child {
@@ -54,7 +55,7 @@ const href = `/work/${entry.id}`;
   .case-card__meta {
     grid-area: meta;
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--paper-muted);

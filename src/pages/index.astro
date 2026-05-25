@@ -136,8 +136,8 @@ const paths = [
     text-align: center;
     gap: 12px;
     padding: 28px 24px;
-    background: rgba(22, 49, 90, 0.35);
-    border: 1px solid rgba(230, 228, 218, 0.08);
+    background: var(--surface-card);
+    border: 1px solid var(--border-soft);
     min-height: 130px;
   }
 
@@ -178,8 +178,8 @@ const paths = [
     align-items: center;
     text-align: center;
     padding: 28px 28px 32px;
-    background: rgba(22, 49, 90, 0.35);
-    border: 1px solid rgba(230, 228, 218, 0.08);
+    background: var(--surface-card);
+    border: 1px solid var(--border-soft);
     text-decoration: none;
     color: inherit;
     transition: border-color 180ms var(--ease-quart), background 180ms var(--ease-quart);
@@ -187,8 +187,8 @@ const paths = [
 
   .path:hover,
   .path:focus-visible {
-    border-color: rgba(212, 160, 23, 0.55);
-    background: rgba(22, 49, 90, 0.55);
+    border-color: var(--accent-strong);
+    background: var(--surface-card-open);
     outline: none;
   }
 
@@ -219,7 +219,7 @@ const paths = [
   }
 
   .path__sub {
-    font-size: 14.5px;
+    font-size: 15.5px;
     line-height: 1.55;
     color: var(--paper-soft);
     margin: 0 auto;
@@ -231,8 +231,8 @@ const paths = [
    * works with centered content. */
   .home__fulltime {
     padding: 32px 28px;
-    border-top: 2px solid rgba(212, 160, 23, 0.5);
-    background: rgba(8, 20, 41, 0.55);
+    border-top: 2px solid var(--accent-soft);
+    background: var(--surface-tint);
     margin: 0 0 80px;
     text-align: center;
   }
@@ -253,7 +253,7 @@ const paths = [
     color: var(--paper);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba(212, 160, 23, 0.6);
+    text-decoration-color: var(--accent-link);
     transition: text-decoration-color 140ms;
   }
 
@@ -265,7 +265,7 @@ const paths = [
   .home__footer {
     margin-top: 96px;
     padding-top: 24px;
-    border-top: 1px solid rgba(230, 228, 218, 0.18);
+    border-top: 1px solid var(--border-strong);
   }
 
   .home__footer p {

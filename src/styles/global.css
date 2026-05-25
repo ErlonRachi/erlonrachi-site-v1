@@ -12,10 +12,13 @@
   --color-europa-blue-deeper:  #081429;
   --color-europa-blue-mid:     #16315A;
 
-  /* Neutrals — paper gray and tinted black */
+  /* Neutrals — paper gray and tinted black.
+   * paper-soft and paper-muted brightened on 2026-05-25 readability pass:
+   * paper-muted went from #7E8590 (~4.2:1 vs europa-blue, below WCAG AA)
+   * to #A0A8B3 (~6.5:1, comfortable small-text legibility). */
   --color-paper:        #E6E4DA;
-  --color-paper-soft:   #B7B9BF;
-  --color-paper-muted:  #7E8590;
+  --color-paper-soft:   #C2C5CB;
+  --color-paper-muted:  #A0A8B3;
   --color-tinted-black: #06101F;
 
   /* Accent — the Splash
@@ -44,6 +47,27 @@
   --tinted-black:       var(--color-tinted-black);
   --splash:             var(--color-splash);
   --splash-text:        var(--color-splash-text);
+
+  /* Alpha-derived surface and accent tokens. Centralises repeated rgba
+   * values across pages. If a value is not here, it should not be in a page. */
+  --surface-card:        rgba(22, 49, 90, 0.40);   /* default card bg */
+  --surface-card-open:   rgba(22, 49, 90, 0.55);   /* expanded / hovered state */
+  --surface-tint:        rgba(8, 20, 41, 0.55);    /* deeper inset (e.g. asides) */
+  --surface-code:        rgba(8, 20, 41, 0.70);    /* inline code background */
+
+  --accent-strong:       rgba(212, 160, 23, 0.55); /* open-state borders */
+  --accent-soft:         rgba(212, 160, 23, 0.50); /* faded splash for accents */
+  --accent-link:         rgba(212, 160, 23, 0.60); /* link underline color */
+  --accent-faint:        rgba(212, 160, 23, 0.06); /* hover wash on cards */
+  --accent-faint-grad:   linear-gradient(           /* row-hover gradient */
+    to right,
+    rgba(212, 160, 23, 0.05) 0%,
+    transparent 60%
+  );
+
+  --border-soft:         rgba(230, 228, 218, 0.08); /* card borders */
+  --border-medium:       rgba(230, 228, 218, 0.12); /* in-content dividers */
+  --border-strong:       rgba(230, 228, 218, 0.18); /* section separators */
 }
 
 html {
@@ -92,8 +116,8 @@ body {
 
 .label-mono {
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--paper-muted);
 }
@@ -109,4 +133,22 @@ body {
 :focus-visible {
   outline: 2px solid var(--splash);
   outline-offset: 3px;
+}
+
+/* ----------------------------------------------------------------------------
+ * Reduced motion: honor OS-level user preference (WCAG, PRODUCT.md).
+ * Wipes all transitions, animations, scroll behaviors site-wide.
+ * Static state-changes still happen (the page is still functional);
+ * we just skip the motion between them.
+ * ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

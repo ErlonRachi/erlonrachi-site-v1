@@ -105,7 +105,7 @@ const sameTheme = allCases
   .case__back {
     margin: 0 0 28px;
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
@@ -123,12 +123,12 @@ const sameTheme = allCases
   .case__header {
     margin-bottom: 56px;
     padding-bottom: 32px;
-    border-bottom: 1px solid rgba(230, 228, 218, 0.12);
+    border-bottom: 1px solid var(--border-medium);
   }
 
   .case__meta {
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--paper-soft);
@@ -174,7 +174,7 @@ const sameTheme = allCases
     color: var(--paper-soft);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba(212, 160, 23, 0.5);
+    text-decoration-color: var(--accent-soft);
     transition: text-decoration-color 140ms, color 140ms;
   }
 
@@ -220,7 +220,7 @@ const sameTheme = allCases
   .case__related {
     margin-top: 96px;
     padding-top: 32px;
-    border-top: 1px solid rgba(230, 228, 218, 0.12);
+    border-top: 1px solid var(--border-medium);
   }
 
   .case__related .label-mono {
@@ -240,17 +240,20 @@ const sameTheme = allCases
   .case__related-link {
     display: block;
     padding: 16px 0;
-    border-bottom: 1px solid rgba(230, 228, 218, 0.08);
+    border-bottom: 1px solid var(--border-soft);
     text-decoration: none;
     transition: background 140ms;
   }
 
-  .case__related-link:hover {
-    background: linear-gradient(
-      to right,
-      rgba(212, 160, 23, 0.05) 0%,
-      transparent 60%
-    );
+  .case__related-link:hover,
+  .case__related-link:focus-visible {
+    background: var(--accent-faint-grad);
+    outline: none;
+  }
+
+  .case__related-link:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 2px;
   }
 
   .case__related-list li:last-child .case__related-link {
@@ -269,7 +272,7 @@ const sameTheme = allCases
   .case__related-meta {
     display: block;
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--paper-muted);
@@ -278,7 +281,7 @@ const sameTheme = allCases
   .case__footer {
     margin-top: 64px;
     padding-top: 24px;
-    border-top: 1px solid rgba(230, 228, 218, 0.18);
+    border-top: 1px solid var(--border-strong);
   }
 
   .case__footer p {
