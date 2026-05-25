@@ -1,0 +1,325 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import DevNav from "../../components/DevNav.astro";
+import { PILLARS } from "../../data/writing";
+
+export async function getStaticPaths() {
+  const essays = (await getCollection("essays")).filter((e) => !e.data.draft);
+  return essays.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry, allEssays: essays },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"essays">;
+  allEssays: CollectionEntry<"essays">[];
+}
+
+const { entry, allEssays } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, pillar, publishedDate, originalSource } = entry.data;
+const pillarInfo = PILLARS[pillar];
+
+const dateFmt = new Intl.DateTimeFormat("en-GB", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+// More in the same pillar, excluding the current essay, sorted by date desc
+const related = allEssays
+  .filter((e) => e.data.pillar === pillar && e.id !== entry.id)
+  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime())
+  .slice(0, 3);
+---
+
+<Layout
+  title={`${title} — Erlon Rachi`}
+  description={description ?? title}
+>
+  <DevNav />
+
+  <article class="essay mx-auto max-w-[720px] px-6 py-16 md:py-24">
+    <p class="essay__back">
+      <a href="/writing">← back to writing</a>
+    </p>
+
+    <header class="essay__header">
+      <p class="essay__meta">
+        <a href={`/writing#${pillar}`} class="essay__pillar">{pillarInfo.short}</a>
+        <span class="essay__sep">·</span>
+        <time datetime={publishedDate.toISOString()}>{dateFmt.format(publishedDate)}</time>
+        {originalSource && (
+          <>
+            <span class="essay__sep">·</span>
+            <span class="essay__source">first published on {originalSource}</span>
+          </>
+        )}
+      </p>
+      <h1 class="essay__title">{title}</h1>
+      {description && <p class="essay__desc">{description}</p>}
+    </header>
+
+    <div class="essay__body">
+      <Content />
+    </div>
+
+    {related.length > 0 && (
+      <aside class="essay__related">
+        <p class="label-mono">More in {pillarInfo.title}</p>
+        <ul class="essay__related-list">
+          {related.map((e) => (
+            <li>
+              <a href={`/writing/${e.id}`} class="essay__related-link">
+                <span class="essay__related-title">{e.data.title}</span>
+                <span class="essay__related-date">{dateFmt.format(e.data.publishedDate)}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )}
+
+    <footer class="essay__footer">
+      <p class="label-mono">
+        <a href="/writing">All writing</a>
+        <span class="essay__footer-sep">·</span>
+        <a href="/work">Portfolio</a>
+        <span class="essay__footer-sep">·</span>
+        <a href="/work-with-me">Work with me</a>
+      </p>
+    </footer>
+  </article>
+</Layout>
+
+<style>
+  .essay__back {
+    margin: 0 0 28px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .essay__back a {
+    color: var(--paper-soft);
+    text-decoration: none;
+    transition: color 140ms;
+  }
+
+  .essay__back a:hover {
+    color: var(--paper);
+  }
+
+  .essay__header {
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(230, 228, 218, 0.12);
+  }
+
+  .essay__meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--paper-muted);
+    margin: 0 0 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .essay__pillar {
+    color: var(--splash);
+    text-decoration: none;
+    transition: color 140ms;
+  }
+
+  .essay__pillar:hover {
+    color: var(--paper);
+  }
+
+  .essay__sep {
+    color: var(--paper-muted);
+    opacity: 0.6;
+  }
+
+  .essay__title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: clamp(30px, 4.2vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    color: var(--paper);
+    margin: 0 0 20px;
+    max-width: 22ch;
+  }
+
+  .essay__desc {
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--paper-soft);
+    margin: 0;
+    max-width: 60ch;
+    font-style: italic;
+  }
+
+  /* Body: rendered markdown for long-form reading */
+  .essay__body :global(h2) {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    margin: 56px 0 20px;
+  }
+
+  .essay__body :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .essay__body :global(h3) {
+    font-family: "Inter Tight", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.3;
+    color: var(--paper);
+    margin: 36px 0 14px;
+  }
+
+  .essay__body :global(p) {
+    font-size: 17.5px;
+    line-height: 1.75;
+    color: var(--paper-soft);
+    margin: 0 0 22px;
+    max-width: 66ch;
+  }
+
+  .essay__body :global(p strong) {
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  .essay__body :global(p em) {
+    color: var(--paper);
+  }
+
+  .essay__body :global(ul), .essay__body :global(ol) {
+    margin: 0 0 22px;
+    padding-left: 22px;
+    color: var(--paper-soft);
+    font-size: 17.5px;
+    line-height: 1.7;
+    max-width: 66ch;
+  }
+
+  .essay__body :global(li) {
+    margin-bottom: 8px;
+  }
+
+  .essay__body :global(blockquote) {
+    margin: 28px 0;
+    padding-left: 24px;
+    border-left: 3px solid rgba(212, 160, 23, 0.5);
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    color: var(--paper);
+    font-size: 19px;
+    line-height: 1.55;
+    max-width: 60ch;
+  }
+
+  .essay__body :global(code) {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.9em;
+    background: rgba(8, 20, 41, 0.7);
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--paper);
+  }
+
+  /* Related */
+  .essay__related {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(230, 228, 218, 0.12);
+  }
+
+  .essay__related .label-mono {
+    margin: 0 0 20px;
+  }
+
+  .essay__related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .essay__related-list li {
+    margin: 0;
+  }
+
+  .essay__related-link {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(230, 228, 218, 0.08);
+    text-decoration: none;
+    transition: background 140ms;
+  }
+
+  .essay__related-link:hover {
+    background: linear-gradient(to right, rgba(212, 160, 23, 0.05) 0%, transparent 60%);
+  }
+
+  .essay__related-list li:last-child .essay__related-link {
+    border-bottom: 0;
+  }
+
+  .essay__related-title {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--paper);
+    margin-bottom: 4px;
+  }
+
+  .essay__related-date {
+    display: block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--paper-muted);
+  }
+
+  .essay__footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(230, 228, 218, 0.18);
+  }
+
+  .essay__footer p {
+    margin: 0;
+  }
+
+  .essay__footer a {
+    color: var(--paper-soft);
+    text-decoration: none;
+  }
+
+  .essay__footer a:hover {
+    color: var(--paper);
+  }
+
+  .essay__footer-sep {
+    margin: 0 10px;
+    color: var(--paper-muted);
+  }
+</style>
