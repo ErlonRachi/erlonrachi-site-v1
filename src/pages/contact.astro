@@ -1,0 +1,160 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DevNav from "../components/DevNav.astro";
+import PaintedHighlight from "../components/PaintedHighlight.astro";
+
+const tierLabels: Record<string, string> = {
+  "fractional-diagnostic": "Agentic AI Readiness Diagnostic",
+  "fractional-head-of-ai": "Fractional Head of AI",
+  "fractional-council": "AI Operating Council",
+  "builder-audit": "Technical Readiness Audit",
+  "builder-sprint": "Embedded Builder Sprint",
+  "builder-retainer": "Architecture Retainer",
+};
+
+const tierParam = Astro.url.searchParams.get("tier") ?? "";
+const tierLabel = tierLabels[tierParam];
+const mailSubject = tierLabel
+  ? `Inquiry: ${tierLabel}`
+  : "Inquiry: Work with me";
+const mailtoHref = `mailto:hello@erlonrachi.com?subject=${encodeURIComponent(mailSubject)}`;
+---
+
+<Layout title="Contact — Erlon Rachi">
+  <DevNav />
+
+  <main class="contact mx-auto max-w-[820px] px-6 py-20 md:py-28">
+    <p class="label-mono">Contact</p>
+    <h1 class="display-xl contact__h1">
+      Let's <PaintedHighlight>talk</PaintedHighlight>.
+    </h1>
+
+    {tierLabel && (
+      <p class="contact__tier">
+        <span class="label-mono">Tier of interest</span>
+        <span class="contact__tier-name">{tierLabel}</span>
+      </p>
+    )}
+
+    <p class="contact__lead">
+      Form coming soon. While it lands, the fastest way to reach me is direct.
+    </p>
+
+    <dl class="spec-sheet">
+      <div class="spec-row">
+        <dt class="label-mono">Email</dt>
+        <dd><a href={mailtoHref}>hello@erlonrachi.com</a></dd>
+      </div>
+      <div class="spec-row">
+        <dt class="label-mono">LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/erlonrachi/" rel="me noopener">linkedin.com/in/erlonrachi</a></dd>
+      </div>
+      <div class="spec-row">
+        <dt class="label-mono">Response time</dt>
+        <dd>Within 24 hours during the working week.</dd>
+      </div>
+      <div class="spec-row">
+        <dt class="label-mono">Location</dt>
+        <dd>Milan. CET. No timezone restriction in practice.</dd>
+      </div>
+    </dl>
+
+    <p class="contact__back">
+      <a href="/work-with-me">← back to engagement tracks</a>
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .contact__h1 {
+    margin: 14px 0 32px;
+    max-width: 12ch;
+  }
+
+  .contact__tier {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 20px;
+    background: rgba(212, 160, 23, 0.08);
+    border-left: 2px solid var(--splash);
+    margin: 0 0 28px;
+    max-width: 60ch;
+  }
+
+  .contact__tier-name {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 20px;
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  .contact__lead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--paper-soft);
+    max-width: 60ch;
+    margin: 0 0 40px;
+  }
+
+  .spec-sheet {
+    margin: 0 0 56px;
+    padding: 0;
+    border-top: 1px solid rgba(230, 228, 218, 0.18);
+  }
+
+  .spec-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(230, 228, 218, 0.1);
+  }
+
+  @media (min-width: 720px) {
+    .spec-row {
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+    }
+  }
+
+  .spec-row dt {
+    padding-top: 2px;
+    color: var(--paper-muted);
+  }
+
+  .spec-row dd {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+  }
+
+  .spec-row a {
+    color: var(--paper);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(212, 160, 23, 0.6);
+  }
+
+  .spec-row a:hover {
+    text-decoration-color: var(--splash);
+  }
+
+  .contact__back {
+    margin: 0;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .contact__back a {
+    color: var(--paper-soft);
+    text-decoration: none;
+  }
+
+  .contact__back a:hover {
+    color: var(--paper);
+  }
+</style>

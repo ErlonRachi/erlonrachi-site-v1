@@ -1,0 +1,381 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DevNav from "../components/DevNav.astro";
+import PaintedHighlight from "../components/PaintedHighlight.astro";
+
+const fractionalTiers = [
+  {
+    n: 1,
+    name: "Agentic AI Readiness Diagnostic",
+    duration: "2 weeks",
+    who: "A CEO, COO, or CTO who knows they need to act on AI but does not know what to ship first or how exposed they are under the EU AI Act.",
+    what: [
+      "Mapped inventory of AI use cases already in flight (sanctioned and shadow)",
+      "EU AI Act risk classification of each",
+      "A 90-day action plan: what to kill, what to harden, what to pilot",
+      "A 30-minute presentation to the leadership team",
+    ],
+    why: "Low commitment, fast turnaround. The output naturally creates demand for Tier 2. Diagnostic-to-engagement pattern of the best fractional CAIOs.",
+    cta: "Start with the Diagnostic",
+    slug: "fractional-diagnostic",
+  },
+  {
+    n: 2,
+    name: "Fractional Head of AI",
+    duration: "90-day sprint, renewable",
+    who: "A scale-up or mid-market company that needs an executive in the room two days a week to set strategy, hire the right people, ship the first production agentic workflow, and stand up MLOps and governance from day one.",
+    what: [
+      "Embedded leadership presence (defined cadence)",
+      "Strategy document and 90-day roadmap, owned end to end",
+      "One production-grade agentic workflow shipped",
+      "Governance scaffolding (data lineage, model cards, EU AI Act docs)",
+      "A trained internal lead by day 90: capability transfer is the deliverable",
+    ],
+    why: "Bread and butter. Where applied math, leadership chops, and Iarandu's delivery muscle compound. The 'trained successor' line settles consultant-lock-in concerns.",
+    cta: "Discuss a Fractional engagement",
+    slug: "fractional-head-of-ai",
+  },
+  {
+    n: 3,
+    name: "AI Operating Council",
+    duration: "Monthly retainer",
+    who: "A board or exec team that already has AI capability but wants a senior independent voice in their quarterly cycle.",
+    what: [
+      "Monthly half-day strategy session",
+      "Async review of major decisions",
+      "Quarterly written outlook on regulation, vendor landscape, and team health",
+    ],
+    why: "Predictable monthly cadence, low time cost. Signals 'the kind of person companies retain' to anyone evaluating. Doubles as recruiter validation.",
+    cta: "Join the Council",
+    slug: "fractional-council",
+  },
+];
+
+const builderTiers = [
+  {
+    n: 1,
+    name: "Technical Readiness Audit",
+    duration: "2 weeks",
+    who: "A CTO, Head of Engineering, or VP Data who suspects technical debt is blocking AI or data ambitions.",
+    what: [
+      "Stack assessment (data infrastructure, AI/ML layer, compliance posture)",
+      "Bottleneck inventory: what hurts, what scales, what will break",
+      "A 60-day technical roadmap with the recommended sequence of builds",
+      "A 30-minute presentation to the technical leadership",
+    ],
+    why: "Low-commitment proof of competence. Output generates Tier 2 demand. The technical mirror of the Diagnostic in the Fractional track.",
+    cta: "Start with the Audit",
+    slug: "builder-audit",
+  },
+  {
+    n: 2,
+    name: "Embedded Builder Sprint",
+    duration: "8 to 12 weeks, renewable",
+    who: "A team that needs a senior practitioner hands-on to ship a specific production artifact: an agentic workflow, a data architecture refactor, an MLOps platform, a compliance framework, or a critical data engineering pipeline.",
+    what: [
+      "Code shipped to production: the artifact IS the deliverable",
+      "Architecture documentation",
+      "One internal team member trained as owner",
+      "Repo handed off with tests and CI/CD ready",
+    ],
+    why: "Pure shipping mode. 3 days a week in the codebase. Capability transfer through the trained owner. The technical mirror of the Fractional Head of AI's 'trained successor'.",
+    cta: "Discuss a Builder Sprint",
+    slug: "builder-sprint",
+  },
+  {
+    n: 3,
+    name: "Architecture Retainer",
+    duration: "Monthly",
+    who: "A technical team that wants ongoing senior architectural review without re-engagement overhead.",
+    what: [
+      "Bi-weekly architecture office hours (1 hour)",
+      "Async review of major designs and PRs (48-hour turnaround)",
+      "Quarterly stack health review (written and sync)",
+    ],
+    why: "Predictable cash, low time cost. The 'senior architect on call' signal. Renewable monthly.",
+    cta: "Join the Retainer",
+    slug: "builder-retainer",
+  },
+];
+---
+
+<Layout
+  title="Work with me — Erlon Rachi"
+  description="Two productized engagement tracks: Fractional Executive (Erlon in the decision room) and Embedded Builder (Erlon in the codebase). Six tiers, request-a-quote."
+>
+  <DevNav />
+
+  <main class="engage mx-auto max-w-[1180px] px-6 py-16 md:py-24">
+    <p class="label-mono">Engage</p>
+    <h1 class="display-xl engage__h1">
+      Two ways to <PaintedHighlight>work with me</PaintedHighlight>.
+    </h1>
+
+    <p class="engage__lead">
+      The question is simple: do you need an executive in the decision room, or a builder in the codebase? Both are senior. Both are me. Different roles, different cadences, different deliverables. Pick the lane that fits the problem, request a quote, and we will talk.
+    </p>
+
+    <div class="engage__note">
+      Looking for a full-time executive role for me? That conversation does not live on this page. Reach out via <a href="https://www.linkedin.com/in/erlonrachi/" rel="me noopener">LinkedIn</a> with context, and I will respond directly.
+    </div>
+
+    <div class="tracks">
+      {/* Track A: Fractional Executive */}
+      <section class="track" aria-labelledby="track-fractional">
+        <header class="track__header">
+          <p class="label-mono">Track A</p>
+          <h2 class="track__title" id="track-fractional">Fractional Executive</h2>
+          <p class="track__sub">Erlon in the decision room. Structuring teams, setting strategy, advising, building organisations through the team.</p>
+        </header>
+        <div class="tier-stack">
+          {fractionalTiers.map((t) => (
+            <article class="tier">
+              <p class="label-mono tier__meta">Tier {t.n} · {t.duration}</p>
+              <h3 class="tier__name">{t.name}</h3>
+              <div class="tier__section">
+                <p class="label-mono tier__sub-label">Who it's for</p>
+                <p class="tier__body">{t.who}</p>
+              </div>
+              <div class="tier__section">
+                <p class="label-mono tier__sub-label">What you get</p>
+                <ul class="tier__list">
+                  {t.what.map((item) => <li>{item}</li>)}
+                </ul>
+              </div>
+              <div class="tier__section">
+                <p class="label-mono tier__sub-label">Why it works</p>
+                <p class="tier__body tier__body--italic">{t.why}</p>
+              </div>
+              <a href={`/contact?tier=${t.slug}`} class="tier__cta">{t.cta} →</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Track B: Embedded Builder */}
+      <section class="track" aria-labelledby="track-builder">
+        <header class="track__header">
+          <p class="label-mono">Track B</p>
+          <h2 class="track__title" id="track-builder">Embedded Builder</h2>
+          <p class="track__sub">Erlon in the codebase. Shipping production artifacts. Builder, shipper, executioner.</p>
+        </header>
+        <div class="tier-stack">
+          {builderTiers.map((t) => (
+            <article class="tier">
+              <p class="label-mono tier__meta">Tier {t.n} · {t.duration}</p>
+              <h3 class="tier__name">{t.name}</h3>
+              <div class="tier__section">
+                <p class="label-mono tier__sub-label">Who it's for</p>
+                <p class="tier__body">{t.who}</p>
+              </div>
+              <div class="tier__section">
+                <p class="label-mono tier__sub-label">What you get</p>
+                <ul class="tier__list">
+                  {t.what.map((item) => <li>{item}</li>)}
+                </ul>
+              </div>
+              <div class="tier__section">
+                <p class="label-mono tier__sub-label">Why it works</p>
+                <p class="tier__body tier__body--italic">{t.why}</p>
+              </div>
+              <a href={`/contact?tier=${t.slug}`} class="tier__cta">{t.cta} →</a>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <footer class="engage__footer">
+      <p class="label-mono">No prices on the page</p>
+      <p class="engage__footer-body">
+        Quotes are conversation-driven. Tell me the problem, the timeline, and the stakeholders, and I will scope. If we are not a fit, I will say so directly.
+      </p>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .engage__h1 {
+    margin: 14px 0 40px;
+    max-width: 14ch;
+  }
+
+  .engage__lead {
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--paper);
+    max-width: 65ch;
+    margin: 0 0 28px;
+  }
+
+  .engage__note {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--paper-muted);
+    padding: 16px 20px;
+    border-left: 2px solid rgba(212, 160, 23, 0.5);
+    background: rgba(8, 20, 41, 0.5);
+    margin: 0 0 80px;
+    max-width: 65ch;
+  }
+
+  .engage__note a {
+    color: var(--paper-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(212, 160, 23, 0.6);
+  }
+
+  .engage__note a:hover {
+    color: var(--paper);
+    text-decoration-color: var(--splash);
+  }
+
+  /* Two-track parallel layout: stacks on mobile, side-by-side on desktop */
+  .tracks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  @media (min-width: 1000px) {
+    .tracks {
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+  }
+
+  .track__header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid rgba(212, 160, 23, 0.5);
+  }
+
+  .track__title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(28px, 3vw, 36px);
+    line-height: 1.12;
+    letter-spacing: -0.014em;
+    color: var(--paper);
+    margin: 8px 0 12px;
+  }
+
+  .track__sub {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+    margin: 0;
+    font-style: italic;
+    max-width: 42ch;
+  }
+
+  .tier-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .tier {
+    display: block;
+    padding: 28px 28px 32px;
+    background: rgba(22, 49, 90, 0.4);
+    border: 1px solid rgba(230, 228, 218, 0.08);
+  }
+
+  .tier__meta {
+    margin: 0 0 8px;
+    color: var(--splash);
+  }
+
+  .tier__name {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    margin: 0 0 24px;
+    max-width: 22ch;
+  }
+
+  .tier__section {
+    margin-bottom: 18px;
+  }
+
+  .tier__sub-label {
+    margin: 0 0 6px;
+    color: var(--paper-muted);
+  }
+
+  .tier__body {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+  }
+
+  .tier__body--italic {
+    font-style: italic;
+    color: var(--paper-soft);
+  }
+
+  .tier__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tier__list li {
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--paper-soft);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+
+  .tier__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 6px;
+    height: 1px;
+    background: var(--splash);
+  }
+
+  .tier__cta {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 0 12px 0;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--paper);
+    border-bottom: 2px solid var(--splash);
+    text-decoration: none;
+    transition: color 140ms, padding-right 140ms, border-color 140ms;
+  }
+
+  .tier__cta:hover,
+  .tier__cta:focus-visible {
+    color: var(--splash);
+    padding-right: 4px;
+  }
+
+  .engage__footer {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(230, 228, 218, 0.18);
+  }
+
+  .engage__footer-body {
+    margin: 12px 0 0;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+    max-width: 60ch;
+  }
+</style>
