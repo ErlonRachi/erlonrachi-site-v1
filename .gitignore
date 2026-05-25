@@ -28,3 +28,7 @@ Thumbs.db
 
 # audit scratch (kept locally as evidence, not for repo)
 # audit-evidence/  — left in for now; revisit if it bloats
+
+# Local-only assets: candidate photos / reference materials that didn't make
+# it to public/. Kept locally for future iterations, not in repo.
+assets/

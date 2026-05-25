@@ -1,0 +1,286 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import DevNav from "../../components/DevNav.astro";
+import PaintedHighlight from "../../components/PaintedHighlight.astro";
+import { THEMES, THEME_ORDER, CASES, casesByTheme } from "../../data/portfolio";
+
+const grouped = casesByTheme();
+const totalCases = CASES.length;
+---
+
+<Layout title="Work — erlonrachi.com">
+  <DevNav />
+
+  <main class="mx-auto max-w-[1080px] px-6 py-16 md:py-24">
+    <h1 class="display-xl mb-8">
+      <PaintedHighlight>32 projects</PaintedHighlight>, six themes.
+    </h1>
+
+    <p class="intro-lead">
+      Eleven years (2015–2026), <strong>27+ markets</strong>, organisations ranging from early-stage startups to <strong>multi-billion-euro enterprises and Fortune 500s</strong>. Private firms, public bodies, regulated industries, scale-ups.
+    </p>
+
+    <dl class="spec-sheet">
+      <div class="spec-row">
+        <dt class="label-mono">Leadership</dt>
+        <dd>Senior data and AI strategy at the CDO, VP Data, and Head of AI level. Building and scaling teams across regions. Capability transfer as a deliverable. C-suite and board-level alignment.</dd>
+      </div>
+      <div class="spec-row">
+        <dt class="label-mono">Architecture</dt>
+        <dd>Multi-cloud (Azure, GCP, AWS, Databricks). Agentic AI deployment patterns. Real-time inference and streaming. MLOps and CI/CD for AI systems.</dd>
+      </div>
+      <div class="spec-row">
+        <dt class="label-mono">Data Science</dt>
+        <dd>Recommendation engines, behavioural modelling, predictive forecasting, sentiment analysis. Factorial analysis and clustering. A/B testing frameworks. Customer Data Platforms.</dd>
+      </div>
+      <div class="spec-row">
+        <dt class="label-mono">Compliance</dt>
+        <dd>GDPR and EU AI Act. DAMA framework, Databricks Unity Catalog. Disaster recovery and cybersecurity. Responsible AI under regulator-grade scrutiny.</dd>
+      </div>
+      <div class="spec-row">
+        <dt class="label-mono">Sectors</dt>
+        <dd>CPG, online gaming, banking, RegTech, AdTech, HR-Tech, healthcare, automotive, pharmaceutical, public sector regulators.</dd>
+      </div>
+    </dl>
+
+    <p class="measure mb-16" style="color: var(--paper-soft); font-size: 19px; line-height: 1.65;">
+      Pick the theme that matches your question. Each opens into the cases under that competency.
+    </p>
+
+    <div class="theme-grid">
+      {THEME_ORDER.map((slug, i) => {
+        const theme = THEMES[slug];
+        const cases = grouped.get(slug) ?? [];
+        const sample = cases.slice(0, 2);
+        return (
+          <a href={`#${slug}`} class="theme-card" data-theme={slug}>
+            <p class="theme-card__num">{String(i + 1).padStart(2, "0")}</p>
+            <h2 class="theme-card__title">{theme.title}</h2>
+            <p class="theme-card__question">{theme.question}</p>
+            <p class="theme-card__count">{cases.length} {cases.length === 1 ? "case" : "cases"}</p>
+            {sample.length > 0 && (
+              <ul class="theme-card__sample">
+                {sample.map((c) => <li>{c.metric}</li>)}
+              </ul>
+            )}
+          </a>
+        );
+      })}
+
+      <a href="/work/all" class="theme-card theme-card--see-all">
+        <div class="see-all__inner">
+          <div>
+            <p class="theme-card__num">07 / All</p>
+            <h2 class="theme-card__title see-all__title">See all {totalCases} projects</h2>
+            <p class="see-all__sub">
+              A continuous view of every case, grouped by theme. For when you'd rather scan the full portfolio than pick a competency first.
+            </p>
+          </div>
+          <span class="see-all__arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+    </div>
+
+    <footer class="mt-32 pt-10" style="border-top: 1px solid rgba(230,228,218,0.12);">
+      <p class="label-mono">Sample subset: {totalCases} of 32 cases · drill-down per theme pending</p>
+      <p class="mt-3" style="color: var(--paper-muted); font-size: 14px;">
+        Production version loads all 32 from Content Collections. Theme detail pages route at /work/&lt;theme-slug&gt;.
+      </p>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  /* Intro lead paragraph: tight, body-soft, sits between H1 and spec sheet */
+  .intro-lead {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--paper);
+    max-width: 65ch;
+    margin: 0 0 36px;
+  }
+
+  .intro-lead strong {
+    font-weight: 500;
+    color: var(--paper);
+  }
+
+  /* Spec sheet: editorial 2-column rows. label left (fixed), capabilities right.
+   * NYT Mag / Vignelli spec sheet feel. Stacks to 1-col on mobile. */
+  .spec-sheet {
+    margin: 0 0 56px;
+    padding: 0;
+    border-top: 1px solid rgba(230, 228, 218, 0.18);
+  }
+
+  .spec-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(230, 228, 218, 0.1);
+  }
+
+  @media (min-width: 720px) {
+    .spec-row {
+      grid-template-columns: 160px 1fr;
+      gap: 32px;
+      padding: 18px 0;
+    }
+  }
+
+  .spec-row dt {
+    padding-top: 2px;
+    color: var(--paper-muted);
+  }
+
+  .spec-row dd {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+    max-width: 70ch;
+  }
+
+  .theme-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 760px) {
+    .theme-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .theme-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .theme-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px 36px;
+    background: var(--europa-blue-mid);
+    border: 1px solid rgba(230, 228, 218, 0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 180ms var(--ease-quart), background 180ms var(--ease-quart);
+  }
+
+  .theme-card:hover,
+  .theme-card:focus-visible {
+    border-color: rgba(212, 160, 23, 0.5);
+    background: rgba(22, 49, 90, 1.1); /* tonal lift */
+    outline: none;
+  }
+
+  .theme-card__num {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--paper-muted);
+    margin: 0 0 14px;
+  }
+
+  .theme-card__title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    margin: 0 0 14px;
+    max-width: 16ch;
+  }
+
+  .theme-card__question {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--paper-soft);
+    font-style: italic;
+    margin: 0 0 18px;
+  }
+
+  .theme-card__count {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--splash);
+    margin: 0 0 14px;
+  }
+
+  .theme-card__sample {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgba(230, 228, 218, 0.08);
+    padding-top: 14px;
+  }
+
+  .theme-card__sample li {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--paper-muted);
+    margin-bottom: 6px;
+  }
+
+  /* See-all meta-card: spans full width on desktop, outlined instead of filled,
+   * sits at the bottom as the "or, scan everything" affordance. */
+  .theme-card--see-all {
+    background: transparent;
+    border-color: rgba(212, 160, 23, 0.4);
+    padding: 28px 32px;
+  }
+
+  @media (min-width: 760px) {
+    .theme-card--see-all {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .theme-card--see-all:hover,
+  .theme-card--see-all:focus-visible {
+    background: rgba(212, 160, 23, 0.08);
+    border-color: var(--splash);
+  }
+
+  .see-all__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .see-all__title {
+    max-width: none;
+    margin-bottom: 8px;
+    font-size: 24px;
+  }
+
+  .see-all__sub {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--paper-soft);
+    margin: 0;
+    max-width: 56ch;
+  }
+
+  .see-all__arrow {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 32px;
+    color: var(--splash);
+    flex-shrink: 0;
+    transition: transform 180ms var(--ease-quart);
+  }
+
+  .theme-card--see-all:hover .see-all__arrow {
+    transform: translateX(4px);
+  }
+</style>

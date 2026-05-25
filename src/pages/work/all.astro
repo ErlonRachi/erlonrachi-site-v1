@@ -1,0 +1,85 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import DevNav from "../../components/DevNav.astro";
+import CaseCard from "../../components/CaseCard.astro";
+import PaintedHighlight from "../../components/PaintedHighlight.astro";
+import { THEMES, THEME_ORDER, casesByTheme } from "../../data/portfolio";
+
+const grouped = casesByTheme();
+---
+
+<Layout title="All projects — erlonrachi.com">
+  <DevNav />
+
+  <main class="mx-auto max-w-[920px] px-6 py-16 md:py-24">
+    <p class="label-mono mb-6">
+      <a href="/work" style="color: var(--paper-soft); text-decoration: none;">← back to themes</a>
+    </p>
+
+    <h1 class="display-xl mb-8">
+      <PaintedHighlight>All projects</PaintedHighlight>, grouped by theme.
+    </h1>
+
+    <p class="measure mb-20" style="color: var(--paper-soft); font-size: 19px; line-height: 1.65;">
+      Each section answers one question. Has Erlon done this kind of work before? Scroll, scan, find your answer.
+    </p>
+
+    {THEME_ORDER.map((slug, i) => {
+      const theme = THEMES[slug];
+      const cases = grouped.get(slug) ?? [];
+      return (
+        <section class="theme-section" id={slug}>
+          <header class="theme-section__header">
+            <p class="label-mono">{String(i + 1).padStart(2, "0")} / {theme.short}</p>
+            <h2 class="theme-section__title">{theme.title}</h2>
+            <p class="theme-section__question">{theme.question}</p>
+          </header>
+          <div class="theme-section__cases">
+            {cases.map((c) => <CaseCard case={c} />)}
+          </div>
+        </section>
+      );
+    })}
+
+    <footer class="mt-32 pt-10" style="border-top: 1px solid rgba(230,228,218,0.12);">
+      <p class="label-mono">Sample subset · production loads all 32 from Content Collections</p>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .theme-section {
+    margin-top: 96px;
+    scroll-margin-top: 80px;
+  }
+
+  .theme-section:first-of-type {
+    margin-top: 0;
+  }
+
+  .theme-section__header {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(212, 160, 23, 0.5); /* faded splash, marks theme boundaries */
+  }
+
+  .theme-section__title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(28px, 3.4vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 8px 0 12px;
+    max-width: 22ch;
+  }
+
+  .theme-section__question {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+    margin: 0;
+    max-width: 50ch;
+    font-style: italic;
+  }
+</style>

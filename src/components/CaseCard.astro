@@ -1,0 +1,73 @@
+---
+import type { CaseEntry } from "../data/portfolio";
+
+interface Props {
+  case: CaseEntry;
+}
+
+const { case: c } = Astro.props;
+---
+
+<article class="case-card">
+  <p class="case-card__meta">
+    <span class="case-card__client">{c.client}</span>
+    <span class="case-card__sep">·</span>
+    <span class="case-card__year">{c.year}</span>
+  </p>
+  <h3 class="case-card__title">{c.title}</h3>
+  <p class="case-card__metric">{c.metric}</p>
+</article>
+
+<style>
+  .case-card {
+    display: block;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(230, 228, 218, 0.12);
+  }
+
+  .case-card:last-child {
+    border-bottom: 0;
+  }
+
+  .case-card__meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--paper-muted);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .case-card__client {
+    color: var(--paper-soft);
+  }
+
+  .case-card__sep {
+    color: var(--paper-muted);
+    opacity: 0.6;
+  }
+
+  .case-card__title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: clamp(20px, 2.2vw, 26px);
+    line-height: 1.2;
+    letter-spacing: -0.012em;
+    color: var(--paper);
+    margin: 0 0 10px;
+    max-width: 38ch;
+  }
+
+  .case-card__metric {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+    margin: 0;
+    max-width: 60ch;
+  }
+</style>
