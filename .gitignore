@@ -32,3 +32,9 @@ Thumbs.db
 # Local-only assets: candidate photos / reference materials that didn't make
 # it to public/. Kept locally for future iterations, not in repo.
 assets/
+
+# Internal working doc with real client names. Public version with
+# anonymized signals lives in src/content/cases/ and in
+# "[on] Public Portfolio 32-cases.md". This file must NEVER be tracked.
+# (Square brackets escaped because [on] would otherwise match any of o,n.)
+\[on\] Portfolio-Projects-by-business-theme.md
