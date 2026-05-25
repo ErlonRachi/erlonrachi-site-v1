@@ -1,0 +1,331 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DevNav from "../components/DevNav.astro";
+import PaintedHighlight from "../components/PaintedHighlight.astro";
+---
+
+<Layout
+  title="Story — Erlon Rachi"
+  description="First-person narrative: where Erlon comes from, what he believes, what he's doing now."
+>
+  <DevNav />
+
+  {/* Inline SVG duotone filter: maps grayscale of portrait to Europa Blue Deeper
+      (shadows) → Paper (highlights). Engraving / lithograph register. */}
+  <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="duotone-europa" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          0.299 0.587 0.114 0 0
+          0.299 0.587 0.114 0 0
+          0.299 0.587 0.114 0 0
+          0     0     0     1 0
+        "/>
+        <feComponentTransfer>
+          <feFuncR tableValues="0.031 0.718"/>
+          <feFuncG tableValues="0.078 0.725"/>
+          <feFuncB tableValues="0.161 0.749"/>
+        </feComponentTransfer>
+      </filter>
+    </defs>
+  </svg>
+
+  <main class="story mx-auto max-w-[860px] px-6 py-16 md:py-24">
+    <p class="label-mono">Story</p>
+    <h1 class="display-xl story__h1">
+      <PaintedHighlight>Building people</PaintedHighlight> before building code.
+    </h1>
+
+    {/* ---------- Beat 1: Where I come from (with portrait) ---------- */}
+    <section class="beat beat--with-portrait">
+      <p class="label-mono beat__label">01 / Where I come from</p>
+      <div class="beat__grid">
+        <figure class="portrait">
+          <img
+            src="/img/erlon-portrait.jpg"
+            alt="Erlon Rachi"
+            class="portrait__img"
+            loading="lazy"
+            decoding="async"
+            width="560"
+            height="700"
+          />
+        </figure>
+        <div class="beat__prose">
+          <p>
+            Applied math at UNICAMP. The operating years. The philosophy of building people before building code.
+          </p>
+          <p>
+            Italian citizen, born in a small village in Brazil. I left that village to study at the best university in the country. I have worked in top companies across the US, Brazil, the UK, and the EU.
+          </p>
+          <p>
+            I built teams. I mentored people into senior leadership positions. I have changed lives. Over the last ten years, I have created more than <strong>USD 250MM in value</strong> for the clients and employers who trusted me with the work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ---------- Beat 2: What I believe ---------- */}
+    <section class="beat">
+      <p class="label-mono beat__label">02 / What I believe</p>
+      <div class="beat__prose">
+        <p>
+          AI can bring out the best of us. People and organisations stand to benefit greatly from it, when it is built with care.
+        </p>
+        <p>
+          That is why I support the European principles of explainability, responsibility, and accountability in how AI is designed and deployed. I follow stoicism in practice. I am a deep humanist in instinct.
+        </p>
+        <p>
+          The future I am building toward is <PaintedHighlight>a more prosperous, fairer society</PaintedHighlight>. AI is the vehicle, not the destination.
+        </p>
+      </div>
+    </section>
+
+    {/* ---------- Beat 3: What I'm doing now ---------- */}
+    <section class="beat">
+      <p class="label-mono beat__label">03 / What I'm doing now</p>
+      <div class="beat__prose">
+        <p>
+          I am building organisations that are AI-native, including my own firm, Iarandu. The current bet is on problems that make people and organisations benefit from the potential of AI without surrendering judgment to it.
+        </p>
+        <p>
+          The operating thesis behind everything I do is simple: <PaintedHighlight>data and knowledge are more important than software</PaintedHighlight>.
+        </p>
+      </div>
+    </section>
+
+    {/* ---------- Beat 4: How I work (spec sheet) ---------- */}
+    <section class="how-i-work">
+      <p class="label-mono beat__label">04 / How I work</p>
+      <dl class="spec-sheet">
+        <div class="spec-row">
+          <dt class="label-mono">Cadence</dt>
+          <dd>Sync. Daily standup pattern.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Style</dt>
+          <dd>Direct but diplomatic. 100% transparency, no sugar-coating. Respectful of how the information lands.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Trust</dt>
+          <dd>Trust, but verify.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Posture</dt>
+          <dd>Hands-on. I gravitate to problems I genuinely enjoy: behavioural analysis, data modelling, agentic systems design.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Method</dt>
+          <dd>Socratic in conversation. DevOps in delivery. Incremental improvement, learning from results.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Pace</dt>
+          <dd>Fast. Sprint-based. I sharpen the axe before cutting.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Expects from client</dt>
+          <dd>Genuine interest in the solution. The access and authority needed to get the work done.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Geography</dt>
+          <dd>No timezone restriction. Milan-based, with clients and partners served across the US and Australia.</dd>
+        </div>
+      </dl>
+    </section>
+
+    {/* ---------- Practical close ---------- */}
+    <footer class="practical">
+      <dl class="spec-sheet spec-sheet--compact">
+        <div class="spec-row">
+          <dt class="label-mono">Location</dt>
+          <dd>Milan. 100% open to relocate for the right long-term engagement.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Languages</dt>
+          <dd>Portuguese and English native. Italian beginner.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Timezone</dt>
+          <dd>CET. No operational restriction.</dd>
+        </div>
+        <div class="spec-row">
+          <dt class="label-mono">Reach</dt>
+          <dd>
+            <a href="https://www.linkedin.com/in/erlonrachi/" rel="me noopener">LinkedIn</a>
+            <span style="color: var(--paper-muted);"> · </span>
+            <a href="/work-with-me">contact form</a>
+          </dd>
+        </div>
+      </dl>
+
+      <p class="practical__epigraph">
+        Nothing that is worth doing can be done alone.
+      </p>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .story__h1 {
+    margin: 14px 0 80px;
+    max-width: 18ch;
+  }
+
+  @media (min-width: 720px) {
+    .story__h1 {
+      margin-bottom: 112px;
+    }
+  }
+
+  .beat {
+    margin-top: 88px;
+  }
+
+  .beat:first-of-type {
+    margin-top: 0;
+  }
+
+  .beat__label {
+    margin-bottom: 20px;
+  }
+
+  .beat__prose p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--paper-soft);
+    margin: 0 0 20px;
+    max-width: 62ch;
+  }
+
+  .beat__prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  .beat__prose strong {
+    font-weight: 500;
+    color: var(--paper);
+  }
+
+  /* Beat 1 layout: portrait + prose 2-col on desktop, stack on mobile */
+  .beat--with-portrait .beat__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  @media (min-width: 760px) {
+    .beat--with-portrait .beat__grid {
+      grid-template-columns: 240px 1fr;
+      gap: 44px;
+      align-items: start;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .beat--with-portrait .beat__grid {
+      grid-template-columns: 280px 1fr;
+      gap: 56px;
+    }
+  }
+
+  .portrait {
+    margin: 0;
+    padding: 0;
+  }
+
+  .portrait__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    margin: 0 auto;
+    filter: url(#duotone-europa);
+    /* Subtle border in europa-blue-mid to anchor against the dark surface */
+    border: 1px solid rgba(230, 228, 218, 0.08);
+  }
+
+  /* How I work spec sheet — same pattern as /work intro spec */
+  .how-i-work {
+    margin-top: 112px;
+    padding-top: 56px;
+    border-top: 1px solid rgba(230, 228, 218, 0.18);
+  }
+
+  .spec-sheet {
+    margin: 32px 0 0;
+    padding: 0;
+    border-top: 1px solid rgba(230, 228, 218, 0.12);
+  }
+
+  .spec-sheet--compact .spec-row {
+    padding: 12px 0;
+  }
+
+  .spec-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(230, 228, 218, 0.1);
+  }
+
+  @media (min-width: 720px) {
+    .spec-row {
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+    }
+  }
+
+  .spec-row dt {
+    padding-top: 2px;
+    color: var(--paper-muted);
+  }
+
+  .spec-row dd {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+    max-width: 60ch;
+  }
+
+  .spec-row a {
+    color: var(--paper);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(212, 160, 23, 0.6);
+    transition: text-decoration-color 140ms;
+  }
+
+  .spec-row a:hover {
+    text-decoration-color: var(--splash);
+  }
+
+  /* Practical close + epigraph */
+  .practical {
+    margin-top: 112px;
+    padding-top: 32px;
+  }
+
+  .practical__epigraph {
+    margin: 64px 0 0;
+    padding-top: 32px;
+    border-top: 1px solid rgba(230, 228, 218, 0.18);
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    max-width: 36ch;
+    text-align: left;
+  }
+
+  /* Print: remove duotone filter on portrait, keep everything else legible */
+  @media print {
+    .portrait__img {
+      filter: none;
+    }
+  }
+</style>
