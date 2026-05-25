@@ -1,28 +1,50 @@
 ---
-import type { CaseEntry } from "../data/portfolio";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  case: CaseEntry;
+  entry: CollectionEntry<"cases">;
 }
 
-const { case: c } = Astro.props;
+const { entry } = Astro.props;
+const { title, client, year, metric } = entry.data;
+const href = `/work/${entry.id}`;
 ---
 
-<article class="case-card">
+<a class="case-card" href={href}>
   <p class="case-card__meta">
-    <span class="case-card__client">{c.client}</span>
+    <span class="case-card__client">{client}</span>
     <span class="case-card__sep">·</span>
-    <span class="case-card__year">{c.year}</span>
+    <span class="case-card__year">{year}</span>
   </p>
-  <h3 class="case-card__title">{c.title}</h3>
-  <p class="case-card__metric">{c.metric}</p>
-</article>
+  <h3 class="case-card__title">{title}</h3>
+  <p class="case-card__metric">{metric}</p>
+  <span class="case-card__arrow" aria-hidden="true">→</span>
+</a>
 
 <style>
   .case-card {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "meta meta"
+      "title arrow"
+      "metric metric";
+    column-gap: 16px;
     padding: 28px 0;
     border-bottom: 1px solid rgba(230, 228, 218, 0.12);
+    text-decoration: none;
+    color: inherit;
+    transition: background 160ms var(--ease-quart);
+  }
+
+  .case-card:hover,
+  .case-card:focus-visible {
+    background: linear-gradient(
+      to right,
+      rgba(212, 160, 23, 0.05) 0%,
+      transparent 60%
+    );
+    outline: none;
   }
 
   .case-card:last-child {
@@ -30,6 +52,7 @@ const { case: c } = Astro.props;
   }
 
   .case-card__meta {
+    grid-area: meta;
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-size: 12px;
     letter-spacing: 0.06em;
@@ -52,6 +75,7 @@ const { case: c } = Astro.props;
   }
 
   .case-card__title {
+    grid-area: title;
     font-family: "Fraunces", Georgia, serif;
     font-weight: 500;
     font-variation-settings: "opsz" 144, "SOFT" 30;
@@ -63,7 +87,26 @@ const { case: c } = Astro.props;
     max-width: 38ch;
   }
 
+  .case-card__arrow {
+    grid-area: arrow;
+    align-self: start;
+    padding-top: 4px;
+    color: var(--splash);
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 22px;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 180ms var(--ease-quart), transform 180ms var(--ease-quart);
+  }
+
+  .case-card:hover .case-card__arrow,
+  .case-card:focus-visible .case-card__arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   .case-card__metric {
+    grid-area: metric;
     font-size: 16px;
     line-height: 1.55;
     color: var(--paper-soft);

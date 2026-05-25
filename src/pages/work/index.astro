@@ -1,11 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import DevNav from "../../components/DevNav.astro";
 import PaintedHighlight from "../../components/PaintedHighlight.astro";
-import { THEMES, THEME_ORDER, CASES, casesByTheme } from "../../data/portfolio";
+import { THEMES, THEME_ORDER, groupByTheme } from "../../data/portfolio";
 
-const grouped = casesByTheme();
-const totalCases = CASES.length;
+const cases = (await getCollection("cases")).filter((c) => !c.data.draft);
+const grouped = groupByTheme(cases);
+const totalCases = cases.length;
 ---
 
 <Layout title="Work — erlonrachi.com">
@@ -53,14 +55,14 @@ const totalCases = CASES.length;
         const cases = grouped.get(slug) ?? [];
         const sample = cases.slice(0, 2);
         return (
-          <a href={`#${slug}`} class="theme-card" data-theme={slug}>
+          <a href={`/work/all#${slug}`} class="theme-card" data-theme={slug}>
             <p class="theme-card__num">{String(i + 1).padStart(2, "0")}</p>
             <h2 class="theme-card__title">{theme.title}</h2>
             <p class="theme-card__question">{theme.question}</p>
             <p class="theme-card__count">{cases.length} {cases.length === 1 ? "case" : "cases"}</p>
             {sample.length > 0 && (
               <ul class="theme-card__sample">
-                {sample.map((c) => <li>{c.metric}</li>)}
+                {sample.map((c) => <li>{c.data.metric}</li>)}
               </ul>
             )}
           </a>

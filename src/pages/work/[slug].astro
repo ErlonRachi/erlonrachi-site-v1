@@ -1,0 +1,301 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import DevNav from "../../components/DevNav.astro";
+import PaintedHighlight from "../../components/PaintedHighlight.astro";
+import { THEMES, type ThemeSlug } from "../../data/portfolio";
+
+export async function getStaticPaths() {
+  const cases = (await getCollection("cases")).filter((c) => !c.data.draft);
+  return cases.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry, allCases: cases },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"cases">;
+  allCases: CollectionEntry<"cases">[];
+}
+
+const { entry, allCases } = Astro.props;
+const { Content } = await render(entry);
+const { title, client, year, primaryTheme, secondaryThemes, metric } = entry.data;
+
+const themePrimary = THEMES[primaryTheme];
+const themeSecondaries = (secondaryThemes ?? []).map((s) => THEMES[s as ThemeSlug]);
+
+// prev/next within the primary theme for related navigation
+const sameTheme = allCases
+  .filter((c) => c.data.primaryTheme === primaryTheme && c.id !== entry.id)
+  .slice(0, 2);
+---
+
+<Layout
+  title={`${title} — Erlon Rachi`}
+  description={metric}
+>
+  <DevNav />
+
+  <article class="case mx-auto max-w-[820px] px-6 py-16 md:py-24">
+    <p class="case__back">
+      <a href="/work">← back to work</a>
+    </p>
+
+    <header class="case__header">
+      <p class="case__meta">
+        <span>{client}</span>
+        <span class="case__sep">·</span>
+        <span>{year}</span>
+      </p>
+      <h1 class="display-lg case__title">{title}</h1>
+      <p class="case__metric">
+        <PaintedHighlight>{metric}</PaintedHighlight>
+      </p>
+      <p class="label-mono case__themes">
+        <span class="case__themes-label">Theme</span>
+        <a href={`/work/all#${themePrimary.slug}`} class="case__theme-link">{themePrimary.title}</a>
+        {themeSecondaries.length > 0 && (
+          <>
+            <span class="case__themes-sep">·</span>
+            <span class="case__themes-label">Also</span>
+            {themeSecondaries.map((t, i) => (
+              <>
+                {i > 0 && <span class="case__themes-sep">·</span>}
+                <a href={`/work/all#${t.slug}`} class="case__theme-link">{t.short}</a>
+              </>
+            ))}
+          </>
+        )}
+      </p>
+    </header>
+
+    <div class="case__body">
+      <Content />
+    </div>
+
+    {sameTheme.length > 0 && (
+      <aside class="case__related">
+        <p class="label-mono">More in {themePrimary.title}</p>
+        <ul class="case__related-list">
+          {sameTheme.map((c) => (
+            <li>
+              <a href={`/work/${c.id}`} class="case__related-link">
+                <span class="case__related-title">{c.data.title}</span>
+                <span class="case__related-meta">{c.data.client} · {c.data.year}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )}
+
+    <footer class="case__footer">
+      <p class="label-mono">
+        <a href="/work">All projects</a>
+        <span class="case__footer-sep">·</span>
+        <a href="/work-with-me">Work with me</a>
+      </p>
+    </footer>
+  </article>
+</Layout>
+
+<style>
+  .case__back {
+    margin: 0 0 28px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .case__back a {
+    color: var(--paper-soft);
+    text-decoration: none;
+    transition: color 140ms;
+  }
+
+  .case__back a:hover {
+    color: var(--paper);
+  }
+
+  .case__header {
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(230, 228, 218, 0.12);
+  }
+
+  .case__meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--paper-soft);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .case__sep {
+    color: var(--paper-muted);
+    opacity: 0.6;
+  }
+
+  .case__title {
+    margin: 0 0 24px;
+    max-width: 26ch;
+  }
+
+  .case__metric {
+    margin: 0 0 24px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--paper);
+    max-width: 60ch;
+  }
+
+  .case__themes {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .case__themes-label {
+    color: var(--paper-muted);
+    margin-right: 4px;
+  }
+
+  .case__theme-link {
+    color: var(--paper-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(212, 160, 23, 0.5);
+    transition: text-decoration-color 140ms, color 140ms;
+  }
+
+  .case__theme-link:hover {
+    color: var(--paper);
+    text-decoration-color: var(--splash);
+  }
+
+  .case__themes-sep {
+    color: var(--paper-muted);
+    opacity: 0.6;
+  }
+
+  /* Body: rendered markdown from collection entry. Tight, editorial. */
+  .case__body :global(h2) {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    margin: 56px 0 20px;
+  }
+
+  .case__body :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .case__body :global(p) {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--paper-soft);
+    margin: 0 0 20px;
+    max-width: 62ch;
+  }
+
+  .case__body :global(p strong) {
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  /* Related */
+  .case__related {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(230, 228, 218, 0.12);
+  }
+
+  .case__related .label-mono {
+    margin: 0 0 20px;
+  }
+
+  .case__related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .case__related-list li {
+    margin: 0;
+  }
+
+  .case__related-link {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(230, 228, 218, 0.08);
+    text-decoration: none;
+    transition: background 140ms;
+  }
+
+  .case__related-link:hover {
+    background: linear-gradient(
+      to right,
+      rgba(212, 160, 23, 0.05) 0%,
+      transparent 60%
+    );
+  }
+
+  .case__related-list li:last-child .case__related-link {
+    border-bottom: 0;
+  }
+
+  .case__related-title {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--paper);
+    margin-bottom: 4px;
+  }
+
+  .case__related-meta {
+    display: block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--paper-muted);
+  }
+
+  .case__footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(230, 228, 218, 0.18);
+  }
+
+  .case__footer p {
+    margin: 0;
+  }
+
+  .case__footer a {
+    color: var(--paper-soft);
+    text-decoration: none;
+  }
+
+  .case__footer a:hover {
+    color: var(--paper);
+  }
+
+  .case__footer-sep {
+    margin: 0 10px;
+    color: var(--paper-muted);
+  }
+</style>
