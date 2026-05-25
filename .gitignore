@@ -38,3 +38,12 @@ assets/
 # "[on] Public Portfolio 32-cases.md". This file must NEVER be tracked.
 # (Square brackets escaped because [on] would otherwise match any of o,n.)
 \[on\] Portfolio-Projects-by-business-theme.md
+
+# Local debug screenshots (Wix DNS panels, Netlify dashboards during cutover).
+# Reference only, not for the repo. Allowlist public/ images by exception.
+*.jpg
+*.jpeg
+*.png
+!public/**/*.jpg
+!public/**/*.jpeg
+!public/**/*.png
