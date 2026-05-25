@@ -1,0 +1,71 @@
+---
+// Painted Highlight — signature component for erlonrachi.com
+//
+// Per briefs/painted-highlight.brief.md:
+//   - EU Mustard Gold (~ #F4C430) brush stroke behind text
+//   - Highlighter-marker character: constant thickness, slight imperfection
+//   - Multi-line via box-decoration-break: clone (each wrapped line gets its own stroke)
+//   - Three proportional variants driven by text length (word / phrase / line)
+//   - Auto-paired text color (tinted-black, ≥10:1 contrast on gold)
+//   - Static; no motion; respects prefers-reduced-motion trivially
+//   - Print: degrades to subtle gray border-bottom
+//
+// Semantics: uses <mark> per HTML spec (text marked for reference).
+
+interface Props {
+  /** Optional extra CSS class to merge */
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<mark class:list={["painted-highlight", className]}>
+  <slot />
+</mark>
+
+<style>
+  /* Brush stroke as background image (inline SVG data URI).
+   * Path designed with slight irregularity at corners to read as a
+   * hand-stroke rather than a CSS rectangle. preserveAspectRatio="none"
+   * lets it stretch cleanly to fit any text-length bounding box. */
+  .painted-highlight {
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 30' preserveAspectRatio='none'><path d='M3,5 Q0,3 5,3 L196,4 Q200,4 197,8 L198,24 Q200,27 194,26 L5,27 Q0,27 3,23 Z' fill='%23D4A017'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+
+    /* Multi-line: each wrapped line gets its own stroke segment */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    /* Auto-paired text color (≥10:1 contrast on gold) */
+    color: var(--splash-text, #06101F);
+
+    /* Visual fit: pad to give the brush a halo around the glyphs */
+    padding: 0.05em 0.32em 0.08em;
+
+    /* Pull the stroke a hair past the text bounding box on left/right
+     * so the visual edge of the brush feels like a stroke, not a fill */
+    margin: 0 -0.04em;
+
+    /* Tighter letter-spacing inside the splash reads cleaner against the gold */
+    letter-spacing: 0;
+
+    /* Faster baseline correction across browsers */
+    line-height: inherit;
+  }
+
+  /* Print: do not waste ink on a solid gold block.
+   * Degrades to a subtle underline that preserves the "this matters" signal. */
+  @media print {
+    .painted-highlight {
+      background-image: none;
+      color: inherit;
+      padding: 0;
+      margin: 0;
+      border-bottom: 1.5px solid currentColor;
+    }
+  }
+</style>

@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+ * Design tokens — Europa, Modernist
+ * Surface: Europa Blue family. Accent: EU Mustard Gold. Neutrals tinted toward
+ * the blue. Per DESIGN.md, hex values may be tuned in subsequent passes.
+ * ------------------------------------------------------------------------- */
+
+@theme {
+  /* Europa Blue family — primary surface */
+  --color-europa-blue:         #0F2545;
+  --color-europa-blue-deeper:  #081429;
+  --color-europa-blue-mid:     #16315A;
+
+  /* Neutrals — paper gray and tinted black */
+  --color-paper:        #E6E4DA;
+  --color-paper-soft:   #B7B9BF;
+  --color-paper-muted:  #7E8590;
+  --color-tinted-black: #06101F;
+
+  /* Accent — the Splash
+   * Antique gold, painterly. Pulls from illuminated-manuscript gold leaf
+   * and Star Trek TNG ops gold rather than highlighter yellow. */
+  --color-splash:      #D4A017;
+  --color-splash-deep: #B7872E;
+  --color-splash-text: #06101F; /* paired text color, ≥7:1 contrast on splash (AAA) */
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans:    "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* Ease */
+  --ease-quart: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --europa-blue:        var(--color-europa-blue);
+  --europa-blue-deeper: var(--color-europa-blue-deeper);
+  --europa-blue-mid:    var(--color-europa-blue-mid);
+  --paper:              var(--color-paper);
+  --paper-soft:         var(--color-paper-soft);
+  --paper-muted:        var(--color-paper-muted);
+  --tinted-black:       var(--color-tinted-black);
+  --splash:             var(--color-splash);
+  --splash-text:        var(--color-splash-text);
+}
+
+html {
+  background: var(--europa-blue);
+  color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Inter Tight", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  /* Light text on dark needs line-height compensation per typography.md */
+  line-height: 1.7;
+  letter-spacing: 0.012em;
+}
+
+::selection {
+  background: var(--splash);
+  color: var(--splash-text);
+}
+
+/* ----------------------------------------------------------------------------
+ * Type roles
+ * ------------------------------------------------------------------------- */
+
+.display-xl {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-size: clamp(40px, 5.5vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.display-lg {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.14;
+  letter-spacing: -0.014em;
+}
+
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper-muted);
+}
+
+.measure {
+  max-width: 65ch;
+}
+
+/* ----------------------------------------------------------------------------
+ * Focus
+ * ------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--splash);
+  outline-offset: 3px;
+}

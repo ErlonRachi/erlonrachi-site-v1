@@ -1,0 +1,1746 @@
+ARTICLE PUBLISHED IN 10 JUN 2025
+
+ARTICLE PUBLISHED IN 21 NOV 2025
+
+ARTICLE PUBLISHED IN 20 NOV 2025
+
+From Assistant to Autonomous Partner
+(my first contact with Google's Antigravity)
+For too long, AI coding tools felt like an autocomplete on steroids. They were reactive, waiting for a prompt,
+and only capable of tackling discrete, simple tasks. I thought things would stay this way for longer, but Google
+has released its new Antigravity, an advanced agentic development platform designed to enhance coding
+projects.
+
+Antigravity embraces this philosophy, moving us from "AI-assisted" to "agent-native" development. At its core
+lies Gemini 3 Pro (and notably, supports other models like Claude Sonnet 4.5 and GPT-OSS) to not just
+suggest the next line of code, but to take true, autonomous action across the three core development
+surfaces: the code editor, the terminal, and the browser.
+
+I genuinely believe the future lies in agentic AI--entities that can reason, plan, and execute complex workflows
+on their own. So I was very excited and decided to give Antigravity a shot and see what it was all about.
+
+A day flowing in antigravity!
+The first step was finding a case, a project that I could take using it. I've been working on deploying a
+prediction model for a client lately. Although this is a new challenge, with its own characteristics and unique
+architecture, it also is the type of project I have done many many times over, thus using antigravity to revisit
+old designs and models seemed a perfect opportunity.
+
+The very first thing that has impressed me is how serious it takes the critical challenges of agentic systems:
+transparency, accountability, and seamless integration. My first takeaway is that Antigravity isn't just a new
+feature for an IDE--it's the architecture for the "AI-infused" enterprise I've been discussing for months.
+
+My interactions were pretty much like if I was supervising a junior developer, literally "debating" and explaining
+how I wanted the model to be developed, how data should be treated, how functions should be called, how
+tests should be performed and how the whole thing should be integrated and deployed.
+
+Though the experience, four things stood out:
+1. The Artifacts System: Trust Through Verifiable Outputs
+The "black box" is the silent killer of trust in AI. How can you sign off on code if you can't verify the steps the
+agent took? Antigravity solves this with Artifacts: structured, verifiable evidence of the agent's actions.
+
+I noticed that instead of sifting through thousands of raw logs, I was presented with clear Task Lists, Code
+Diffs, Screenshots of the UI after changes, and even Browser Recordings of end-to-end tests. It had an
+interesting impact on me, as I moved from line-by-line debugging to high-level review and architecture,
+elevating my analysis and judgment by automating the tedious execution and providing audit-ready proof.
+
+It felt like Antigravity has accountability built in by design.
+
+2. Cross-Surface Agentic Control
+An agent is only as good as its access to the environment. Antigravity agents are truly cross-surface, meaning
+they can perform things like Write and Refactor Code in the editor, Run Terminal Commands to install
+dependencies, run tests, and spin up a local server.
+
+One cool feature that is how it acts on the browser to test their own work in a real Chrome instance, verify the
+output, and even record the user flow.
+
+I delegated a task--"Build a small Python app with a dynamic event trigger and full search functionality"--and
+the agent autonomously handled the dependencies, the coding, the local launch, and the test validation. It
+delivered a ready-to-review result and its own proof of work. This is no small potatoes!
+
+3. Multi-Agent Orchestration with Manager View:
+For large-scale enterprise projects, we know that successful architecture is about orchestration, not isolated
+tools. Antigravity has the Manager View, a "mission control" type of dashboard designed for high-level
+oversight.
+
+I am impressed with parallelism: I was able to spawn and monitor multiple agents--a Refactoring Agent
+cleaning up an authentication module in one workspace while another was implementing a new front-end
+feature in a parallel workspace. This is the practical realization of multi-agent systems in production, moving
+the developer's role to that of an architect and orchestrator, maximizing velocity by parallelizing tasks that
+were previously sequential and context-switching heavy.
+
+4. Continuous Feedback Loops and Self-Improvement
+Integrated Feedback that kept context and persistance: Antigravity allows you to add Google Docs-style
+comments directly onto any Artifact--a screenshot, a plan, or a code diff--without stopping the agent's work.
+The agent seamlessly incorporates this feedback and continues its execution, ensuring continuous
+refinement. This solves the "20% problem" I've seen derail so many POCs.
+
+Although it is not full knowledge management capability, it sure is a strong step towards it. Far greather than
+what I had seen. Agents can learn from past projects, storing successful code snippets, execution patterns,
+and architectural decisions to an internal knowledge base. This means your agents get smarter, and your
+enterprise memory grows with every project.
+
+After the Rush
+As I am writing this, I was able to achieve in one day what used to take me a full sprint of work, full of syncs,
+dailies, code-review sessions, refactoring and who-knows-how-many versions. This has strengthened my
+belief that this type of AI development, embodied by Antigravity, is the future.
+
+It's an urgent call for us as leaders--CTOs, CDOs, and Product Heads--to step up and lead the charge.
+
+Antigravity and its competitors will redefine Roles, STARTING YESTERDAY. However we need to view this not
+as a job replacement, but a skill elevation. Our junior developers become "AI Supervisors," learning to architect
+and validate rather than just implement line-by-line.
+
+It is not all praises and high sugar rush though. Documentation of the final artifact result is the low-point that I
+believe deserves attention from Google's development team. I might be wrong but I think there is still a lot to
+do till Antigravity can autonomously run a full Dev/Sec/Ops cycle on its own. I might have missed something
+but if you are running a tech team not only focused on developing brand new things but also sustaining,
+patching, and updating legacy code and modes, the documentation on how things were built, the vulnerability
+analysis, the governance structure, the quality test results and other aspects central to a decent technology
+area will still require a serious dose of old-fashion human work.
+
+This is the perfect segway for an old message of mine, still fresh and relevant: Focus on Governance and
+Observability! The complexity of autonomous agents demands a robust central nervous system. We must
+build the ethical and operational guardrails to ensure agents are effective, compliant, and accountable. People
+is still central, documentation is even more important and governance is paramount!
+
+With that caveat, Antigravity is promising and easy to use. I believe it is capable of delivering innovation at a
+velocity we could only dream of before.
+
+Let's keep this vital conversation going.
+#AI #AgenticAI #DigitalTransformation #GoogleAntigravity #Gemini3 #FutureOfWork #CTO #CDO #Innovation
+#DataEngineering #SoftwareDevelopment
+ARTICLE PUBLISHED IN 18 SEPT 2025
+
+My Reflections on the AI Agent Playbook
+
+If you're in the trenches of data science and AI, you know the conversations are shifting. It's no longer just
+about building cool models or automating a single task. We're talking about AI agents--entities that can
+reason, plan, and execute complex workflows on their own.
+
+But here's the cold, simple truth I learned in practice this summer: the most successful AI initiatives are not
+about trying to rip out entire infrastructures, nor about building AI expert teams isolated from IT or big data
+competencies and starting from scratch. That's a fool's errand. The real competitive advantage is being
+unlocked by a far more pragmatic strategy: matching AI agents to the existing human processes and
+workflows already in place.
+
+This isn't a sign of limited vision. It's a two-step master plan for success.
+
+First, you integrate. You find a high-value process--maybe a customer quote system or a KYC analysis
+workflow--and you deploy an agent to make it better. You get a quick win, a measurable return on investment
+(ROI), and you start building trust and momentum within the organization. This is about being smart and
+strategic, not about making a big, noisy announcement. It's about building a foundation of data and buy-in for
+what comes next.
+
+Then, you transform. Once you've proven the value, you can begin the more ambitious, transformative work.
+You start to fundamentally redesign your core workflows around the unique capabilities of AI. This isn't just
+about working faster; it's about reimagining how work gets done. Think about a product development cycle
+that used to take two years, now being completed in four months because you've parallelized sequential
+human activities with AI. That's not a marginal improvement--that's an exponential leap.
+
+This phased approach is what separates the companies that get a little bit better from those that become
+"AI-infused".
+
+This strategy however falls victim to its own success as the explosion of specialized AI agents--from a data
+agent in Snowflake to a conversational one in AWS--has created a new kind of architectural problem. Your
+agents can't talk to each other. They're siloed, and they can't collaborate on complex tasks.
+
+This is why interoperable AI agent frameworks are no longer a luxury--they are a strategic imperative.
+
+These frameworks act as the central nervous system for your AI ecosystem. They provide the protocols and
+standards that allow different agents, models, and tools to communicate and collaborate seamlessly. Without
+this, your multi-agent system is just a collection of disconnected tools.
+
+We're already seeing two key protocols emerge to solve this. The Model Context Protocol (MCP) standardizes
+how AI systems connect to various datasets and APIs. This means your developers aren't writing custom
+code for every single integration, which saves time and money. It's the plumbing that ensures your agents can
+pull data from a dozen different sources without a hitch.
+
+The other piece of this puzzle is the Agent Communication Protocol (ACP). This is the common language that
+allows agents themselves to talk to one another. It enables them to negotiate tasks, resolve conflicts, and
+work together as a cohesive unit. This is critical for complex operations, like a supply chain where multiple
+agents are managing warehousing, shipping, and inventory in real-time.
+
+Organizations that get locked into a single-vendor ecosystem risk being outpaced by more agile competitors.
+The ability to mix and match specialized agents from different providers gives you the flexibility to adapt to
+changing market demands and stay ahead of the curve.
+This central nervous system for AI is my key learning point of the summer, and I am proud of the success I
+achieved over it. It accounts for AI effectiveness, compliance and coordination.
+
+Companies do not invest in AI because it makes them look cool (though some do). They invest because AI
+has to be effective: cutting costs, augmenting productivity, providing better experiences. This means this
+central nervous system has to measure and proof beyond doubt that the AI agents are effective, productive
+and impactful.
+
+They cannot do so at any cost, nor by acting rogue. There are rules and regulations to be followed, not only the
+most obvious ones like GPDR, EU AI Act, Digital Services Act but also company policies, authorization paths,
+log registries, shipping regulations, therefore making sure that each and every AI agents must stay compliant
+and their assembled work must also be compliant to rules.
+
+Finally coordination is needed to make sure that those AI agents that have been developed by different teams,
+for a variety of purposes can evolve and grow without stepping on each other's toes as they stay active for
+long.
+
+I have talked about this many times, it has been true for a while and will continue to be true in the future: This
+central nervous system must also rest on three non-negotiable pillars into the AI lifecycle: observability,
+accountability, and governance.
+
+Observability: Think of this as the eyes and ears of your AI system. It's about continuous monitoring of your
+data, models, and infrastructure. Without it, your models can "silently degrade over time" due to changes in
+data or a shift in the problem you're trying to solve. You won't know there's a problem until it's too late.
+Observability provides the visibility to detect issues before they impact your bottom line.
+
+Accountability & Governance: These are the ethical and operational frameworks that keep your AI systems in
+check. You need policies and procedures to ensure ethical deployment, manage risk, and protect
+stakeholders. This includes things like:
+
+Fairness and Bias Mitigation: You must ensure your AI agents don't discriminate. This means using diverse
+datasets and regularly auditing your models for bias.
+
+Transparency and Explainability: The inner workings of your AI systems need to be open to scrutiny. We need
+to be able to explain why a model made a particular decision, especially in high-stakes fields like healthcare or
+finance.
+
+Accountability: Humans, not machines, must take ultimate responsibility for AI-driven decisions. Your
+governance framework must provide an audit trail that ties model behavior to specific owners.
+
+The most successful AI strategies are not those that attempt a radical, disruptive overhaul. They are defined
+by a phased, human-centric approach that begins with integration and evolves into strategic transformation.
+This journey validates a simple truth: matching AI agents to existing processes is the recipe for early success.
+
+The future of work is not a zero-sum game between humans and machines. It is a symbiotic partnership. AI
+agents are the perfect partners for automating routine work and providing predictive insights. Human
+expertise remains crucial for creativity, empathy, and ethical judgment.
+
+By investing in interoperable frameworks, establishing rigorous governance, and prioritizing continuous
+observability, we can ensure our AI systems are not just powerful, but also reliable, accountable, and aligned
+with human values. This is how we confidently navigate the intelligent age and forge a new blueprint for a
+human-machine partnership that will define the next era of business transformation.
+
+My final summer message: AI is a different beast, it is NOT like software development. Run the same software
+a million times over and it will perform exactly as it was coded every single time. Run the same prompt twice
+and you will get different results even so slightly. Agentic AI is an entity, not a program. It evolves, changes,
+drifts, adapts, improves. AI is the unavoidable future, its adoption is necessary but the sooner CTOs and CEOs
+understand they are not dealing with lines of code, the better.
+
+ARTICLE PUBLISHED IN 15 JUL 2025
+
+From Input-Output to Intent: Architecting the Future of Enterprise AI
+
+I want to thank you all for the feedback on the piece I published last week. I started writing that piece as a way
+to settle down my own ideas for live architecture and as I went on experimenting them on Google Cloud, other
+critical aspects of deployment kept surfacing, demanding tweaks in the architecture, addition of connectors,
+setup of verification points and KPIs that pushed my thoughts towards the most efficient way to deploy
+Agentic AI in a scalable fashion, an AI architecture framework for enterprises of sorts
+
+We're no longer talking about AI as a tool that simply takes an input and gives you an output. The next
+generation of AI is fundamentally different. These systems are moving from being reactive to being proactive,
+from executing commands to actively reasoning, planning, and executing actions on their own. This is the
+emergence of agentic AI, and it's poised to transform how we approach intelligent automation. For enterprises
+this is the ultimate departmental integration.
+
+And here lies a catch I've seen before: deploying agentic systems in an enterprise environment requires more
+than just adopting the latest LLM models or "vibe-coding" techniques. Success demands architectural
+patterns that balance cutting-edge capabilities with organizational realities as one change in the marketing
+process might have huge implications for legal, marketing or logistical departments. That's what this
+architecture aims to handle. It is not about IT but how agentic AI connects itself with the overall organization
+though the IT stack.
+
+We're talking about a familiar set of topics I've written before: governance requirements, audit trails, security
+protocols, and, critically, ethical accountability. Amazing how the fundamentals do not change, they only apply
+to different situations!
+
+Just as I've said time and time again, building a robust data governance framework is a journey, not a
+destination. The same holds true for architecting agentic AI. You can't simply flip a switch and expect a fully
+autonomous system to operate safely and effectively within your business.
+
+In my experience, organizations that succeed in implementing data products share the same trait: they
+prioritize simple, composable architectures over overly complex frameworks. Allowing them to manage
+complexity while controlling costs and maintaining performance standards. The implementation must be
+measured, evaluated and constantly discussed with the teams, partners, internal stakeholders and users.
+
+It is the classic data digital transformation approach, acting as the background constantly evaluating when
+predictability and control take precedence versus flexibility and autonomous decision-making. It is on this
+background that the architectural framework will hang,
+
+This framework is a systematic maturity progression, designed to help organizations build competency and
+stakeholder trust incrementally before they ever attempt to advance to more sophisticated implementations.
+It anticipates emerging regulatory frameworks like the EU AI Act and others, making it a blueprint for
+future-proof development.
+
+We start with The Foundation Tier which is the essential first step for any enterprise looking to deploy agentic
+AI, focusing on establishing trust and governance before attempting greater autonomy. It is defined by three
+key architectural patterns: tool orchestration, which restricts the AI to a curated set of approved APIs and data
+sources; reasoning transparency, which requires logging and auditing the AI's decision-making process to
+ensure explainability and accountability; and the disciplined use of data lifecycle patterns, which guarantees
+that the data the AI consumes and generates is validated, well-managed, and ethically handled. This tier
+serves as the bedrock, proving the system's reliability and building the crucial buy-in from stakeholders by
+demonstrating a controlled and auditable approach to AI development. This is also where most companies
+and consulting companies are as of today.
+
+The second tier focuses on Workflows. It builds upon the foundation of trust established in Tier one, delivering
+significant automation by orchestrating multi-step, predefined processes. This tier is not about full autonomy
+but about creating highly efficient, repeatable AI workflows. It is characterized by five core patterns: Prompt
+Chaining, which links a series of deterministic LLM calls; Routing, which directs tasks to the appropriate
+sub-process; Parallelization, which enables concurrent task execution; the Evaluator-Optimizer pattern, which
+introduces a self-correction loop for improving output quality; and the Orchestrator-Workers model, which
+delegates complex tasks to specialized agents. These features allow automation of complex business
+processes while maintaining a predictable, auditable framework with clear human oversight, measuring the
+relevant KPIs and validating (or not) efficiency and productivity gains.
+
+The final tier is all about autonomy, and represents the advanced stage of agentic AI deployment, enabling
+systems with genuine, goal-directed planning capabilities. This tier is not about replacing human
+decision-making with fully autonomous systems, but rather about deploying Constrained Autonomy Zones
+that operate within a tightly controlled, well-governed environment. The core principle here is to allow the AI to
+dynamically determine its own approach to achieving a goal, while still embedding validation checkpoints and
+human oversight to maintain accountability and mitigate risk. This introduces flexibility and innovation,
+allowing the AI to learn and adapt, but always within boundaries that align with regulatory compliance and
+ethical standards.
+
+Industry-Specific Implementation: A Tale of Context
+
+One size does not fit all. The general framework I've outlined is a guide, but any specific implementation must
+be tailored to the unique guiding principles and utility functions of your industry: regulatory constraints,
+business objectives, tech stack limitations.
+
+I know first hand that Financial Services, Healthcare, Gaming, Retail and Manufacturing have specificities that
+make implementation as different as day and night, so in the coming weeks my idea is to explore contextual
+engineering as a core feature of any AI deployment.
+
+Finally I would like to share how lucky I am to have intellectual partners in this journey, like Subash Natarajan
+and Ahilan Ponnusamy whose work have inspired me and Naomi Garratt whose tech prowess always
+impresses me.
+
+ARTICLE PUBLISHED IN 08 JUL 2025
+
+Serving AI in Real-Time: Architecture for Low-Latency, High-Availability Inference
+
+As I've said time and time again, in production environments, deploying a trained AI model is no longer a
+matter of saving a .pkl file and calling it a day. Real-time inference requires architectural discipline. This is
+especially true in latency-sensitive use cases like finance, healthcare, gaming, real-time bidding, or fraud
+detection, where every millisecond counts and system failures carry significant business risk.
+
+The growing availability of open-source tools and managed platforms has certainly lowered the barrier to
+entry, but it has simultaneously raised expectations on throughput, observability, and user experience.
+
+This article outlines an end-to-end serving architecture designed to meet low latency constraints while
+maintaining high availability and scalability. My focus here is practical: what works, what scales, and what
+needs constant observation. Just like building a robust data governance framework is a journey, so is
+architecting for real-time AI inference. It's about building a foundation that will power your digital strategy.
+
+Let's start with the orchestration layer. The first crucial decision you face when venturing into real-time AI
+inference is whether to manage the serving infrastructure yourself or to leverage a managed solution. This
+choice isn't trivial; it depends heavily on your organization's operational maturity, existing compliance
+requirements, and, critically, your performance constraints.
+
+For many enterprise scenarios, managed model serving from platforms like Databricks Mosaic Model Serving,
+Azure ML Studios Endpoints, or Amazon SageMaker Endpoints provides a viable balance. These services
+abstract away a significant portion of the underlying infrastructure complexity. They handle automated
+scaling, SSL certificates, A/B testing, and version control, freeing your teams from much of the operational
+burden. They're typically suitable for workloads that can tolerate latencies in the range of ~50-150ms, offering
+a streamlined path to production without demanding deep DevOps expertise. These platforms often allow for
+automatic scaling based on demand, which is particularly beneficial for fluctuating AI workloads, just as
+cloud-native infrastructure is for a retail company during a holiday sale.
+
+However, for organizations that demand stricter control over latency and require more aggressive
+optimization, teams often turn to self-managed solutions built on Kubernetes with KServe. KServe (formerly
+KFServing) is a Kubernetes-native serving framework that simplifies the deployment of machine learning
+models. It's a powerful tool, offering advanced features like scaling to zero (saving costs during idle periods),
+auto-scaling based on various metrics (requests per second, concurrency, CPU/GPU utilization), version
+management, and sophisticated traffic management (e.g., A/B testing, canary rollouts). KServe seamlessly
+integrates with various inference servers like TFServing, TorchServe, and Triton Inference Server, providing
+immense flexibility for different model types. The trade-off here is increased operational overhead; managing
+Kubernetes and its ecosystem requires a dedicated and skilled team. But for mission-critical applications
+where every millisecond counts, the superior customization and control it offers can be invaluable.
+
+I would like to emphasize the steep learning curve or the need for strong SRE/DevOps maturity when adopting
+KServe. However if you are into the millisecond tier, you likely know that already.
+
+In very specific edge use cases, teams might even bypass traditional orchestration altogether, but I will not get
+into that at the moment
+
+Once you've chosen your serving framework, the next critical step is architecting the computational backbone
+for your real-time inference. This dictates both performance and cost. Your serving infrastructure must align
+directly with your model size, expected Queries Per Second (QPS), and, of course, your target inference latency
+requirements.
+
+The debate of how much of the infrastructure will be "on prem" is a lengthy one with its own intricacies. I will
+not delve into that at the moment, but I want to highlight its importance: We are talking about GPU vs CPU,
+Horizontal vs Vertical Scaling, Predictive scaling, cooldown periods, load balancing, concurrency management
+and so on.
+
+I want to emphasize that building out the right infrastructure for AI is not a one-time project; it's an ongoing
+journey of evaluation, adaptation, and optimization. Your teams must constantly discuss it, preferably in a
+"chapter" or "guild" model. As CTOs and CDOs, our role is to ensure this foundation is not only robust and
+efficient today but also agile enough to embrace the innovations of tomorrow.
+
+Then, it is APIs time!!! The API design defines how your applications interact with the deployed AI models. It's
+the handshake between your front-end experience and your intelligent backend. This interface must be stable,
+fast, and, ideally, backwards-compatible to ensure seamless updates and integrations.
+RESTful APIs are the workhorse of the modern web and are widely adopted due to their simplicity,
+statelessness, and broad tooling support. They're perfectly suitable for many real-time inference scenarios,
+especially when request payloads are relatively small and individual predictions are independent. Most data
+scientists and developers are familiar with exposing models as REST endpoints, and libraries like Flask,
+FastAPI, or Node.js frameworks make this straightforward.
+
+However, for ultra-low latency, high-throughput, and streaming scenarios, gRPC presents a compelling
+alternative. Built on HTTP/2 and Protocol Buffers, gRPC offers several significant advantages:
+
+Binary serialization: Protocol Buffers are significantly more efficient than JSON for serialization, leading to
+smaller payload sizes and reduced parsing overhead. This might seem like a minor detail, but at scale, these
+savings translate to substantial performance gains.
+
+Multiplexing: HTTP/2 allows multiple concurrent requests over a single TCP connection, drastically reducing
+connection overhead. In a high-volume scenario, this means fewer handshakes and more efficient use of
+network resources.
+
+Bidirectional streaming: This is critical for applications requiring continuous data exchange, such as real-time
+voice transcription, conversational AI, or the continuous updates common in gaming. Imagine a continuous
+stream of game telemetry being fed to an AI model for real-time anomaly detection or dynamic difficulty
+adjustment.
+
+For finance, and gaming applications, where continuous updates or complex interactions are prevalent, gRPC
+can undeniably provide a performance edge over REST, often reducing end-to-end inference time a
+considerable amount.
+
+Beyond the protocol, consider your batching vs. streaming strategy. In many real-time contexts, single-record
+inference is standard--you need a prediction for one action, right now. However, in other recommendation or
+personalization services, batching inference requests can significantly improve GPU utilization at the cost of
+some latency trade-offs. Beware of jitter or queuing delays and remember It's a balance between individual
+request latency and overall system throughput.
+
+Finally, prioritize payload size and serialization. Keep your payloads lean; avoid sending unnecessary
+metadata. Use efficient serialization formats like Protocol Buffers or Apache Avro to minimize transfer
+overhead. Every byte counts when you're pushing for sub-100ms. And just as importantly, ensure your API is
+discoverable and well-documented.
+
+You likely know me at this point: Data Governance and Documentation is an obsession of mine, so keep in
+mind that a well-maintained data dictionary isn't a bureaucratic exercise; it's the Rosetta Stone for your
+organization, especially when it comes to understanding how to interact with your AI services. Not to mention
+future-proofing development, avoiding refactoring and debugging.
+
+My last point is about the silent killer of real-time performance: Network latency. Even with the fastest models
+and most optimized servers, if your data has to travel across continents, minimizing round-trip time (RTT) is
+absolutely critical, especially when targeting such stringent end-to-end latency.
+
+While primarily known for static content, CDNs (Content Delivery Networks) can be cleverly leveraged to cache
+model artifacts or frequently requested inference results closer to the user. This reduces download times for
+model weights and overall latency for repetitive predictions. Think about semantic caching at the edge, where
+frequently requested model outputs are stored closer to the user, similar to how content is delivered faster
+from a local server. This approach isn't about replacing core inference but optimizing delivery of model-related
+assets or highly repetitive inference outcomes.
+
+For applications with extremely stringent latency requirements (e.g., autonomous systems, real-time industrial
+control, or even specific gaming scenarios like cloud gaming), Edge Computing is the answer. Deploying
+inference capabilities at the network edge, physically closer to the data source or end-user, drastically
+minimizes round-trip times to central cloud data centers. This involves pushing model execution onto edge
+devices (like IoT gateways, smart cameras, or even local micro-data centers). This strategy not only slashes
+network latency but also enhances privacy and security by processing sensitive data locally, reducing the need
+to transmit raw data over the network.
+
+TLS Termination is another often-overlooked optimization. Terminating SSL/TLS connections at the load
+balancer or API Gateway reduces server-side processing overhead and allows the backend inference services
+to focus solely on prediction. Furthermore, using modern protocols like HTTP/2 or QUIC at the load balancer
+level can significantly reduce handshake overhead and improve multiplexing, further shaving off precious
+milliseconds. There is a pitfall I must warn you though in regulated sectors (e.g., finance, healthcare),
+terminating TLS at the load balancer must comply with zero-trust and end-to-end encryption policies. This
+may restrict TLS termination options.
+
+Finally, consider the impact of your model itself on network efficiency. Model Distillation & Quantization are
+powerful techniques to create lightweight models. Distilled or quantized models (e.g., INT8) offer several
+benefits: faster serialization, lower memory footprints, and smaller binary sizes. These smaller models are
+inherently more network-efficient, requiring less bandwidth to transmit and load, contributing to a snappier
+overall experience. This isn't just about technical optimization; it's about delivering a seamless user
+experience, which ultimately fuels business value.
+
+Advice for Teams Implementing AI
+
+Real-time inference forces a powerful convergence of disciplines: ML engineering, backend infrastructure, and
+DevOps. In my experience, success depends far less on which specific model you choose and much more on
+how you serve it.
+
+If you're embarking on AI implementation in your organization, start by gaining a crystal-clear understanding
+of your specific latency budget and reliability targets. Don't guess; measure. Then, choose serving frameworks
+and infrastructure that are designed to make performance observable and reproducible. Design your serving
+APIs with future integration in mind, prioritizing lean payloads and efficient serialization.
+
+And always, always plan for failure. Whether that's an unexpected spike in demand, a model crash, or
+upstream feature drift--anticipate these scenarios and build resilient mechanisms like circuit breakers or
+rules-based fallbacks. Remember my discussion on the Human Factor: It's not about hunting unicorns, but
+about building balanced teams that can tackle these multifaceted challenges.
+
+Don't treat model deployment as the finish line. It's truly the beginning of a living, breathing system that must
+adapt, scale, and stay accountable. The possibilities that AI unlocks are immense, but realizing that potential
+hinges on the strength and intelligence of the infrastructure that supports it. By prioritizing modularity,
+flexibility, efficiency, and strategic alignment--and by leveraging modern data technologies designed for these
+challenges--we can empower our organizations to deploy AI agents that truly transform our businesses,
+adapting to evolving needs without overwhelming our budgets or our teams.
+
+What are the biggest real-time inference challenges you're facing in your AI journey? How are you approaching
+this balance between innovation, cost, and future-readiness? Let's keep the conversation going.
+
+ARTICLE PUBLISHED IN 17 JUN 2025
+
+Last week I had the opportunity to gauge the main events happening in Europe around Ai and Technology:
+London Tech Week and VivaTech in Paris.
+This year the atmosphere in both events was electric, but it wasn't just about the usual tech optimism. The
+message was clear and seismic: we're no longer talking about AI as just another tool. We're in the first days of
+a new industrial revolution, and AI is the foundational infrastructure upon which everything will be built.
+
+For my fellow leaders, the takeaway is urgent and direct: The possibilities for reinventing your business are
+limitless, but this transformation demands leadership from the top. CEOs and CTOs, this is our moment to
+lead the charge.
+
+Perhaps the most powerful concept from the events was this: the new programming language is human.
+
+You no longer need to be a deep coder to "program" an AI. You just need to be able to ask clear, thoughtful
+questions. This democratizes technology on an unprecedented scale, unlocking latent talent across your
+entire organization.
+
+This puts a lot of pressure into tech teams who should provide the infrastructure supporting the AI Agentic
+Ecosystems, fostering data governance, data visibility and championing data literacy to get data
+democratization and the transformation of the culture towards Data and AI
+
+How are you and your leadership team preparing for this shift? What's the first step you're taking to build your
+own "AI Factory"?
+
+#AI #DigitalTransformation #Leadership #CEO #CTO #Innovation #FutureOfWork #DataScience #VivaTech
+#LondonTechWeek
+
+ARTICLE PUBLISHED IN 10 JUN 2025
+
+The Human Factor in Data and IA
+
+Welcome back. Over the last couple of weeks, we've covered a lot of ground together. We started by tackling
+the core challenges of getting your data house in order, moved on to the foundational infrastructure needed to
+support real ambition, and most recently, we delved into the bedrock of data governance. We've talked tech,
+we've talked pipelines, we've talked strategy.
+
+But let's be direct: none of it matters without the right people.
+
+You can have the most elegant Lakehouse architecture, the most pristine data models, and a governance
+framework that would make a regulator weep with joy. But if you haven't addressed the human element--the
+teams who use the tools, the talent you're trying to attract, and the cultural transformation required to make it
+all stick--you've built a high-tech engine that's going nowhere.
+
+This brings us to what I consider the most critical element in any data transformation program: The Human
+Factor. This is where the magic happens, but it's also where the majority of data and AI initiatives ultimately
+stumble.
+
+Data science, at its core, is a world of advanced mathematics, statistics, and uncompromising logical
+thinking. These are not, traditionally, the strongest traits you find in the people who excel at building client
+relationships, crafting compelling marketing narratives, or leading sales teams. Yet, in today's business
+landscape, we're telling everyone they need to change their DNA and become "data-driven."
+
+This creates a fascinating, and frankly, dangerous paradox. On one hand, there's a genuine, widespread
+enthusiasm to understand and deploy AI. Everyone wants to be part of the future. The downside? This can
+breed an "ends justify the means" mentality. In the rush to get quick, visible results, teams often cut corners,
+bypass governance, and build solutions on shaky ground. It's a sprint for immediate validation in a world
+where, ironically, nobody believes anything will last long anyway.
+But as leaders, our job isn't to chase fleeting wins. It's to build a lasting capability. And that begins and ends
+with people. Based on my experience in the trenches, the entire challenge boils down to three core areas:
+Teams, Talent, and Transformation.
+
+The Teams Conundrum: Breaking Down the Tower of Babel
+
+One of the most persistent and damaging challenges in any data project is the failure of cross-functional
+teams to truly collaborate. It's less of a gap and more of a chasm. We bring together data scientists, data
+engineers, business stakeholders, IT security, and marketing experts, and we expect them to seamlessly
+create value. More often than not, it looks like a modern-day Tower of Babel run by Jira Tickets.
+
+Each group speaks its own jargon, operates on its own incentives, and carries its own biases.
+
+While these groups don't share a common language or a unified understanding of the project's goals, the
+results are predictably messy: data silos deepen, misunderstandings fester, and projects either crawl to a halt
+or deliver a final product that, while technically sound, completely misses the business mark.
+
+I once worked with a major retail company that was incredibly excited to launch a new AI-powered
+recommendation engine. The data science team spent a few sprints building a technically magnificent model.
+The accuracy was off the charts. When it was deployed, however, engagement tanked.
+
+Why? The conversations with the people on the shop floor were protocolar, basically the data team
+interviewing for requirements rather than engaging in the nuance of the customer journey and the sales
+journey (two very different beasts, by the way). Don't get me wrong the model was a work of art, but it was
+solving a different problem. When we got the technical people to actually spend a couple of days on the field,
+accompanying the sales team, having lunch together, talking to clients, using the legacy order app which the
+sales field officers had to cope with, everything changed!
+
+That's how I believe we fix this! It's not about forcing everyone to become a data scientist. It's about building
+bridges and this is what have worked for me:
+
+I always start by creating dedicated "translation layers". In my teams, we've had immense success by formally
+establishing roles like Data Product Owners who operate as Analytics Translators. These people are
+bilingual--they can speak the language of business and the language of data. They sit in on sales meetings
+and then turn around and translate that context into clear requirements for the engineering team. They are the
+essential connective tissue.
+
+Nobody understands the whole complexity of a major enterprise project, that's why truly cross-functional
+teams are paramount. I don't mean a weekly check-in meeting. I mean putting a data scientist, a product
+manager, a marketing expert, and an engineer into the same virtual (or physical) "pod," with a shared objective
+and shared accountability. When they are all responsible for the same outcome--not just their siloed part of
+the process--the conversations change dramatically. Suddenly, the engineer starts to care about the
+marketing campaign's click-through rate, and the marketer gets interested in the quality of the data feeding the
+model.
+
+I risk being repetitive about the importance of communication but please double down on the shared language
+and vocabulary. Not in the literal sense of everybody speaking latin or something else. It is about my favorite
+topic: governance. A well-maintained data dictionary isn't a bureaucratic exercise; it's the Rosetta Stone for
+your organization. When "Active Customer" is defined, documented, and agreed upon by everyone, it
+eliminates a whole class of miscommunication. It builds the foundation for trust and a common
+understanding that allows for effective collaboration.
+
+The Talent Question: It's Not About Hunting Unicorns
+
+This second great human challenge is the talent gap in data & tech. The data and AI landscape is evolving so
+fast that organizations are in a perpetual state of catch-up. We face a dual problem: a shortage of technical
+expertise and a critical lack of the soft skills needed to drive change.
+
+The common reaction is to go "unicorn hunting"--trying to find that mythical individual who is a world-class
+statistician, an expert coder, a brilliant communicator, and a savvy business strategist all rolled into one. Let
+me be clear: these people barely exist. And if you find one, you probably can't afford them.
+
+The real challenge is twofold: cultivating the talent you have and overcoming the deep-seated resistance to
+change. For many employees, the push for AI and automation isn't exciting; it's terrifying. It comes with a fear
+of redundancy, a discomfort with leaving behind familiar tools and processes, and a genuine lack of
+confidence in their ability to adapt. As leaders, if we dismiss this as simple stubbornness, we've already lost.
+
+I saw this firsthand at a large insurance firm that wanted to use AI to help with claims processing. The most
+experienced claims adjusters--people with many years of invaluable institutional knowledge--were the most
+resistant. They weren't anti-technology. They were afraid that a black-box algorithm would miss the subtle
+human nuances they knew were critical to spotting fraud or identifying a vulnerable customer. They feared
+their hard-won expertise was about to be rendered obsolete.
+
+The project only succeeded when we changed the entire premise. Instead of trying to reinvent them, we
+reframed the initiative to empower them. We turned them into "AI Supervisors." Their job became to train,
+validate, correct the AI models, and provide fundamental feedback on the new systems, getting financial
+prizes for successfully deployed model versions. We leveraged their deep expertise to make the machine
+smarter. This did two things: it dramatically improved the model's real-world accuracy, and it turned our
+biggest skeptics into our most passionate champions. They became part of the development pipeline, not
+targets for replacement..
+
+Addressing the talent challenge requires a more thoughtful approach than just posting a job description. This
+is what worked for me:
+
+First, stop hunting unicorns and start building balanced teams. You don't need every person to be good at
+everything. You need a team where skills are complementary: a great coder paired with a great communicator;
+a deep-thinking researcher paired with a pragmatic project manager. The team, as a whole, becomes the
+unicorn.
+
+Second, invest in transformation, not just training. One-off workshops on Python or VectorAI are not enough.
+You need to build a genuine culture of continuous learning. This means giving people the time and resources
+to learn. It means creating dual career paths, so your most brilliant senior data scientist can continue to grow
+as an individual contributor without being forced into a management role they don't want. And critically, it
+means leaders must publicly celebrate learning and experimentation--especially when an experiment proves a
+long-held belief was wrong.
+
+Finally, recognize and reward the value of data roles. If you treat your data team like a back-office cost center,
+don't be surprised when your best talent leaves for a company that treats them like a strategic asset.
+Fostering a culture where data expertise is visibly valued, respected, and integrated into strategic
+decision-making is the most powerful retention tool you have.
+The Real Transformation: It's About Changing the Corporate DNA
+
+This brings us to the ultimate human challenge: cultural transformation. I've said it time and time again, and
+I'll keep saying it until it sticks: TECHNOLOGY FOLLOWS CULTURE. You can spend millions on the most
+advanced data platform on the planet, but if your company's DNA is still wired for gut-feel decisions, you've
+accomplished nothing. The platform will become a ghost town, an expensive piece of shelf-ware.
+
+Changing the DNA of a company is not something a Third-Party contractor, nor a Senior Manager nor a
+Director nor even a CTO can do. This is something that has to be driven by the CEO of the whole organization,
+because EVERYONE will have to change their mentality, processes and ways of working. Getting the most
+competent technical people and never having time for discussing how to become data oriented is a recipe for
+failure.
+
+Successfully embedding data-driven practices is not a technical problem; it's a change management
+marathon. It requires rewriting the unwritten rules of how your organization operates. It means challenging
+legacy decision-making habits, building trust in automated systems, and getting genuine buy-in from every
+single level of the company.
+
+The most powerful tool for cultural change is communication, specifically the celebration of small, concrete
+wins. Remember my point from the governance article about shouting your successes from the rooftops?
+This is why it matters. When you roll out a new self-service dashboard for the finance team and they use it to
+identify a significant cost-saving opportunity in the first week, you need to make that story legendary. Share it
+in the company all-hands, write about it in the newsletter, have the CFO talk about it.
+
+This does more than just make the finance or commercial teams feel good. It shows everyone else, in tangible
+terms, that this new "data-driven" way of working isn't just more work--it delivers real, recognizable value. It
+proves that change isn't something to be feared, but something to be embraced.
+
+This also requires deep empathy from us as leaders. We have to meet people where they are. We can't expect
+the entire sales organization to suddenly become experts in statistical modeling. But we can give them a
+simple, intuitive AI-powered tool that scores their leads and helps them focus their time more effectively. We
+empower them within their existing workflow, rather than demanding they adopt a completely new one.
+
+Technology, in many ways, is the easy part. The real challenge--and the greatest opportunity--lies in
+empowering our people to harness it.
+
+I would love to learn what are the biggest human-factor challenges you're facing in your organization? How are
+you bridging the gap between your technical experts and your business leaders? Let's continue this vital
+conversation.
+
+ARTICLE PUBLISHED IN 03 JUN 2025
+
+Data Governance: The Bedrock of Trust and Value
+
+Welcome back to our ongoing conversation! Over the past month, we've delved into the critical foundations of
+successful data strategies I've experienced. We started by tackling the complexities of Infrastructure, the
+essential bedrock for any data-driven ambition. Then, we explored the nuances of building and maintaining
+that robust technological backbone. Now, as the third part of this series, the time has come to address an
+equally vital, yet often misunderstood, component: Data Governance.
+For many, it conjures up images of suffocating bureaucracy, endless meetings, and a surefire way to kill
+innovation. It sounds like a massive, painful thing you just have to endure. To me this could not be further
+from the truth
+
+Good governance cultivates trust at every single level of your organization allowing the "data driven" mentality
+to flourish. Your data analysts produce insights because they know the underlying data is sound. Your product
+teams confidently develop innovative features because multiple data sources indicate success. Your
+customers, critically, expect you to handle their personal information with the respect and responsibility it
+deserves. And your leadership team trusts that the business is operating in full compliance with ever-evolving
+regulations like GDPR, HIPAA, LGPD, PIPA or EU AI law.
+
+But here's the thing, and I've been repeating time and time again across different industries and cultures: Data
+Governance is not some static checklist you power through. It's a living, breathing you cultivate. It's not about
+locking your data in a cage; it's about building a robust framework of trust around it. Let me tell you, trust isn't
+just important ­ it's pure gold. Good governance is the mint that produces it.
+
+One of the toughest pills for many leaders to swallow is that data governance is fundamentally a journey, not a
+destination, it is a never ending process like quality obsession for a manufacturing operation. Business
+leaders, quite rightly, are wired to think in terms of clear goals, hard deadlines, and projects that get marked
+"complete." They want to know when the "governance initiative" will be ticked off the list so they can move on.
+This is where the core misunderstanding lies. Data governance, by its very nature, will always be incomplete
+because your business is in a constant state of flux. New data sources emerge, regulations shift, products get
+launched, customer behaviors evolve. To imagine you can create a static, one-and-done governance plan is to
+ignore this dynamic reality.
+
+How do you show progress on something that doesn't have a neat finish line? The crucial lesson I've learned,
+often through navigating choppy waters, is that you absolutely must break the journey down into tangible,
+measurable milestones.
+
+And your most powerful ally in this? Communication. Crystal clear, consistent, and celebratory
+communication. You have to shout about every small win. Did the team successfully define the data domains
+for the sales department? Announce it, explain its impact. Did you roll out a new, simplified data dictionary
+that clarifies the top 50 most critical KPIs for marketing? Share that success widely. These intermediate goals
+become the concrete achievements that demonstrate momentum, build crucial buy-in, and keep the energy
+alive for the long haul. They prove to stakeholders that while the journey is ongoing, the path is being paved
+with real, value-adding accomplishments.
+
+Everytime I did that, the process advanced. Everytime I caved because that was not in the "culture of the
+company" to engage in this folly, data governance dragged on and its value perception decreased.
+
+Good data governance framework provides clear answers to those fundamental questions: Who truly owns
+this piece of data? Who is ultimately responsible for maintaining its quality? How can it be used, and by
+whom? What are the ethical implications? Can I use this data? Can I trust it?
+
+This last question is the most important: governance exists to build TRUST in the data so that others ­ people
+outside the core data team ­ can confidently use it. It also provides the rules of the road so everybody else
+can keep trusting the data while securely finding the new trustworthy applications and analysis created.
+
+I strongly believe that the ultimate aim of any central data function is to get out of the way and become as
+invisible as electricity is in our daily lives. Thus the central data function has to empower the entire
+organization and foster the data and the data products that work, while focusing its expertise on the problems
+never faced before.
+This is the very heart of data democratization and it is impossible to achieve without a robust data
+governance ethos.
+
+When individuals across every department--be it marketing, sales, finance, or operations--can confidently
+access, interpret, and use data, algorithms, AI agents to make their own informed decisions, develop their own
+tailored reports, even run their own well-designed experiments, and incorporate data products into their
+applications, you've unlocked a truly powerful engine for widespread innovation and agility.
+
+This generates growth, value and a deluge of new data that in turn needs to be governed making the data
+governance process fundamental.
+
+Over the years, I've found that putting this philosophy into practice hinges on a few core principles that have
+proven indispensable time and again.
+
+First, and I can't stress this enough, communication and deep involvement are everything. A data governance
+program cooked up in an IT silo, without genuine input from the rest of the business, is almost certainly
+doomed to fail. Everyone who generates data, or uses data to do their job ­ which, in any modern company, is
+pretty much everyone ­ must have a genuine buy-in. They need to understand the "why" behind it, not just the
+"what." When I was tasked with establishing a Data Governance Office in a previous role, our very first step
+wasn't to draft policies or select tools. It was to build a powerful coalition. We worked hard to get the CTO, the
+CFO, and even the Director of Compliance to co-chair the initiative. This wasn't just symbolic; it sent an
+unmistakable message from the top down: data is a shared strategic asset, and its governance is a collective
+responsibility, vital to our success.
+
+Second, embrace flexibility, especially when defining data domains. This is often one of the most painstaking
+and time-consuming parts of the entire process. The natural temptation for a technically-minded team is to
+spend months, sometimes even years, trying to architect the "perfect," theoretically pristine set of data
+domains. What I've learned is that it's far more effective to develop a flexible, iterative approach. Come up with
+a solid, well-reasoned initial set of domains that can be carved out, expanded, or merged later as the business
+evolves and understanding deepens. The key is to communicate this initial framework to the wider company
+sooner rather than later. Get a working model out there. Let teams start using it. The feedback you'll gather
+from real-world application and the insights gained from how people actually interact with the data are
+infinitely more valuable than endlessly striving for an abstract, theoretical perfection in isolation.
+
+Third, don't reinvent the wheel; leverage established frameworks like DAMA (Data Management Body of
+Knowledge). Now, the DAMA framework is fantastic, but often not for the reasons most people initially
+assume. Its most powerful feature, in my experience, isn't necessarily its detailed technical prescriptions or its
+comprehensive lists of functions. While technically deep, its real power often lies in how it helps clarify roles
+and responsibilities for non-technical teams across these areas. This transforms governance from an "IT
+issue" into a genuine business partnership, making it tangible and actionable for those closest to the data's
+creation and use.
+
+This approach provides a common vocabulary and a well-defined structure, assigning data ownership and
+stewardship roles and duties to the people who are closest to the data's creation, its context, its accuracy and
+its ultimate use.
+
+The data technology team however has an immense responsibility to prioritize the approach order and
+translate to the business people how they fit into the eleven key knowledge areas encompassing in the DAMA
+framework. It is no small feat to break down concepts like:
+
+      Data Governance Policy: Establishing authority, control, and decision-making over data.
+      Data Architecture: The blueprint for managing data assets.
+      Data Modeling and Design: Structuring and organizing data.
+      Data Storage and Operations: Managing the physical and cloud-based storage of data.
+      Data Security: Ensuring data privacy, confidentiality, and protection.
+      Data Integration and Interoperability: Combining data from different sources.
+      Documents and Content Management: Managing unstructured and semi-structured data.
+      Reference and Master Data: Managing critical shared data like customer or product information.
+      Data Warehousing and Business Intelligence: Providing data for reporting and analytics.
+      Metadata Management: Managing data about data (e.g., definitions, lineage).
+      Data Quality: Ensuring data is fit for its intended purpose.
+
+In my experience, the best approach is to divide those into two categories: one business and process oriented
+and the other purely technical and data architecture oriented. Both running in parallel and reporting to a leader
+whose sole responsibility is the program implementation. Adopting a RACI approach makes things easier at
+the start and contributes to further break-downs.
+
+The results were consistently transformative: increased departmental autonomy, more agile decision-making,
+improved regulatory adherence, and more reliable insights. This comprehensive approach didn't just fix
+immediate issues; it laid the foundation for a truly data-driven organization, trusted by all stakeholders and
+poised for innovation. Transforming your organization's relationship with data is a journey, demanding
+patience, constant communication, and a profound belief in the power of trust. By treating governance as a
+continuous improvement process and empowering everyone to participate, we build resilient, intelligent
+enterprises where high-quality, democratized data fuels sustainable growth.
+
+The path isn't always easy, but a data-empowered organization is a destination worth striving for. What are
+your biggest governance challenges? How are you balancing control and enablement? Let's continue the
+discussion.
+
+ARTICLE PUBLISHED IN 20 MAY 2025
+
+CTO & CDO Infrastructure Challenges
+
+In a previous article, I talked about the "three legs of the stool" for data and AI success: Data, Infrastructure
+Foundation, and Implementation. I got a huge response from that piece mostly around the foundation
+infrastructure supporting AI capabilities and legacy software development.
+
+Encouraged by your feedback, today I'd like to double-click on that second leg, coming from my data-centric
+point-of-view of developing AI and Data products that not only generate insights and analytics but also are
+integrated into main software products, guiding customer journeys, offering promotions, and hyper
+personalization.... While keeping costs and latency down.
+
+This isn't just about bolting on new hardware or spinning up a few more cloud instances; it's about a strategic
+architectural approach that has to be tailored to take our AI ambitions into account.
+
+Based on my experiences leading numerous data and AI projects, successful technology stacks share key
+characteristics: modular infrastructure, resilient processing and pipelines, and a focus on future-proofing.
+Topics such as cybersecurity, metadata monitoring, data lifecycle monitoring, and application performance,
+while important, are intentionally excluded here for brevity as they build upon this foundational stack.
+
+Building out the right infrastructure for AI is not a one-time project; it's an ongoing journey of evaluation,
+adaptation, and optimization. As CTOs and CDOs, our role is to ensure this foundation is not only robust and
+efficient today but also agile enough to embrace the innovations of tomorrow. It requires a relentless focus on
+modular design, careful management of cost levers, and, above all, a tight coupling between our data strategy
+and the overarching business objectives.
+
+With that in mind, let's go through what I've seen gracefully handle the often-unpredictable and
+resource-intensive nature of AI workloads in a cost-effective manner.
+Modular Infrastructure Architectures
+
+When we talk about AI, especially training complex models or running inference at scale, the demand for
+compute and data processing can be immense and spiky. One minute you might be ticking along, the next, a
+new model training cycle kicks in, or a successful AI-powered feature sees a surge in user adoption, and your
+resource needs can go through the roof. This is where scalability isn't just a nice-to-have; it's the absolute
+bedrock.
+
+Platforms like AWS, Azure, and Google Cloud offer incredible elasticity. They allow us to scale resources up or
+down almost instantaneously in response to fluctuating AI workloads. They also carry some level of risk as
+you might end up in an oversize contract that is expensive for the moment you are in your data journey,
+especially if your company talks a bigger game about data and AI compared to the actual level of automation
+and data products adoption.
+
+The obvious benefits are avoiding massive upfront capital expenditures on hardware that might sit idle much
+of the time and the pay-as-you-go scheme that closely follows the actual demand. It is particularly beneficial
+to businesses heavily dependent on seasonal demand. Think about a retail company using AI for personalized
+recommendations. During a holiday sale, traffic might spike tenfold. A cloud-native infrastructure can
+automatically scale the AI inference services to handle this peak load and then scale back down when things
+quieten, optimizing both performance and cost.
+
+Then there's the processing power itself. Large-scale data pipelines are the lifeblood of AI. We need to ingest,
+transform, and feed vast amounts of data to our models. This is where distributed processing frameworks like
+Apache Spark or Ray come into their own. These frameworks are designed to parallelize tasks across clusters
+of machines, dramatically speeding up data processing and model training. I've seen reports suggesting that
+effective use of these frameworks can cut infrastructure costs associated with these heavy workloads by as
+much as 30%. That's not pocket change.
+
+Cloud platforms are not the only game in town. In my experience, most large organizations aren't starting with
+a blank slate. I have been fortunate enough to have worked for companies which have their own on-prem data
+infrastructure, that means taking into account legacy systems, existing data warehouses, and applications
+that are critical to the business. This poses the question of developing hybrid strategies and consistent
+integration work.
+
+A hybrid cloud strategy often makes a lot of sense. It allows for a gradual migration of workloads and data,
+minimizing disruption to those crucial legacy systems. We can use the public cloud for its agility and
+scalability to rapidly prototype and deploy new AI agents, while sensitive data or deeply integrated systems
+might remain on-premise for a period. This phased approach balances innovation speed with operational
+stability but requires mastering integration on a different level. If you guys want to take the discussion through
+this route, reach me out and let's dive into the tricks and specificities of the hybrid approach
+
+Future-Proofing an Infrastructure which evolves with AI
+
+Any infrastructure that's cutting-edge today could be outdated tomorrow if it's not designed for flexibility. This
+is particularly true with the AI landscape evolving at breakneck speed and new algorithms, tools, and
+frameworks emerging constantly. Future-proofing isn't about predicting the future; it's about building an
+architecture that can adapt to it.
+
+I'm a big proponent of Lakehouse architecture. As I've mentioned in previous discussions, most organizations
+are dealing with a mix of structured data (from databases, ERPs) and unstructured data (text, images, videos,
+sensor data). Traditional data warehouses excel at structured data, while data lakes are great for storing vast
+amounts of raw, unstructured data. A Lakehouse architecture, as the name suggests, combines the benefits of
+both, providing a unified platform that can support both batch processing and real-time AI agent training using
+all types of data. This versatility is key for many modern AI applications, from natural language processing to
+computer vision.
+Containerization technologies like Docker and Kubernetes are also fundamental to architectural flexibility.
+Containers package up an application and its dependencies, ensuring it runs consistently across different
+environments ­ whether it's a developer's laptop, an on-premise server, or various cloud platforms. Kubernetes
+then orchestrates these containers, managing deployment, scaling, and operations. This approach not only
+ensures portability and avoids vendor lock-in (you're not tied to a single cloud provider's proprietary services)
+but also streamlines the deployment pipeline for AI models.
+
+And as we build out these capabilities, an API-first design philosophy is paramount. By exposing data and
+functionalities through well-defined APIs, we simplify integration with new and emerging AI tools and
+frameworks. As the AI ecosystem continues to churn out innovations, an API-first approach ensures that our
+core infrastructure can easily connect to and leverage these new capabilities, maintaining agility and allowing
+us to adopt the best tools for the job without major re-architecting.
+
+Finally I would like to bring up distributed technologies which are designed from the ground up to address
+many of these modern AI infrastructure challenges, like CockroachDB. It has been a long time since a vendor
+impressed me this much.
+
+These distributed architectures are great for modern AI demands. You get seamless horizontal scaling across
+regions, automatic data rebalancing (no more manual sharding), and low-latency global access--all while
+preserving strong consistency. That's a major win for real-time AI systems. Plus, coupling this with elastic
+compute and tiered storage means you're not just scaling--you're optimizing resource usage dynamically,
+which is exactly what volatile AI workloads demand.
+
+The Journey Continues
+
+These foundational discussions around core requirements of scalability, resilience, data agility, and native
+integration with AI workflows, are just the beginning and we must consider cybersecurity and compliance
+concerns as we become any company's strategic enablers.
+
+The possibilities that AI unlocks are immense, but realizing that potential hinges on the strength and
+intelligence of the infrastructure that supports it. By prioritizing modularity, flexibility, efficiency, and strategic
+alignment ­ and by leveraging modern data technologies designed for these challenges ­ we can empower
+our organizations to deploy AI agents that truly transform our businesses, adapting to evolving needs without
+overwhelming our budgets or our teams.
+
+I'm keen to hear your experiences. What are the biggest infrastructure challenges you're facing in your AI
+journey? How are you approaching this balance between innovation, cost, and future-readiness? Let's keep the
+conversation going.
+
+ARTICLE PUBLISHED IN 09 MAY 2025
+
+CTO & CDO Challenges in Supporting Data and AI in Large Organizations
+
+Many organizations today possess much more data than they can make sense of. The potential for artificial
+intelligence, data science, and machine learning to convert this data into value in operations is considerable.
+However, the journey from this potential to business outcomes with measurable effect is tricky.
+
+Following the roadmap I discussed in my last article on things I learned in the trenches, in this piece I will
+touch on something professionals coming from a software development background face when they take
+over as CDOs or CTOs. Many technology leaders have developed software their whole careers without
+realizing how nuanced and specific data projects are. Now as AI and Data are blobbing their way onto the
+technology field, these leaders oftenly ask: "What should I focus on to support a true data driven push?"
+
+As many of my colleagues, friends and readers know, my work experience in data transformations across
+various sectors has shown that success depends not only on technology. Strategy, people, and culture are
+huge factors. I will expand on those later. Today I will discuss the three legs of the stool leaders will likely be
+standing on when implementing data products and AI for large organizations.
+
+The first Leg: Data
+
+Let me start with the data itself: Some organizations fall into the trap of trying to "Catalog the Universe" before
+even starting to engage the potential use cases and business value they could obtain from becoming data
+oriented.
+
+Collecting, transforming, storing, and retrieving data are complex, costly and messy activities. Redundant
+types and often contradictory data, collected by different methodologies and under different definitions are
+the norm and a main source of cost, confusion and inefficiency. In large companies, data integration projects
+frequently face difficulties from data formats that differ and conflicting standards, especially when interacting
+with systems from an earlier time.
+
+Therefore, establishing data quality, data consistency, and implementing governance with depth and breadth
+is a foundation step. Setting benchmarks for data quality, fully sanctioned and cared for by responsible data
+owners guarantee the organization has data that can be trusted by anyone. The technology area must
+establish and implement governance mechanisms that operate with automation, including data lineage
+tracking and data dictionaries with detail that is comprehensive, and assist in maintaining quality when
+operating at scale. These systems aid compliance with regulations such as GDPR or HIPAA.
+
+This is such an important and underappreciated basic part of the job. I plan to write in detail about it in the
+future, specifically how these programs lead to data democratization, empowering business teams and
+facilitating the widespread adoption of AI across organizations.
+
+The second leg: Infrastructure Foundation.
+
+As the quest for taming the data deluge goes on, in my experience a continuous assessment and
+strengthening of the technological infrastructure that supports the whole thing must be carried on.
+
+The scope of this work is wide, encompassing the various IT platforms that support both current business
+operations as well as the ensuing data applications: from data analysis, ML development and automation to
+AI agents integration, those applications inevitably add stress onto the overall infrastructure responsible for
+running apps, legacy systems, ERPs, and every aspect of a company's business.
+
+I can tell you that you will be responsible for maintaining and improving what currently exists and works, while
+expanding it to perform crucial data driven activities like collecting old and new data, cleaning, organizing,
+development and testing. Once this is all over, then the infrastructure will consume, deploy and support all the
+delicious innovations and AI trinkets we love.
+
+Hence, the infrastructure foundation shall support a multi structure and full-cycle data usage designed for AI
+automation, which will make the analysis and suggest the decisions (or even make the decisions
+autonomously). This is a game changer as the analytical environment has to be fully integrated with the
+operations environment, to measure, evaluate and improve the consequences of those decisions.
+
+Most companies are not even there yet. Most still have in mind the analytical part of that data-driven arch:
+creating dashboards to support "better informed decisions". But even in those the game has moved from
+ingestion and dashboards to complex integrations, particularly with platforms from earlier eras, embracing
+new environments, flexible designs, modular components, and innovative architectures. In those companies
+technology infrastructure was designed to deal with structured data, but as digitalization grows, numerous
+data formats and unstructured data sources like video, conversations, mechanical sounds must be stored,
+processed and used in advanced algorithms and ai agents.
+I favor architectures built from interchangeable components and solutions designed as a service for their
+interoperability and capacity for growth. This allows component reuse without waste, avoiding rework that
+incurs high expense. But how we utilize those architectures has changed tremendously in the last three years.
+
+This discussion is far beyond the familiar on-premise versus cloud. It is about how to best use multiple
+environments to construct a data backbone that shows resilience as businesses expand and demand scaling
+infrastructure capabilities. Legacy IT systems might not satisfy demand and need to be replaced. Cloud-native
+architectures, serverless computing, and provisioning with automation offer flexibility but might become a
+vulnerability, a liability or both.
+
+This topic as I expected has drawn a lot of attention and I got such tremendous feedback from my data
+architect friends and colleagues that I plan to get back to it in future articles. This also has raised the need of
+the technology area to embrace a data driven approach onto itself!
+
+For now, lets move to the final leg
+
+Third leg: Implementation Innovation, Scale, and Data Products
+
+With data foundation and infrastructure progressing, attention moves to balancing innovation pursuit with
+steadiness in operations. It is expected that Chief Technology Officers guide digital transformation while
+keeping the lights on and the business operating seamlessly. This is a balance act that requires a keen eye on
+the future of the industry and the company, slicing technology adoption in stages, and non stop process
+optimizations. It involves embracing new tools, maintaining systems that function well, and retiring elements
+that are no longer current or may have become a liability in cost, security, or maintenance.
+
+And yes, again, this requires a data driven approach, with the technology area generating data about itself,
+analysing and evaluating its own performance at set intervals, planning for capacity, finding bottlenecks and
+the costs imposed on the area and on the broader organization.
+
+However this third leg is about something completely different from the technical topics covered so far. This
+is about dealing with the consequences of a successful journey until this point. This third leg is about
+developing people so they can reap the fruits of organized and comprehensive data and a powerful
+technology stack capable of making their most innovative business idea come true.
+
+This is where I saw so many companies stumble.
+
+At this point, companies are excited about the success and novelty of the technologies introduced, the power
+of data, the workshops, the internal stakeholder engagement, the encouraging results of MVPs and POC. That
+is when internal demand explodes as every single department in the organization wants to jump into the
+bandwagon and get the benefits of this data-driven digital transformation process.
+
+It is time to scale from a central data function whose job is to carefully curate data and skillfully develop data
+products to an open and wide full scale transformation where data assets are tailored for, or adapted by
+individual business departments to new requirements, under standard frameworks of common governance.
+That's when data products are scaled up to volumes and specifications that far exceed the original ones
+sanctioned by the central data function.
+
+While working on this leg CTOs and CDOs are required to provide training, keep a watchful eye for compliance,
+cybersecurity, support data and software engineers to learn non technical skills: from agile and customer
+centricity to empathy and text interpretation, while providing to salespeople, layers accountants, medical
+doctors, surgeons, marketing experts, cooks the technical training they need to develop their own data
+products, AI agents, in a responsible and effective manner.
+
+In my experience those three legs must not be built apart from each other, but all at once, one supporting the
+other. Oftenly there will be different maturity levels for each of them and that is fine. Though they are NOT the
+only aspects that guarantee the success of data projects, I hope that if you step up to a leadership role in data
+and technology, you will find these thoughts useful.
+
+The stage is set for data democratization, data literacy, people engagement, data security, and strategic
+alliances to come into focus. I want to talk about them next time.
+
+I would love to know what you think, what in your experience supports successful implementations, please let
+me know if I missed something or if I left something out. Let's keep this conversation going.
+
+ARTICLE PUBLISHED IN 4 MAY 2025
+
+ *May the Fourth be with you all! *
+
+Like many of you, I absolutely love the *Star Wars* saga. Beyond the epic space battles and iconic characters,
+I often see powerful parallels between building that incredible universe and launching successful data
+projects right here in our own galaxy. Think about it ­ isn't the journey of deploying a new app or AI Agent as
+thrilling as the Death Star's trench run? I was reminded of that last night as I watched Andor's episode 6 (what
+a fantastic show) and I would like to share some thoughts about the franchise on this day:
+
+This continuously expanding space opera's original trilogy started centered on Luke, Leia, Han, R2 and Vader.
+It told a compelling, core story before expanding outwards. Similarly, our most impactful data projects often
+begin by addressing a specific, critical need, delivering value quickly before scaling up. Paraphrasing Vader:
+*"If you only knew the power of the MVP"* .... we must always start with a focused vision that tackles a real,
+tangible problem.
+
+And just as the Star Wars universe established its fundamental rules early on ­ how the Force works, the
+nature of hyperspace, the might of the Empire ­ strong data projects need solid governance from the outset.
+Defining these core principles, structures, and standards allows our data ecosystems to grow coherently and
+reliably. Paraphrasing Master Yoda: *"Data Governance is strong in this one"* . Indeed, strong governance
+does not hinder nor turn things "bureaucratic". It creates the foundation upon which we can build, innovate,
+and add new capabilities, ensuring everything works together harmoniously.
+
+Neither Cassian Andor, Grand Admiral Thrawn nor Ashoka Tano were created by George Lucas, but they are
+fantastic characters whose stories make the whole thing richer, more enjoyable, more inspiring. As other
+authors and fans inserted their perspectives, co-creating plots and storylines and adding value to us all, *Data
+Democratization* comes into my mind. The same way the rebellion belongs to the whole galaxy *Great data
+projects do not belong to a single centralized team* . Those expand on their own, driven by user's needs,
+specific commercial goals and developed by data savvy padawans, knights and masters. It is our job as
+leaders to nourish these heroes and support them to scale effectively and confidently.
+
+What parallels do you see between your favorite stories and the world of technology, data and AI? Let's share
+our insights and inspire each other to build data projects that are truly out of this world!
+
+*...And May the Force be with us... always!*
+
+ARTICLE PUBLISHED IN APRIL 2025
+
+Okay, let's get straight to the point. We're constantly told that data is the new oil and AI is revolutionizing
+everything. It sounds great, like flipping a switch and suddenly having a smarter, faster, better business. But
+let's be real ­ it's rarely that simple. While data and AI are becoming as fundamental as electricity, translating
+that potential into real-world business value is where most organizations hit a wall.
+My name is Erlon Rachi. For over two decades, I've been deeply involved in data transformations across
+various industries and three continents. I've seen the promise, but I've also seen the pitfalls firsthand.
+Remember that sobering statistic? Something like 87% of data science projects never reach production. Why?
+Because success isn't just about technology; it's about strategy, culture, and execution. It's about moving
+beyond simple reports to genuinely embedding data insights into the fabric of your business.
+
+That's why I'm kicking off this series of articles. My goal is to share practical, on-the-ground insights ­ lessons
+learned from years in the trenches ­ to help you, your teams, and your companies navigate this complex
+landscape. This first piece is an invitation: let's explore together how to genuinely unlock the power lying
+dormant in your data, paving the way for meaningful automation, machine learning, and AI.
+
+My plan is to engage in a conversation with you, sharing my experiences and learning about yours. I plan to
+organize these conversations by topics which are key elements of success , positively influencing and
+supporting each other, carrying the lessons that we've learned along the way. I am counting on your feedback
+to gauge how deep to dive into those topics, either exploring code, case studies, libraries, books, references
+and conversations with the friends I made throughout my journey.
+
+The goal is to help anyone to achieve tangible business results through data and AI projects by discussing
+what supports them. Today , however, I want to lay out these topics and how I see the conversation evolving.
+
+I will start with The Data and its supporting Infrastructure Challenge: "More Isn't Always Better" and the
+recognition that we're swimming in data and the pool deck is not for free, nor was it built by nature. Collect,
+transform, store, retrieve, identify possible value in that data, verify that value, these are not only
+computationally intense operations but also costly ones. Building this foundation of structure, ingestion,
+platforms and frameworks has its challenges and we could stay discussing the pool and the water for ages,
+but we must not miss the point: this pool and the water in it has a purpose and we must understand it. Are we
+hosting the Olympic swimming competition or a pool party?
+
+I will move on towards the necessity to find beauty in the chaos and that's when Data Governance shines. It
+isn't red tape; it's the framework that ensures your data is accurate, consistent, secure, and ethically handled.
+Who owns the data? Who can use it? How is quality maintained? Good governance builds trust ­ trust in your
+insights, trust from your customers, and trust that you're complying with regulations. In the age of data and AI,
+I believe trust is gold!
+
+I also want to talk about a conviction I hold strongly: technology follows culture. You can invest heavily in
+platforms and explore castles on the clouds, but if your organization doesn't embrace data literacy, foster
+collaboration, and empower data-informed decisions, you'll hit a ceiling.
+
+It deserves a topic of its own, but it is a key element present in every other one: the Cultural change and the
+role of leadership, not only changing minds on the field, and in our stakeholder's departments, but also in the
+technology and data areas. This is about shifting from simply reporting what happened to using data to
+understand why, predict (or at least give a great hunch) what's next, and make the decision about what to do
+the most educated possible.
+
+Leadership also plays a vital role in championing the creation of an environment where experimentation is
+encouraged (and yes, that means learning, analysing the data, from occasional failures). A true data-driven
+culture is the engine of sustainable innovation. And nothing helps this more than embracing agile,
+experimentation and scale!
+
+This is what Data Digital Transformation is all about, as it requires encouraging curiosity and critical thinking
+with data across all levels. It means breaking down silos so business experts, tech teams, and analysts work
+together, speaking a common language.
+
+This also applies to identifying the core "Burning Business Question" ­ the specific problem you're trying to
+solve ­ data efforts often become costly exercises in exploration with no clear destination.
+
+I plan to dive into the meta portion of the story: acknowledging how little data areas use KPIs themselves, how
+to use models internally, self improvements, and scaling up our very own impacts. I will also write about the
+pitfalls regarding training and onboarding, the relentless and rewarding stakeholder management process,
+and the link between strategic thinking and budget planning and execution. ,
+
+Join the Journey
+
+Transforming into a truly data-driven organization is a journey, not a single project. It requires a blend of
+strategic vision, technical know-how, cultural change, and unwavering focus on delivering measurable value.
+
+My passion lies in helping organizations navigate this journey. Through this series, I'll share practical
+frameworks, real-world examples, and lessons learned on topics ranging from governance and team building
+to ethical AI and specific implementation strategies.
+
+The future belongs to organizations that can intelligently harness their data. It's about building not just
+smarter systems, but smarter, more adaptive, and more trusted businesses.
+
+I invite you to join me in these upcoming posts. Let's explore how to move beyond the buzzwords and turn
+your data potential into a powerful, sustainable strategic advantage. I look forward to sharing more and
+hearing your thoughts.
+
+Last I would like to thank the support and inspiration I got to embark on this series: Mark Rodseth , Carolina
+Wosiack Naomi Garratt Andrew Beckett Nikos Anastopoulos Henadzi Dubin Breno Spadotto Miguel Frasquilho
+Jamie Norrington Prof. Dr. Marcos Santos Thank you very much!
+ARTICLE PUBLISHED IN MARCH 2025
+
+Implementing AI solutions: The Practical Playbook for Innovators
+
+Let's face it--AI is the buzzword of the decade, and everyone is rushing to integrate it into their business. But
+here's the rub: about 87% of data projects never make it to production, and only 27% are considered profitable.
+So, how do you avoid becoming part of the gloomy statistics?
+
+Having navigated through hundreds of projects across multiple industries, I've seen what makes or breaks an
+AI initiative.
+
+Whether you're a scrappy startup or a seasoned enterprise, here are the crucial steps you need to get right to
+ensure your AI solution doesn't just survive--it thrives.
+
+You can't build a solution without a clear problem. Successful AI projects always start by asking: "What's the
+burning business question?" AI isn't a magic wand; it's a powerful tool that needs a clear direction. Setting the
+purpose of the AI agent you want to develop or deploy might be the most difficult one in the whole journey.
+
+Next, truly embrace agile. The faster you iterate, the quicker you learn. Enterprises often get bogged down in
+infrastructure concerns--storing data, processing algorithms, governance, security, and compliance.
+Meanwhile, startups typically bypass this complexity by leveraging cloud-based solutions, focusing their
+energy on experimenting with compelling products or services.Breaking down the roadmap, trying out MVPs
+help you cut through the maze. The goal is to get something done, not build the best AI agent in a single
+project. Work iteratively!
+
+None of this works however if the right people are not involved. Not only the right technical people who are
+developing the AI, or integrating and deploying it, but also the stakeholders, customers, peers.. AI projects
+hinge on team capability and a data-driven culture. Skills are vital, but curiosity and adaptability are even more
+critical.
+
+This is, however, only the start of a process as creating the AI solution itself is just your first punch. Sure, it
+feels great to develop an algorithm that solves a complex problem, but your second punch--scaling your
+solution--is where true impact lies.
+
+This second punch requires scaling up and addressing issues like reliability, traffic volumes, security,
+compliance and, most important of all, measuring the costs and the effectiveness of the AI agent addressing
+the Burning Question that has motivated its development.
+
+A successful implementation then is one that has passed the three main filters: Cost, considering not only the
+initial development costs, but also factoring in AI tokens, infrastructure usage, maintenance, and scaling
+expenses.Time to Scale: Realistically assessing how quickly your MVP can evolve into an operational asset
+across the organization and finally Effectiveness, measuring how effectively your AI solves the core Burning
+Question..
+
+Whether your company feels more like a startup or an enterprise, your success with AI boils down to clarity of
+purpose, agile processes, and people who understand, embrace, and innovate with data.
+ARTICLE PUBLISHED IN APRIL 2025
+
+1. The AI Implementation Journey
+From your experience, what are the most critical first steps for a company looking to implement AI solutions
+successfully?
+
+The very first step towards implementing AI is leveraging human intelligence in the company: That means
+having data savvy people in the team who are able to identify the low hanging fruits, meaning which problems,
+bottlenecks or inefficiencies yield the most impact, considering that they can be addressed by available data.
+There are many flavors of AI solutions: from GenAI that creates codes and marketing campaigns to machine
+learning algorithms that recommend the next product to be offered. Choosing which to start implementing
+requires human intelligence over the company's goals.
+
+Second is embracing experimentation: testing those solutions in small markets, or in limited time periods,
+learning from the results, which is just another way to say that companies need to gather data and analyse it
+against company objectives. Experimentation is the process of accruing the impact each solution has
+brought, understanding what works and what does not work.
+
+Third is consistency in scaling up and iterating: that means that whatever solution that works must be
+expanded to cover the whole business while they need to continue to be measured for efficiency and improved
+
+This is a never ending cycle, based on data, experimentation and innovation, aligned with business success.
+As companies go through it, more complex and sophisticated AI solutions can be deployed.
+
+2. Identifying the Right Problem
+AI is only as good as the problem it solves. How can organizations ensure they are applying AI to the right
+challenges?
+
+Before starting companies must run an assessment of the existing challenges, capabilities, investment levels
+and benefits being pursued. The objective is to balance technical feasibility with business impact. The
+candidate problems must align with company core business strategies: focusing on cost-control and
+efficiency if the company operates in a resource intensive industry or focusing on scale when operating in
+large horizontal markets.
+
+My favorite framework is an AI opportunity matrix that maps potential use cases against two axes: strategic
+value (revenue impact, customer experience) and implementation complexity (data readiness, technical
+complexity, financial ability, current stage of data development)
+
+3. Scaling AI Beyond the Prototype Stage
+Many AI projects never make it past the MVP phase. What are the biggest barriers to scaling AI solutions, and
+how can companies overcome them?
+
+In my experience, there are three big barriers: First is trying to utilize the same AI algorithm or ML
+methodology developed for the MVP in the scaled up version. It is the equivalent of knowing how to prepare
+pasta at home and then working the same way to feed an army battalion. Even though the main course is the
+same, things run very differently in the kitchen. Different algorithms, codes, and tech stack are needed to scale
+things up
+
+The second barrier is cost: they differ greatly from MVPs into scale. Investment costs have to be factored in,
+as well operational costs, training, security, compliance, redundancy. P&L analysis is still king
+Third is the integration of the AI solution into the overall customer experience. One must never forget that AI is
+part of the customer experience, it is not all of it. Any AI powered solution must fit perfectly into the customer
+journey and the overall experience. If AI introduces an element of oddity and weirdness that undermines other
+aspects of the company's offer, it might bring problems far greater than the ones it initially was designed to
+solve
+
+4. The Agile vs. Enterprise Approach
+There are two dominant approaches to AI implementation--enterprise-level infrastructure vs. agile
+experimentation. How should companies determine which approach suits them best?
+
+It is not one OR the other, but one AND the other. The important thing is understanding WHERE companies are
+in the development cycle I discussed before. Fast agile experimentation is essential to identify the existing
+problems, costs, ROI, interactions with established business models, while Enterprise-level approach usually
+tackles the topics related to scalability, reliability, security, basically things that allow the MVPs to profoundly
+transform the business and unlock major returns.
+
+5. Measuring AI's Impact
+What are the most effective ways to measure the success of an AI implementation in terms of cost,
+scalability, and effectiveness?
+
+This is fundamentally linked to the company expectations prior to the AI deployment which heavily influence
+the calculation of the return of the investment. When it comes to cost, it is important to consider the factors
+like the total cost of ownership (TCO), which includes data acquisition, model development, cloud/compute
+expenses, and maintenance and the reduction of operational costs (OCR) which take into account productivity
+increases, error correction, or process inefficiencies.
+
+Scalability usually involves the creation of KPIs that measure performance like Inference Latency which is the
+time for AI to generate results as load increases, cloud costs per million requests, etc.
+
+Effectiveness metrics is always measured by an internal metric that has to make sense for the leadership
+reflecting a balance between technical results, like how well a given model identifies fraud, and business
+results, like how much money was saved by flagging fraudulent operations.
+
+6. The Role of Data in AI Success
+High-quality data is the foundation of AI. How can companies ensure they have the right data infrastructure to
+support their AI ambitions?
+
+First it is necessary to have an overkill infrastructure capable of cataloging the universe! That's why
+differentiating the ambitions from what is needed at this point is the company's journey is so important.
+
+In my experience, one must always start working using scalable architectures that can handle the amounts of
+structured and unstructured data the company needs at that particular moment. Cloud-based data lakes,
+modern data warehouses, and real-time processing pipelines are essential to ensuring that AI models can
+access and process information efficiently. Without these core capabilities, AI projects often become
+bottlenecked by slow retrieval times, fragmented datasets, and rigid legacy systems that cannot adapt to
+evolving business needs.
+Moving beyond infrastructure, a strong governance to maintain accuracy, consistency, and security is the
+often overlooked stepping stone that guarantees that data can be trusted and put to good use.Security and
+compliance are also part of the governance framework and both play a critical role ensuring AI systems not
+only drive innovation but do so responsibly.
+
+Ultimately, AI success is as much about culture as it is about technology. A strong data infrastructure must be
+accompanied by a shift in mindset, prioritizing cross-functional collaboration, data literacy, and ethical
+considerations. Companies that foster a culture where business leaders, data engineers, and AI researchers
+work together will be better positioned to turn their data into a true competitive advantage.
+
+The most successful AI implementations are those that align with business goals, integrate seamlessly into
+workflows, and are built with long-term sustainability in mind.
+
+7. AI and Decision-Making
+
+AI is often seen as a tool for automation, but how can it be leveraged to enhance strategic decision-making
+within businesses?
+
+Algorithms focused on automation, efficiency and quick response belong to the type of AI and Machine
+Learning mankind has already put to use for the last 60 years. What is new about the current stage of AI is
+that it already is far more than an automation tool. It has become a powerful engine for strategic
+decision-making, capable of uncovering patterns, predicting trends, and guiding leaders through complexity
+with data-driven insights.
+
+The challenge is to organize the flow of data, creating and analyzing vast datasets so AI can simulate different
+scenarios. AI agents and specialised analytics help businesses anticipate market shifts, mitigate risks, and
+optimize resource allocation with greater precision. It also enhances human judgment by surfacing hidden
+correlations and challenging biases, ensuring that decisions are based on evidence rather than intuition alone.
+But for AI to be truly transformative, companies must embed it into their strategic processes, fostering a
+culture where data-driven insights shape long-term vision and competitive advantage. When leveraged
+effectively, AI becomes not just a tool for efficiency, but a trusted partner in shaping the future of business.
+
+8. The Ethical Challenges of AI Implementation
+As AI adoption grows, so do concerns about bias, transparency, and accountability. What steps should
+organizations take to ensure ethical AI deployment?
+
+Bias in AI arises basically from two root causes. The first one is when models learn from skewed or
+incomplete data, leading to unfair outcomes that can reinforce the bias contained in the datasets. The second
+one emerges from humans who are interacting with AI carrying their own biases into the models by the
+prompts, flows, or selections they provide to the algorithms powering AI.
+
+To combat this, companies must implement rigorous data governance practices, regularly auditing datasets
+for representativeness and fairness. Techniques such as bias detection algorithms, adversarial testing, and
+diverse data sampling can help mitigate unintended discrimination.
+
+But technology alone is not enough. Fairness and ethical behaviour must be part of the company culture and
+training. Actions like establishing interdisciplinary review teams, bringing together ethicists, legal experts, and
+domain specialists to scrutinize AI systems before they are deployed at scale must be part of the toolbox.
+
+Transparency and accountability are equally critical. AI models should not operate as "black boxes," where
+decisions are made without clear explanations. Instead, AI development must prioritize explainability by using
+interpretable AI techniques, such as counterfactual analysis, to clarify how models arrive at their conclusions.
+In my opinion, this approach which is favored in Europe, the UK and is at the foundation of the open-sourced
+AI community is the most sensible one.
+
+9. Common AI Implementation Pitfalls
+What are the most common mistakes companies make when implementing AI, and how can they avoid them?
+
+One of the most common mistakes companies make when implementing AI is treating it as a plug-and-play
+solution rather than a strategic investment that requires careful planning and integration. Many organizations
+rush to deploy AI without first ensuring they have high-quality, well-governed data, leading to unreliable models
+and poor performance. Others underestimate the need for cross-functional collaboration, leaving AI initiatives
+siloed within technical teams without input from business areas, domain experts, or end users.
+
+Another critical misstep is failing to define clear success metrics and expecting immediate results without
+iterative refinement. AI is not a one-time deployment, it is the opposite of it! AI requires continuous monitoring,
+retraining, and adaptation as business conditions evolve and data used to model situations change, because
+society and business change.
+
+To avoid these pitfalls, companies must first invest in AI literacy across all levels, ensuring leadership and
+employees understand how AI functions and its limitations. As this change mindset is going on, invest in a
+strong data foundation, ensuring their AI models are trained on clean, representative, and unbiased datasets.
+
+Equally important is fostering collaboration between AI engineers, data scientists, business strategists, and
+frontline employees to ensure AI is designed with real-world needs in mind, establishing feedback loops,
+incorporating human oversight and performance audits to catch errors before they escalate.
+
+10. The Future of AI Implementation
+Looking ahead, how do you see AI implementation evolving, and what trends should businesses prepare for in
+the coming years?
+
+AI implementation is poised to move from boardroom buzzword to an invisible, indispensable force running
+beneath the surface of everyday business operations. Companies will no longer ask, "Should we use AI?" but
+rather, "How do we solve this?" 
+I expect AI to shift from clunky, one-size-fits-all models to hyper-personalized, context-aware systems that
+adapt to individual users, industries, and even moods (yes, your AI assistant may soon know when you need
+coffee before you do). Businesses should brace for the rise of AI copilots not just automating tasks but
+actively enhancing human decision-making and helping us "get in the zone" in a seamless manner, making us
+more productive and reflective as we reason with AI to get better outcomes.
+
+Ethical AI, explainability, and regulatory compliance will become non-negotiable, not just to avoid lawsuits but
+to build trust in an increasingly skeptical world. The future of AI isn't about replacing people; it's about
+augmenting them.
+
+As the AI powered economy takes shape, I strongly believe that the currency of the future is TRUST. If your
+company can accurately interpret the vast amount of data being collected from the world, it will be trusted
+and therefore valued by customers, partners and the society.
+
+ARTICLE PUBLISHED IN SEPT 2024
+As an exec in data and tech, it's crucial to sync personal brand goals with company strategy, avoiding clashes.
+Balance technical expertise with the particularities of the company, respecting how data is created and its
+intended practical usage. Be clear and steady about the governance structure, supporting your team while
+valuing honest feedback. Pushbacks are inevitable and when considered carefully either lead to a better
+governance rules or to the broader organization comprehending the need to adhere to the governance
+structure. Networking must be used wisely as it might lead to partnerships you must always keep in mind
+confidentiality and sensitivity of internal processes and intentions that generated the data environment you
+are in charge of governing.
+
+ARTICLE PUBLISHED IN JULY 2024
+Leaders must balance tailored communication with ethical considerations and authenticity. This is particularly
+important in the Tech Industry and becomes a must when interacting with people that do not have a technical
+background. It demands more than superficial adaptation but truly grasping where your audience's
+understanding and focus are, and the vision you want to carry. How can your messages resonate deeply
+without diluting your vision as a leader? For me these are the two key elements: First, ethical and engaging
+storytelling woven with relevant data that supports every aspect of the message: the goal, capabilities, risks
+and the immediate actions needed. Second, why should your audience care, what is in it for them, the reasons
+why they should engage and think about your message. This generates meaningful and effective feedback,
+fostering trust and impact.
+
+ARTICLE PUBLISHED IN AUGUST 2024
+We all build models of the world in our heads ­ it's how we make sense of things and predict what's coming
+next. But garbage in, garbage out, right?
+
+That goes for our brains AND our AI! This awesome article by Damien Benveniste, PhD dives into the
+nitty-gritty of optimally sampled imbalanced training data. Because just like we need to read different
+viewpoints and connect with diverse people, AI needs a balanced input to avoid becoming a narrow-minded
+bot.
+
+How do you deal with imbalanced data? If you don't have too much data and the imbalance is not too extreme,
+the typical way to deal with it is to simply reweigh the samples such that the loss function considers the
+positive and negative samples equally. When you have an overwhelming amount of negative samples, you
+may want to downsample them to minimize training latency.
+
+But not all samples are equal! At TikTok, for example, for their recommendation engine, they use a
+non-uniform negative sampling scheme they developed with the University of Connecticut:
+https://lnkd.in/gRsFSr2d. They proved that optimal sampling of the negative class is done when giving more
+weight to samples with a higher probability of being positive (Theorem 3). This means that it is better to keep
+samples that are confusing for a model. This way, the model focuses on learning how to separate true
+positive samples from negative samples that look like positive ones.
+
+Interestingly enough, this theorem also means sampling bias is a good thing! In ML applications, a model
+shows users some samples they are likely to engage with. When they don't engage with those, they become
+negative samples for the next training batch. That is sampling bias because only the samples with a high
+probability of engagement ever get shown to users, and they never get the opportunity to interact with the
+"lesser" samples, so we never get signals for those.
+
+By sampling the data, we bias the probability estimates coming out of the model, and they become
+meaningless. The model is not calibrated anymore. To fix that, they came up with a correction of the likelihood
+function to generate unbiased estimates of the model parameters and, therefore, the probabilities (see eq 5).
+
+Practically, you follow this process to sample down negative samples:
+
+1) Uniformly sample the negative class so that the data becomes balanced.
+2) train a model with balanced data. They call it a "pilot" model.
+3) predict the full data with that pilot model. You get an estimate of how much the model believes the sample
+is a positive one.
+4) normalize that probability p by the average probability w and multiply by the sampling rate r: r * p / w
+5) for each negative sample, pick a uniform random number u. If u < r * p / w, keep the sample; remove it
+otherwise. The greater p is, the more likely we will keep it
+6) r * p / w is the sampling probability. When training the model or predicting, correct the log odds using that
+probability.
+
+ARTICLE PUBLISHED IN JULY 2024
+
+## **A Data-Driven Executive's Perspective: Monitoring for Continuous Improvement in Data Governance
+Training**
+
+The article provides a comprehensive overview of the key considerations for monitoring a data governance
+training program. However, I believe it's essential to go beyond mere monitoring and emphasize the
+importance of **continuous improvement** based on data-driven insights. Here's my perspective:
+
+**1. Embrace a data-centric approach.** The article mentions collecting data, but we need to move beyond
+basic metrics and delve into **advanced analytics**. Leverage data visualization tools to identify trends,
+patterns, and correlations between training elements and trainee performance. This allows for **data-driven
+decision-making** to optimize training content, delivery methods, and overall program effectiveness.
+
+**2. Foster a culture of feedback and iteration.** The article suggests collecting feedback, but we should
+**actively encourage continuous dialogue** with trainees and stakeholders. Utilize surveys, focus groups, and
+open communication channels to gather **qualitative and quantitative feedback**. This ongoing feedback
+loop enables **rapid iteration** and ensures the training program remains **relevant, engaging, and
+impactful**.
+
+**3. Prioritize transfer of learning and behavior change.** Monitoring trainee performance beyond
+assessments is crucial. Track **real-world application** of learned skills and observe **changes in data
+governance behavior** within the organization. This ensures the training program translates to **tangible
+improvements** in data quality, compliance, and overall data governance maturity.
+
+**4. Adapt to the evolving data landscape.** The article briefly mentions the need to update training for
+emerging technologies. We should **proactively anticipate** future trends and challenges in the data
+governance landscape. This involves **continuously scanning the horizon** for new regulations, technologies,
+and industry best practices, and **integrating these insights** into the training program to ensure it remains
+**future-proof**.
+
+**5. Cultivate a learning ecosystem, not just a training program.** The article focuses on a single training
+program. We should view data governance training as part of a **holistic learning ecosystem**. Encourage
+**self-directed learning** by providing access to additional resources, knowledge-sharing platforms, and
+mentorship opportunities. This fosters a **culture of continuous learning** and empowers individuals to
+become data governance champions within the organization.
+
+By adopting this data-driven and iterative approach, we can transform data governance training from a
+one-time event to a **continuous improvement engine**. This ensures our workforce remains equipped with
+the **knowledge, skills, and behaviors** necessary to navigate the ever-evolving data landscape and **unlock
+the full potential of data** as a strategic asset.
+
+In my experience, data governance isn't just about firewalls and access controls. It's about building a
+foundation of trust around our data, transforming it from just locked-in numbers into strategic assets.
+
+Sure, lineage, quality, and security are crucial, and data catalogs allow effective development but they are not
+enough. The real magic happens when data is used to make good business decisions.
+
+A data-literate organization leverages the governance process to transform data into knowledge, overcoming
+market changes, perception bias, regulatory shifts, product versioning and privacy concerns.
+
+ARTICLE PUBLISHED IN SEPTEMBER 2023
+
+ Happy Data Privacy Day, everyone!
+At Kaizen Gaming, we take data privacy very seriously. Every day is *"Data Privacy Day"* for us.
+
+In today's digital world, our personal data is more valuable than ever. We're committed to protecting the data
+of our customers, employees, and partners. Everyone's data is safer when every company and individual
+handle personal data responsible, so here are a few simple things you can do to protect your privacy:
+* Be mindful of the information you share online.
+* Use strong passwords and two-factor authentication.
+* Be careful what apps you install on your devices.
+* Regularly review your privacy settings.
+
+And if you work in a company that collects or handles personal data, it's essential to follow industry best
+practices. This includes:
+* Getting clear consent from individuals before collecting their data.
+* Using data only for its intended purpose.
+* Protecting data from unauthorized access, use, disclosure, alteration, or destruction.
+* Implementing appropriate security measures.
+
+We believe that everyone deserves to have their data protected. Join us in making Data Privacy Day a day to
+celebrate and promote responsible data handling.
+
+ARTICLE PUBLISHED IN JUNE 2024
+Unleashing the Power of Data: A Mutant's Journey
+
+Within my office, surrounded by data stacks that rival Stark Tower, I find myself on a new frontier ­ the
+information age. As Professor X, I have guided mutants through unimaginable challenges, but this uncharted
+territory demands telepathic abilities of a different kind.
+Here, data flows like a mighty river, carrying valuable insights but also hidden dangers. How to navigate this
+digital sea without drowning in a tsunami of information? It's the question that haunts me as my telepathic
+powers scan the vastness of data in search of answers.
+New Frontiers, New Challenges
+Just as the X-Men have faced new enemies and challenges over the years, the information age presents its
+own dangers. Disinformation proliferates like a weed, and cybersecurity is a constant battle. We must be
+vigilant, adapting our skills and strategies to overcome these obstacles.
+Xavier's Legacy in the Information Age
+Xavier's legacy is based on the pursuit of knowledge and the use of power for good. In the information age,
+these principles are more important than ever. We must use our knowledge to combat disinformation and
+build a better future for all.
+
+Move 1: Mapping the Unknown
+To venture into the unknown, a map must be drawn. With my students ­ brilliant minds in data science and
+artificial intelligence ­ I define the objectives of our mission: to increase data reliability, accessibility, and
+value. More than just numbers, our goal is to transform data into knowledge, into insights that fuel innovation
+and illuminate the path to the future.
+Uniting Forces for Success
+Just as the X-Men unite their powers to face greater challenges, our team of data specialists works together
+to achieve our goals. Each team member contributes their unique skills and knowledge, creating a synergy
+that allows us to overcome any obstacle.
+
+The Vision of a Data-Driven Future
+I believe data can be a powerful force for good in the world. By using data responsibly and ethically, we can
+create a more just, sustainable, and prosperous future for all.
+
+Move 2: Building the Bridge
+The bridge connecting the present to the future is the data infrastructure. Like a mutant weaving their
+telepathic powers, I create a system to collect, store, and analyze data with the efficiency and precision of an
+X-Men strike.
+Impenetrable Security, Absolute Trust
+The security of our data infrastructure is a top priority. I implement rigorous cybersecurity measures to protect
+data against unauthorized access and malicious attacks. Trust in data security is fundamental to the success
+of our strategy.
+Cutting-Edge Technology for a Bright Future
+I invest in cutting-edge technologies to ensure that our data infrastructure is robust, scalable, and adaptable. I
+am always looking for new solutions to optimize data processing and analysis, driving innovation and growth.
+Move 3: Cultivating the Collective Mind
+For our data strategy to thrive, I cultivate a culture of data within the organization. I train our members like
+X-Men in development, teaching them to find, analyze, and interpret data, transforming it into weapons against
+inefficiency and uncertainty.
+Continuous Learning and Evolution
+Learning is an ongoing process in the information age. I encourage my collaborators to seek knowledge
+constantly, participating in training, workshops, and industry events. Through education and professional
+development, I cultivate a culture of continuous learning and improvement.
+Data for All: Democratizing Knowledge
+I believe that knowledge is power and that access to information should be democratized. Therefore, I strive
+to make data more accessible and understandable for all members of the organization, regardless of their
+position or area of expertise.
+
+Move 4: The Journey Continues
+The information age is still in its early stages, like a young mutant developing its powers. Our data strategy is
+a living organism, adapting and evolving as we unravel the secrets of the digital world.
+With Optimism and Determination
+I am optimistic about the future of data and its potential to make the world a better place. With the
+determination and unwavering resolve of Professor X, I will lead my team of data mutants towards the
+uncharted horizon of the data age, ready to face any challenge that comes our way.
+
+ARTICLE PUBLISHED IN JUNE 2023
+## Crownpeak Customer Conference June 14, 2023
+
+- We've been through difficult times with covid, now we're into a new wave of challenge with the economy.
+How is this impacting the priorities and investments of merchants?
+
+   - Pressure on efficiency
+   - Things changed. We need data
+   - Innovating and testing
+
+- We hear how margin has become a key focus for merchants but equally price is now a sensitive driver for
+consumers. Where can merchants find margin improvement without impacting their pricing competitiveness?
+   - Services, identification of exact need.
+-
+
+- With ChatGPT I guess elevating AI into the mainstream. What practices are you seeing merchants
+embracing, the impact, and any lessons learnt?
+
+   - Changing mindsets
+   - Experimentation, innovation
+- We're 3-4 months before we start to move into peak lock down of IT systems. What would you be shouting
+out about for merchants to be focusing on now to be ready to make peak success in 2023?
+   - Prepare infrastructure
+   - Test hypothesis
+   - Train
+
+ARTICLE PUBLISHED IN JUNE 2023 (zero trust by design)
+In the fast-paced world of artificial intelligence development, Trust emerges as the most valuable asset for
+both companies and individuals. If we want a team on the ground to carry out anything that came out from AI,
+people have to trust that they will get the best outcome from following suit. Think about these scenarios: A
+sales representative visiting a certain customer at a specific day, offering a particular product and charging a
+dynamic price for it. Or a technician installing equipment supported by AI interpreting a highly complex
+manual. Or an elderly customer who is trying to get someone to fix a botched purchase. In those cases if the
+sale does not go through or if the equipment isn't repaired properly, or if the customer quits the channel, trust
+will be lost.
+
+We are humans and trust is what makes our societies work, it is the basis of our legal contracts, and it even
+grants our money worth. Without trust, pursuing business goals is futile. If it is shattered, rebuilding it is a
+costly endeavor. As more and more organizations jump onto the AI bandwagon, the question "can I trust AI"
+becomes ever more important. Answering this question in a practical perspective is a matter of continuously
+measuring how well AI responds to the problems we want it to tackle.
+
+As large scale AI proof-of-concept projects are being deployed, we are getting both encouraging results that
+excite us and also anecdotal problems that challenge trust in machine learning and AI, like hallucination and
+poor accuracy.
+
+Hallucination, an issue experienced in some AI models, occurs when the system generates false or
+misleading outputs that seem plausible at first glance. For instance, an image recognition algorithm might
+mistakenly identify a turtle as a rifle due to a specific combination of colors and patterns. Such errors, while
+rare, raise concerns about the reliability of AI predictions and the potential consequences they may have in
+critical decision-making scenarios.
+Poor accuracy is inherent to the model that has been used. Despite significant advancements, AI models are
+not immune to inaccuracies. In certain cases, models may fail to provide accurate predictions due to various
+factors, such as insufficient training data or biases within the dataset. For example, an AI-powered diagnostic
+tool may incorrectly classify a benign tumor as malignant, potentially leading to unnecessary medical
+interventions or misdiagnoses.
+
+Besides that the very nature of reality changes and AI might still be operating under circumstances that are no
+longer true. For instance, a dynamic pricing AI model may struggle to adapt to unforeseen economic events or
+shifts in market behavior, viral information, scandals, etc. This raises questions about the reliability of AI
+predictions when faced with unpredictable fluctuations and changing situations.
+
+I've been contemplating the challenge of Trust for a while at CI&T as more and more of our teams started
+working to develop AI for our clients. I proactively decided to address it by getting inspiration from another
+area in the data landscape: Data Security. I came to adapt and utilize the Zero Trust perspective to all my
+developments. The results are amazing!
+
+So, what exactly is this Zero Trust Approach?
+
+The Zero Trust model acknowledges that trust is built when real world outcomes match predictions or
+interpretations. With this in mind, the developing team must establish a framework of continuous
+experimentation and verification of AI to ensure its reliability. Instead of blindly trusting the outputs of AI or
+language models like ChatGPT, the Zero Trust model assumes the presence of inaccuracies, errors, or false
+responses. It requires subjecting AI models to rigorous testing, using real-world data collected from the field.
+
+Zero Trust also aligns with CI&T's core belief in experimentation, measurement, analysis and redeployment
+that propels every project we execute. The difference now is that the whole process is oriented towards AI
+development. By adopting the Zero Trust Approach, we shift from a mindset of hoping the predictions are
+accurate to understanding if it has met its purpose.
+
+Zero Trust is embedded by design in the product development cycle with clear metrics, purpose and
+responsibilities. It has to be communicated to the entire group of stakeholders in the AI development, not only
+coders or data scientists. Its main tenants are:
+
+Continuous Experiments: Establishing a culture of ongoing experimentation and validation for their AI models.
+Testing and verification against real-world scenarios will uncover potential weaknesses, biases, or
+inaccuracies. This allows for continuous improvement and enhances the overall trustworthiness of AI
+predictions and interpretations
+Never Trust, Always Verify: Instead of assuming that everything generated by AI or machine learning models is
+accurate, the Zero Trust model promotes an attitude of skepticism. It encourages us to verify the outputs
+rigorously through meticulous testing and comparison. By keeping AI's results and assumptions in check we
+get ahead of hallucination and push the whole application to remain trustworthy and reliable.
+Continuous Integration with Field Results: Truly understanding what success looks like in the field, seeking a
+more accurate representation of the challenges and complexities encountered in real life situations, not only
+to verify if the models worked but checking if the outputs were effective, useful and added value to whoever
+used the AI.
+
+There are some other technical and non-technical issues regarding Zero Trust Approach, including ones
+related to compliance with proposed regulations. Implementing it the fullest even for us at CI&T who have a
+tradition of experimentation and customer centricity has been a challenging task. It involves a mindset shift
+from blind reliance to critical verification, enabling teams to identify and rectify weaknesses, enhance
+accuracy, and ensure that AI aligns with the desired outcomes.
+
+I plan to discuss these issues in future articles.
+
+For the time being I submit to you that the Zero Trust Approach is an effective way to foster the thing the AI
+systems will need the most.
+
