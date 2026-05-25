@@ -1,0 +1,92 @@
+# Netlify config — erlonrachi.com rebuild
+# Build: Astro 5 static SSG → dist/
+# Redirects: 301 from old Wix URLs to the new structure (active after DNS cutover).
+# Headers: baseline security defaults.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# ----------------------------------------------------------------------------
+# 301 redirects from the old Wix site
+# Captured from audit-evidence/* during the audit phase.
+# ----------------------------------------------------------------------------
+
+# Old portfolio project URLs lived at /projects-1/<slug> (Wix collection prefix).
+# Two Wix template default slugs need explicit mapping because the displayed
+# title diverged from the slug (audit P0 finding).
+[[redirects]]
+  from = "/projects-1/desert-wildlife-conservation"
+  to = "/work/data-finops"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projects-1/rainforest-action-initiative"
+  to = "/work/season-sport-engagement"
+  status = 301
+  force = true
+
+# All other /projects-1/* URLs → portfolio index (most case slugs changed;
+# safer to land at /work than to 404 on guessed-wrong matches).
+[[redirects]]
+  from = "/projects-1/*"
+  to = "/work"
+  status = 301
+  force = true
+
+# Wix orphan duplicate pages exposed in the old sitemap (audit P1 finding)
+[[redirects]]
+  from = "/copy-of-companies"
+  to = "/work"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/copy-of-projects"
+  to = "/work"
+  status = 301
+  force = true
+
+# Top-level Wix pages mapped to new IA
+[[redirects]]
+  from = "/portfolio"
+  to = "/work"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/companies"
+  to = "/work-with-me"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services"
+  to = "/work-with-me"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resume"
+  to = "/story"
+  status = 301
+  force = true
+
+# ----------------------------------------------------------------------------
+# Security and caching headers
+# ----------------------------------------------------------------------------
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "interest-cohort=()"
+
+# Long cache for fingerprinted Astro assets (anything under /_astro/)
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
