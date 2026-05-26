@@ -7,208 +7,240 @@ import { PILLARS, PILLAR_ORDER, groupByPillar, sortByDateDesc } from "../../data
 const essays = (await getCollection("essays")).filter((e) => !e.data.draft);
 const grouped = groupByPillar(essays);
 const totalEssays = essays.length;
-
-const dateFmt = new Intl.DateTimeFormat("en-GB", {
-  year: "numeric",
-  month: "short",
-});
 ---
 
 <Layout
-  title="Writing — Erlon Rachi"
+  title="Writing · Erlon Rachi"
   description="Essays on agentic AI, governance, data infrastructure, leadership, the human factor, and field notes from Europe and beyond."
 >
-  <main class="writing mx-auto max-w-[920px] px-6 py-16 md:py-24">
-    <p class="label-mono">Writing</p>
+  <main class="writing mx-auto max-w-[1080px] px-6 py-16 md:py-24">
     <h1 class="display-xl writing__h1">
-      Essays on <PaintedHighlight>data, AI, and the people behind both</PaintedHighlight>.
+      Read <PaintedHighlight>{totalEssays} essays</PaintedHighlight>, grouped by six pillars below.
     </h1>
 
     <p class="writing__lead">
       Working notes and longer-form thinking from the field. Organised by pillar so you can read by what you actually care about. Published first here, syndicated to LinkedIn later.
     </p>
 
-    {PILLAR_ORDER.map((slug) => {
-      const pillar = PILLARS[slug];
-      const list = sortByDateDesc(grouped.get(slug) ?? []);
-      return (
-        <section class="pillar" id={slug}>
-          <header class="pillar__header">
-            <p class="label-mono">{pillar.short}</p>
-            <h2 class="pillar__title">{pillar.title}</h2>
-            <p class="pillar__sub">{pillar.description}</p>
-          </header>
-          {list.length === 0 ? (
-            <p class="pillar__empty">No essays in this pillar yet. Coming soon.</p>
-          ) : (
-            <ul class="pillar__list">
-              {list.map((e) => (
-                <li class="essay-row">
-                  <a href={`/writing/${e.id}`} class="essay-link">
-                    <time class="essay-row__date" datetime={e.data.publishedDate.toISOString()}>
-                      {dateFmt.format(e.data.publishedDate)}
-                    </time>
-                    <span class="essay-row__title">{e.data.title}</span>
-                    {e.data.description && (
-                      <span class="essay-row__desc">{e.data.description}</span>
-                    )}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-      );
-    })}
+    <p class="writing__prompt">
+      Click below on the pillar you are interested in. Each opens the related essays.
+    </p>
 
-    <footer class="writing__footer">
-      <p class="label-mono">
-        {totalEssays} essays published · own-domain first, LinkedIn syndication second
-      </p>
-    </footer>
+    <div class="pillar-grid">
+      {PILLAR_ORDER.map((slug, i) => {
+        const pillar = PILLARS[slug];
+        const list = sortByDateDesc(grouped.get(slug) ?? []);
+        const sample = list.slice(0, 2);
+        return (
+          <a href={`/writing/all#${slug}`} class="pillar-card" data-pillar={slug}>
+            <p class="pillar-card__num">{String(i + 1).padStart(2, "0")}</p>
+            <h2 class="pillar-card__title">{pillar.title}</h2>
+            <p class="pillar-card__question">{pillar.description}</p>
+            <p class="pillar-card__count">{list.length} {list.length === 1 ? "essay" : "essays"}</p>
+            {sample.length > 0 && (
+              <ul class="pillar-card__sample">
+                {sample.map((e) => <li>{e.data.title}</li>)}
+              </ul>
+            )}
+          </a>
+        );
+      })}
+
+      <a href="/writing/all" class="pillar-card pillar-card--see-all">
+        <div class="see-all__inner">
+          <div>
+            <p class="pillar-card__num">07 / All</p>
+            <h2 class="pillar-card__title see-all__title">See all {totalEssays} essays</h2>
+            <p class="see-all__sub">
+              A continuous view of every essay, grouped by pillar. For when you'd rather scan the whole archive than pick a topic first.
+            </p>
+          </div>
+          <span class="see-all__arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+    </div>
   </main>
 </Layout>
 
 <style>
+  /* Page-level centering: same shape as /work. H1, lead, prompt centered;
+   * 6 pillar cards in grid mirror the theme-card pattern from /work. */
+
   .writing__h1 {
-    margin: 14px 0 36px;
-    max-width: 20ch;
+    text-align: center;
+    margin: 0 auto 32px;
+    max-width: 22ch;
   }
 
   .writing__lead {
+    text-align: center;
     font-size: 19px;
     line-height: 1.65;
     color: var(--paper);
     max-width: 65ch;
-    margin: 0 0 88px;
+    margin: 0 auto 40px;
   }
 
-  .pillar {
-    margin-top: 72px;
-    scroll-margin-top: 80px;
-  }
-
-  .pillar:first-of-type {
-    margin-top: 0;
-  }
-
-  .pillar__header {
-    margin-bottom: 24px;
-    padding-bottom: 18px;
-    border-bottom: 2px solid var(--accent-soft);
-  }
-
-  .pillar__title {
-    font-family: "Newsreader", Georgia, serif;
-    font-weight: 500;
-    font-size: clamp(24px, 2.6vw, 32px);
-    line-height: 1.16;
-    letter-spacing: -0.012em;
-    color: var(--paper);
-    margin: 6px 0 10px;
-  }
-
-  .pillar__sub {
-    font-size: 15px;
-    line-height: 1.55;
+  .writing__prompt {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
     color: var(--paper-soft);
-    margin: 0;
-    font-style: italic;
     max-width: 56ch;
+    margin: 0 auto 48px;
   }
 
-  .pillar__empty {
-    font-size: 15px;
-    color: var(--paper-muted);
-    font-style: italic;
-    margin: 12px 0 0;
-  }
-
-  .pillar__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .essay-row {
-    margin: 0;
-    border-bottom: 1px solid var(--border-medium);
-  }
-
-  .essay-row:last-child {
-    border-bottom: 0;
-  }
-
-  .essay-link {
+  .pillar-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 20px 0;
-    text-decoration: none;
-    color: inherit;
-    transition: background 160ms var(--ease-quart);
+    gap: 16px;
   }
 
-  @media (min-width: 720px) {
-    .essay-link {
-      grid-template-columns: 110px 1fr;
-      gap: 28px;
-      align-items: baseline;
+  @media (min-width: 760px) {
+    .pillar-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
   }
 
-  .essay-link:hover,
-  .essay-link:focus-visible {
-    background: var(--accent-faint-grad);
+  @media (min-width: 1100px) {
+    .pillar-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  /* Pillar cards: visually identical to theme-card on /work. */
+  .pillar-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 28px 36px;
+    background: var(--europa-blue-mid);
+    border: 1px solid var(--border-soft);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 180ms var(--ease-quart), background 180ms var(--ease-quart);
+  }
+
+  .pillar-card:hover,
+  .pillar-card:focus-visible {
+    border-color: var(--accent-soft);
     outline: none;
   }
 
-  .essay-link:focus-visible {
+  .pillar-card:focus-visible {
     outline: 2px solid var(--splash);
     outline-offset: 2px;
   }
 
-  .essay-row__date {
+  .pillar-card__num {
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.1em;
     color: var(--paper-muted);
-    font-variant-numeric: tabular-nums;
-    padding-top: 2px;
+    margin: 0 0 14px;
   }
 
-  @media (min-width: 720px) {
-    .essay-row__date {
-      grid-row: 1 / span 2;
+  .pillar-card__title {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    margin: 0 0 14px;
+    max-width: 16ch;
+  }
+
+  .pillar-card__question {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--paper-soft);
+    font-style: italic;
+    margin: 0 0 18px;
+    max-width: 28ch;
+  }
+
+  .pillar-card__count {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--splash);
+    margin: 0 0 14px;
+  }
+
+  .pillar-card__sample {
+    margin: 0;
+    padding: 14px 0 0;
+    list-style: none;
+    border-top: 1px solid var(--border-soft);
+    width: 100%;
+  }
+
+  .pillar-card__sample li {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--paper-muted);
+    margin-bottom: 6px;
+    max-width: 28ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* See-all meta-card: spans full width on desktop. Same as /work. */
+  .pillar-card--see-all {
+    background: transparent;
+    border-color: var(--accent-soft);
+    padding: 28px 32px;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  @media (min-width: 760px) {
+    .pillar-card--see-all {
+      grid-column: 1 / -1;
     }
   }
 
-  .essay-row__title {
-    font-family: "Newsreader", Georgia, serif;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.3;
-    letter-spacing: -0.008em;
-    color: var(--paper);
-    max-width: 58ch;
+  .pillar-card--see-all:hover,
+  .pillar-card--see-all:focus-visible {
+    background: var(--accent-faint);
+    border-color: var(--splash);
   }
 
-  .essay-row__desc {
-    font-size: 15.5px;
+  .see-all__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .see-all__title {
+    max-width: none;
+    margin-bottom: 8px;
+    font-size: 24px;
+  }
+
+  .see-all__sub {
+    font-size: 15px;
     line-height: 1.5;
     color: var(--paper-soft);
-    max-width: 60ch;
-  }
-
-  .writing__footer {
-    margin-top: 96px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border-strong);
-  }
-
-  .writing__footer p {
     margin: 0;
-    color: var(--paper-muted);
+    max-width: 56ch;
+  }
+
+  .see-all__arrow {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 32px;
+    color: var(--splash);
+    flex-shrink: 0;
+    transition: transform 180ms var(--ease-quart);
+  }
+
+  .pillar-card--see-all:hover .see-all__arrow {
+    transform: translateX(4px);
   }
 </style>

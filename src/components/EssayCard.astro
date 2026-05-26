@@ -1,0 +1,138 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"essays">;
+}
+
+const { entry } = Astro.props;
+const { title, description, publishedDate, originalSource } = entry.data;
+const href = `/writing/${entry.id}`;
+
+const dateFmt = new Intl.DateTimeFormat("en-GB", {
+  year: "numeric",
+  month: "short",
+});
+---
+
+<a class="essay-card" href={href}>
+  <p class="essay-card__meta">
+    <time class="essay-card__date" datetime={publishedDate.toISOString()}>
+      {dateFmt.format(publishedDate)}
+    </time>
+    {originalSource && (
+      <>
+        <span class="essay-card__sep">·</span>
+        <span class="essay-card__source">{originalSource}</span>
+      </>
+    )}
+  </p>
+  <h3 class="essay-card__title">{title}</h3>
+  {description && <p class="essay-card__desc">{description}</p>}
+  <span class="essay-card__arrow" aria-hidden="true">→</span>
+</a>
+
+<style>
+  /* Mirrors CaseCard layout: 3-area grid, hidden arrow on hover.
+   * Vertical list pattern, not boxed — hairline divider between rows. */
+  .essay-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "meta meta"
+      "title arrow"
+      "desc desc";
+    column-gap: 16px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border-medium);
+    text-decoration: none;
+    color: inherit;
+    transition: background 160ms var(--ease-quart);
+  }
+
+  .essay-card:hover,
+  .essay-card:focus-visible {
+    background: var(--accent-faint-grad);
+    outline: none;
+  }
+
+  .essay-card:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 2px;
+  }
+
+  .essay-card:last-child {
+    border-bottom: 0;
+  }
+
+  .essay-card__meta {
+    grid-area: meta;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--paper-muted);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .essay-card__date {
+    color: var(--paper-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .essay-card__sep {
+    color: var(--paper-muted);
+    opacity: 0.6;
+  }
+
+  .essay-card__source {
+    color: var(--paper-muted);
+    text-transform: none;
+    letter-spacing: 0.03em;
+    font-style: italic;
+  }
+
+  .essay-card__title {
+    grid-area: title;
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 24;
+    font-size: clamp(20px, 2.2vw, 26px);
+    line-height: 1.2;
+    letter-spacing: -0.012em;
+    color: var(--paper);
+    margin: 0 0 10px;
+    max-width: 40ch;
+  }
+
+  .essay-card__arrow {
+    grid-area: arrow;
+    align-self: start;
+    padding-top: 4px;
+    color: var(--splash);
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 22px;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 180ms var(--ease-quart), transform 180ms var(--ease-quart);
+  }
+
+  .essay-card:hover .essay-card__arrow,
+  .essay-card:focus-visible .essay-card__arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .essay-card__desc {
+    grid-area: desc;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+    margin: 0;
+    max-width: 62ch;
+  }
+</style>

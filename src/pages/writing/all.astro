@@ -1,0 +1,93 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import EssayCard from "../../components/EssayCard.astro";
+import PaintedHighlight from "../../components/PaintedHighlight.astro";
+import { PILLARS, PILLAR_ORDER, groupByPillar, sortByDateDesc } from "../../data/writing";
+
+const essays = (await getCollection("essays")).filter((e) => !e.data.draft);
+const grouped = groupByPillar(essays);
+---
+
+<Layout title="All essays · erlonrachi.com">
+  <main class="mx-auto max-w-[920px] px-6 py-16 md:py-24">
+    <p class="label-mono mb-6">
+      <a href="/writing" style="color: var(--paper-soft); text-decoration: none;">← back to pillars</a>
+    </p>
+
+    <h1 class="display-xl mb-8">
+      <PaintedHighlight>All essays</PaintedHighlight>, grouped by pillar.
+    </h1>
+
+    <p class="measure mb-20" style="color: var(--paper-soft); font-size: 19px; line-height: 1.65;">
+      Each section is one pillar. Scroll, scan, click.
+    </p>
+
+    {PILLAR_ORDER.map((slug, i) => {
+      const pillar = PILLARS[slug];
+      const list = sortByDateDesc(grouped.get(slug) ?? []);
+      return (
+        <section class="pillar-section" id={slug}>
+          <header class="pillar-section__header">
+            <p class="label-mono">{String(i + 1).padStart(2, "0")} / {pillar.short}</p>
+            <h2 class="pillar-section__title">{pillar.title}</h2>
+            <p class="pillar-section__question">{pillar.description}</p>
+          </header>
+          <div class="pillar-section__essays">
+            {list.length === 0 ? (
+              <p class="pillar-section__empty">No essays in this pillar yet. Coming soon.</p>
+            ) : (
+              list.map((e) => <EssayCard entry={e} />)
+            )}
+          </div>
+        </section>
+      );
+    })}
+  </main>
+</Layout>
+
+<style>
+  /* Mirrors /work/all theme-section pattern. */
+  .pillar-section {
+    margin-top: 96px;
+    scroll-margin-top: 80px;
+  }
+
+  .pillar-section:first-of-type {
+    margin-top: 0;
+  }
+
+  .pillar-section__header {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--accent-soft);
+  }
+
+  .pillar-section__title {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(28px, 3.4vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 8px 0 12px;
+    max-width: 22ch;
+  }
+
+  .pillar-section__question {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--paper-soft);
+    margin: 0;
+    max-width: 56ch;
+    font-style: italic;
+  }
+
+  .pillar-section__empty {
+    padding: 24px 0;
+    font-size: 15px;
+    color: var(--paper-muted);
+    font-style: italic;
+    margin: 0;
+  }
+</style>

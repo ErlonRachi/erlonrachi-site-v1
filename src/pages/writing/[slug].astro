@@ -46,7 +46,7 @@ const related = allEssays
 
     <header class="essay__header">
       <p class="essay__meta">
-        <a href={`/writing#${pillar}`} class="essay__pillar">{pillarInfo.short}</a>
+        <a href={`/writing/all#${pillar}`} class="essay__pillar">{pillarInfo.short}</a>
         <span class="essay__sep">·</span>
         <time datetime={publishedDate.toISOString()}>{dateFmt.format(publishedDate)}</time>
         {originalSource && (
