@@ -28,8 +28,9 @@
   --color-splash-deep: #B7872E;
   --color-splash-text: #06101F; /* paired text color, ≥7:1 contrast on splash (AAA) */
 
-  /* Type */
-  --font-display: "Fraunces", Georgia, serif;
+  /* Type — display swapped from Fraunces to Newsreader for stronger on-screen readability.
+   * Newsreader has an opsz axis (6..72) but no SOFT axis; we only set opsz. */
+  --font-display: "Newsreader", Georgia, serif;
   --font-sans:    "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, monospace;
 
@@ -97,18 +98,18 @@ body {
  * ------------------------------------------------------------------------- */
 
 .display-xl {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Newsreader", Georgia, serif;
   font-weight: 600;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-variation-settings: "opsz" 72;
   font-size: clamp(40px, 5.5vw, 72px);
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
 
 .display-lg {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Newsreader", Georgia, serif;
   font-weight: 600;
-  font-variation-settings: "opsz" 96, "SOFT" 30;
+  font-variation-settings: "opsz" 48;
   font-size: clamp(28px, 3.4vw, 44px);
   line-height: 1.14;
   letter-spacing: -0.014em;

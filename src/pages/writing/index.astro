@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import DevNav from "../../components/DevNav.astro";
 import PaintedHighlight from "../../components/PaintedHighlight.astro";
 import { PILLARS, PILLAR_ORDER, groupByPillar, sortByDateDesc } from "../../data/writing";
 
@@ -19,8 +18,6 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
   title="Writing — Erlon Rachi"
   description="Essays on agentic AI, governance, data infrastructure, leadership, the human factor, and field notes from Europe and beyond."
 >
-  <DevNav />
-
   <main class="writing mx-auto max-w-[920px] px-6 py-16 md:py-24">
     <p class="label-mono">Writing</p>
     <h1 class="display-xl writing__h1">
@@ -102,7 +99,7 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
   }
 
   .pillar__title {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Newsreader", Georgia, serif;
     font-weight: 500;
     font-size: clamp(24px, 2.6vw, 32px);
     line-height: 1.16;
@@ -188,7 +185,7 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", {
   }
 
   .essay-row__title {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Newsreader", Georgia, serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 1.3;

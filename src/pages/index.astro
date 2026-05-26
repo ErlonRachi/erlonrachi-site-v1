@@ -1,7 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import DevNav from "../components/DevNav.astro";
 import PaintedHighlight from "../components/PaintedHighlight.astro";
+import { sortByDateDesc, PILLARS } from "../data/writing";
 
 const paths = [
   {
@@ -23,14 +24,18 @@ const paths = [
     sub: "Italian, Brazilian, European. UNICAMP. The philosophy of building people before building code.",
   },
 ];
+
+const allEssays = (await getCollection("essays")).filter((e) => !e.data.draft);
+const sortedEssays = sortByDateDesc(allEssays);
+const latestEssay = sortedEssays[0];
+const totalEssays = allEssays.length;
+const dateFmt = new Intl.DateTimeFormat("en-GB", { year: "numeric", month: "short" });
 ---
 
 <Layout
   title="Erlon Rachi — Senior data and AI leadership and execution"
   description="Senior data and AI work across 27+ markets, productized into two engagement tracks. 32 case studies, USD 250MM+ in delivered value."
 >
-  <DevNav />
-
   <main class="home mx-auto max-w-[960px] px-6 py-20 md:py-28">
     <p class="label-mono home__id">
       Erlon Rachi · Milan · CET
@@ -72,6 +77,24 @@ const paths = [
         </a>
       ))}
     </section>
+
+    {/* Editorial strip — fourth entry point, deliberately not a card.
+        Top + bottom hairlines, mono eyebrow, latest-essay row, all-essays kicker. */}
+    {latestEssay && (
+      <section class="home__writing" aria-label="Latest writing">
+        <p class="label-mono home__writing-eyebrow">Latest essay · {PILLARS[latestEssay.data.pillar].short}</p>
+        <a href={`/writing/${latestEssay.id}`} class="home__writing-link">
+          <time class="home__writing-date" datetime={latestEssay.data.publishedDate.toISOString()}>
+            {dateFmt.format(latestEssay.data.publishedDate)}
+          </time>
+          <span class="home__writing-title">{latestEssay.data.title}</span>
+          <span class="home__writing-arrow" aria-hidden="true">→</span>
+        </a>
+        <p class="home__writing-all">
+          <a href="/writing">All {totalEssays} essays →</a>
+        </p>
+      </section>
+    )}
 
     <aside class="home__fulltime">
       <p class="label-mono">Open to join your organization</p>
@@ -148,7 +171,7 @@ const paths = [
 
   .home__proof-cell dd {
     margin: 0;
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Newsreader", Georgia, serif;
     font-weight: 500;
     font-size: clamp(26px, 2.8vw, 34px);
     line-height: 1.05;
@@ -162,7 +185,7 @@ const paths = [
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    margin: 0 0 80px;
+    margin: 0 0 56px;
   }
 
   @media (min-width: 880px) {
@@ -198,7 +221,7 @@ const paths = [
   }
 
   .path__label {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Newsreader", Georgia, serif;
     font-weight: 500;
     font-size: 22px;
     line-height: 1.18;
@@ -224,6 +247,98 @@ const paths = [
     color: var(--paper-soft);
     margin: 0 auto;
     max-width: 36ch;
+  }
+
+  /* Writing strip — editorial row, deliberately NOT a card.
+   * Top + bottom hairlines, full width of the path grid above. */
+  .home__writing {
+    padding: 22px 0 16px;
+    border-top: 1px solid var(--border-medium);
+    border-bottom: 1px solid var(--border-medium);
+    margin: 0 0 80px;
+  }
+
+  .home__writing-eyebrow {
+    margin: 0 0 14px;
+    color: var(--paper-muted);
+  }
+
+  .home__writing-link {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: baseline;
+    padding: 6px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: background 160ms var(--ease-quart);
+  }
+
+  @media (min-width: 720px) {
+    .home__writing-link {
+      grid-template-columns: 120px 1fr auto;
+      gap: 24px;
+    }
+  }
+
+  .home__writing-link:hover,
+  .home__writing-link:focus-visible {
+    background: var(--accent-faint-grad);
+    outline: none;
+  }
+
+  .home__writing-link:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 2px;
+  }
+
+  .home__writing-date {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--paper-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .home__writing-title {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(20px, 2vw, 24px);
+    line-height: 1.22;
+    letter-spacing: -0.008em;
+    color: var(--paper);
+    max-width: 44ch;
+  }
+
+  .home__writing-arrow {
+    color: var(--splash);
+    font-size: 22px;
+    align-self: center;
+    transition: transform 180ms var(--ease-quart);
+  }
+
+  .home__writing-link:hover .home__writing-arrow {
+    transform: translateX(4px);
+  }
+
+  .home__writing-all {
+    margin: 14px 0 0;
+    text-align: right;
+  }
+
+  .home__writing-all a {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--paper-soft);
+    text-decoration: none;
+    transition: color 140ms;
+  }
+
+  .home__writing-all a:hover {
+    color: var(--splash);
   }
 
   /* Full-time aside: spans the full width of the path grid above, centered.

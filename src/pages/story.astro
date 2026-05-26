@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import DevNav from "../components/DevNav.astro";
 import PaintedHighlight from "../components/PaintedHighlight.astro";
 ---
 
@@ -8,8 +7,6 @@ import PaintedHighlight from "../components/PaintedHighlight.astro";
   title="Story — Erlon Rachi"
   description="First-person narrative: where Erlon comes from, what he believes, what he's doing now."
 >
-  <DevNav />
-
   {/* Inline SVG duotone filter: maps grayscale of portrait to Europa Blue Deeper
       (shadows) → Paper (highlights). Engraving / lithograph register. */}
   <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true" focusable="false">
@@ -311,7 +308,7 @@ import PaintedHighlight from "../components/PaintedHighlight.astro";
     margin: 64px 0 0;
     padding-top: 32px;
     border-top: 1px solid var(--border-strong);
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Newsreader", Georgia, serif;
     font-weight: 400;
     font-style: italic;
     font-size: clamp(20px, 2vw, 26px);

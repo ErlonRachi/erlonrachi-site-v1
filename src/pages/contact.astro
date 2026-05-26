@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import DevNav from "../components/DevNav.astro";
 import PaintedHighlight from "../components/PaintedHighlight.astro";
 
 const tierLabels: Record<string, string> = {
@@ -21,8 +20,6 @@ const mailtoHref = `mailto:erlonrachi@gmail.com?subject=${encodeURIComponent(mai
 ---
 
 <Layout title="Contact — Erlon Rachi">
-  <DevNav />
-
   <main class="contact mx-auto max-w-[820px] px-6 py-20 md:py-28">
     <p class="label-mono">Contact</p>
     <h1 class="display-xl contact__h1">
@@ -79,7 +76,7 @@ const mailtoHref = `mailto:erlonrachi@gmail.com?subject=${encodeURIComponent(mai
   }
 
   .contact__tier-name {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Newsreader", Georgia, serif;
     font-size: 20px;
     color: var(--paper);
     font-weight: 500;

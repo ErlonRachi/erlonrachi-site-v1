@@ -1,0 +1,129 @@
+---
+// Production global header.
+//
+// Pattern: editorial, not a SaaS menubar. Logotype-left + four nav-right.
+// Sticky on top so it never leaves the viewport on long scrolls.
+// The logotype is the "back to home" affordance on every non-home page.
+const current = Astro.url.pathname;
+const isHome = current === "/" || current === "";
+
+const nav = [
+  { href: "/work",         label: "Work" },
+  { href: "/writing",      label: "Writing" },
+  { href: "/story",        label: "Story" },
+  { href: "/work-with-me", label: "Engage" },
+];
+
+const isActive = (href: string) => {
+  if (href === "/") return isHome;
+  return current === href || current.startsWith(href + "/");
+};
+---
+
+<header class="site-header" aria-label="Primary navigation">
+  <div class="site-header__inner">
+    {isHome ? (
+      <span class="site-header__brand" aria-current="page">Erlon Rachi</span>
+    ) : (
+      <a href="/" class="site-header__brand" aria-label="Back to home">Erlon Rachi</a>
+    )}
+
+    <nav class="site-header__nav">
+      {nav.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={["site-header__link", { "is-current": isActive(href) }]}
+          aria-current={isActive(href) ? "page" : undefined}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(15, 37, 69, 0.92);
+    backdrop-filter: saturate(140%) blur(8px);
+    -webkit-backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .site-header__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  /* Brand: Newsreader display token. Slightly tighter than body for the editorial feel. */
+  .site-header__brand {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 18;
+    font-size: 18px;
+    letter-spacing: -0.005em;
+    color: var(--paper);
+    text-decoration: none;
+    transition: color 140ms;
+  }
+
+  a.site-header__brand:hover {
+    color: var(--splash);
+  }
+
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .site-header__link {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--paper-soft);
+    text-decoration: none;
+    transition: color 140ms;
+  }
+
+  .site-header__link:hover {
+    color: var(--paper);
+  }
+
+  .site-header__link.is-current {
+    color: var(--splash);
+  }
+
+  .site-header__link:focus-visible {
+    outline: 2px solid var(--splash);
+    outline-offset: 4px;
+  }
+
+  /* Mobile: stack rows; brand on top, nav below, both centered. The header
+   * gains a couple of pixels in height; tradeoff for keeping all four nav
+   * items visible without a hamburger. */
+  @media (max-width: 640px) {
+    .site-header__inner {
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px 20px 14px;
+    }
+
+    .site-header__nav {
+      gap: 18px;
+    }
+
+    .site-header__link {
+      font-size: 12px;
+    }
+  }
+</style>

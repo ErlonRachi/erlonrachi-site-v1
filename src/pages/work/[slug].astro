@@ -2,7 +2,6 @@
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import DevNav from "../../components/DevNav.astro";
 import PaintedHighlight from "../../components/PaintedHighlight.astro";
 import { THEMES, type ThemeSlug } from "../../data/portfolio";
 
@@ -36,8 +35,6 @@ const sameTheme = allCases
   title={`${title} — Erlon Rachi`}
   description={metric}
 >
-  <DevNav />
-
   <article class="case mx-auto max-w-[820px] px-6 py-16 md:py-24">
     <p class="case__back">
       <a href="/work">← back to work</a>
@@ -190,7 +187,7 @@ const sameTheme = allCases
 
   /* Body: rendered markdown from collection entry. Tight, editorial. */
   .case__body :global(h2) {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Newsreader", Georgia, serif;
     font-weight: 500;
     font-size: clamp(22px, 2.4vw, 28px);
     line-height: 1.2;
@@ -262,7 +259,7 @@ const sameTheme = allCases
 
   .case__related-title {
     display: block;
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Newsreader", Georgia, serif;
     font-weight: 500;
     font-size: 17px;
     color: var(--paper);
