@@ -37,6 +37,7 @@ const essays = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
+    tagline: z.string().optional(),
     pillar: z.enum(PILLAR_SLUGS),
     publishedDate: z.coerce.date(),
     originalSource: z.string().optional(),

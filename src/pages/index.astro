@@ -87,7 +87,12 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", { year: "numeric", month: "shor
           <time class="home__writing-date" datetime={latestEssay.data.publishedDate.toISOString()}>
             {dateFmt.format(latestEssay.data.publishedDate)}
           </time>
-          <span class="home__writing-title">{latestEssay.data.title}</span>
+          <span class="home__writing-titles">
+            <span class="home__writing-title">{latestEssay.data.title}</span>
+            {latestEssay.data.tagline && (
+              <span class="home__writing-tagline">{latestEssay.data.tagline}</span>
+            )}
+          </span>
           <span class="home__writing-arrow" aria-hidden="true">→</span>
         </a>
         <p class="home__writing-all">
@@ -301,6 +306,13 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", { year: "numeric", month: "shor
     font-variant-numeric: tabular-nums;
   }
 
+  .home__writing-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+
   .home__writing-title {
     font-family: "Newsreader", Georgia, serif;
     font-weight: 500;
@@ -309,6 +321,16 @@ const dateFmt = new Intl.DateTimeFormat("en-GB", { year: "numeric", month: "shor
     letter-spacing: -0.008em;
     color: var(--paper);
     max-width: 44ch;
+  }
+
+  .home__writing-tagline {
+    font-family: "Newsreader", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15.5px;
+    line-height: 1.45;
+    color: var(--paper-soft);
+    max-width: 58ch;
   }
 
   .home__writing-arrow {

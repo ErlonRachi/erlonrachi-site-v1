@@ -1,6 +1,7 @@
 ---
 title: "The Secret Sauce Is Still a Secret"
 description: "10% algorithm, 20% data and governance, 70% process and people. The 10/20/70 ratio is the most important number in enterprise AI rollout right now, and almost nobody is acting on it."
+tagline: "AI implementation success is not about algorithms and models, it is all about everything around them"
 pillar: "leadership"
 publishedDate: 2026-06-03
 ---
