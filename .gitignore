@@ -2,6 +2,12 @@
 dist/
 .astro/
 
+# Icon-build inputs (font binaries fetched at build time, not source)
+scripts/_assets/
+
+# Local design-iteration pages. Used for in-browser exploration; never ship.
+src/pages/dev/
+
 # dependencies
 node_modules/
 
