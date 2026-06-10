@@ -8,6 +8,11 @@ scripts/_assets/
 # Local design-iteration pages. Used for in-browser exploration; never ship.
 src/pages/dev/
 
+# inbox: drop folder for raw article drafts. Keep the scaffolding, ignore the drops.
+inbox/*
+!inbox/README.md
+!inbox/_TEMPLATE.md
+
 # dependencies
 node_modules/
 
