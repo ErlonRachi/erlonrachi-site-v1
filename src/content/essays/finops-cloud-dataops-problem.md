@@ -2,7 +2,7 @@
 title: "Reflections on FinOps: Why Your Cloud Bill Is a DataOps Problem"
 description: "Cutting infrastructure costs by 30% was never about better tooling. It was about putting every workload's cost in front of the engineer who created it, until capacity stopped being free and became a design constraint."
 tagline: "Read the folio, cancel the spa nobody visits, then spend the difference on the reason you made the trip"
-pillar: "leadership"
+pillar: "data-infrastructure"
 publishedDate: 2026-07-03
 ---
 
